@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستقبل الإقامة المرنة - خطة عمل تفاعلية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles for a Luxury Vibe */
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #F7F2EB; /* Soft cream background */
+            color: #1A1A1A; /* Dark charcoal text */
+            direction: rtl;
+            text-align: right;
+        }
+        [lang="en"] body {
+            font-family: 'Playfair Display', serif;
+            direction: ltr;
+            text-align: left;
+        }
+
+        /* Hero section specific styles to add a background image */
+        #hero-ar, #hero-en {
+            background-image: url('https://placehold.co/1920x1080/4B2C1C/F7F2EB?text=LUXURY+LIVING');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
+            background-color: rgba(75, 44, 28, 0.7); /* Dark brown overlay */
+        }
+        
+        /* Utility for elegant borders */
+        .border-luxury {
+            border: 1px solid #E5E5D5;
+        }
+
+        /* Custom scrollbar for an elegant feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F7F2EB;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #A78B6D; /* Gold-like accent color */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B8860B; /* Darker gold on hover */
+        }
+
+        /* Existing styles with updated colors */
+        .nav-link {
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #A78B6D;
+            border-bottom-color: #A78B6D;
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+            padding-right: 2.5rem;
+        }
+        [lang="en"] .timeline-item {
+            padding-left: 2.5rem;
+            padding-right: 0;
+        }
+        .timeline-item:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            right: 11px;
+            width: 2px;
+            height: 100%;
+            background-color: #E0E0E0;
+        }
+        [lang="en"] .timeline-item:not(:last-child)::before {
+            right: auto;
+            left: 11px;
+        }
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24px;
+            height: 24px;
+            background-color: #F7F2EB;
+            border: 2px solid #E0E0E0;
+            border-radius: 50%;
+            z-index: 10;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        [lang="en"] .timeline-dot {
+            right: auto;
+            left: 0;
+        }
+        .timeline-dot.active, .timeline-dot:hover {
+            border-color: #A78B6D;
+            transform: scale(1.1);
+        }
+        .timeline-dot.active .inner-dot {
+            opacity: 1;
+        }
+        .inner-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #A78B6D;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div id="app-container">
+        
+        <!-- Language Switcher -->
+        <div class="fixed top-4 right-4 z-[100] p-2 bg-white rounded-full shadow-lg">
+            <button id="lang-toggle-button" class="text-sm font-bold text-gray-700 focus:outline-none">
+                <span id="lang-text-ar">English</span>
+                <span id="lang-text-en" class="hidden">عربي</span>
+            </button>
+        </div>
+
+        <!-- Arabic Content -->
+        <div lang="ar" class="content-container">
+            <nav id="navbar-ar" class="bg-[#F7F2EB]/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+                <div class="container mx-auto px-6 py-3">
+                    <div class="flex items-center justify-between">
+                        <h1 class="text-xl font-bold text-[#4B2C1C]">مستقبل الإقامة</h1>
+                        <div class="hidden md:flex items-center space-x-8 lg:space-x-10">
+                            <a href="#opportunity-ar" class="nav-link px-2 py-1">الفرصة والحل</a>
+                            <a href="#market-ar" class="nav-link px-2 py-1">السوق</a>
+                            <a href="#financials-ar" class="nav-link px-2 py-1">النموذج المالي</a>
+                            <a href="#roadmap-ar" class="nav-link px-2 py-1">خارطة الطريق</a>
+                            <a href="#investment-ar" class="nav-link px-2 py-1">الاستثمار</a>
+                            <a href="#team-ar" class="nav-link px-2 py-1">الفريق</a>
+                        </div>
+                        <button id="mobile-menu-button-ar" class="md:hidden text-gray-700 focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        </button>
+                    </div>
+                    <div id="mobile-menu-ar" class="hidden md:hidden mt-4 flex flex-col items-center space-y-2">
+                        <a href="#opportunity-ar" class="nav-link w-full text-center py-2">الفرصة والحل</a>
+                        <a href="#market-ar" class="nav-link w-full text-center py-2">السوق</a>
+                        <a href="#financials-ar" class="nav-link w-full text-center py-2">النموذج المالي</a>
+                        <a href="#roadmap-ar" class="nav-link w-full text-center py-2">خارطة الطريق</a>
+                        <a href="#investment-ar" class="nav-link w-full text-center py-2">الاستثمار</a>
+                        <a href="#team-ar" class="nav-link w-full text-center py-2">الفريق</a>
+                    </div>
+                </div>
+            </nav>
+
+            <main class="container mx-auto px-6 py-12">
+                <header id="hero-ar" class="text-center text-white rounded-3xl overflow-hidden mb-20 p-12 md:p-24 fade-in shadow-xl">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg">مستقبل الإقامة المرنة في الرياض</h1>
+                    <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md">نموذج هجين يجمع راحة المنزل ومرونة الإقامة مع خدمات فندقية متكاملة لتلبية احتياجات سوق متنامٍ.</p>
+                    <a href="#opportunity-ar" class="inline-block mt-8 py-3 px-8 rounded-full border-2 border-white text-white font-bold hover:bg-white hover:text-[#4B2C1C] transition duration-300">اكتشف المزيد</a>
+                </header>
+
+                <section id="opportunity-ar" class="mb-24 scroll-mt-20 fade-in">
+                    <h2 class="text-3xl font-bold text-center mb-4 text-[#4B2C1C]">سد الفجوة في سوق الإيواء</h2>
+                    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">يقدم هذا القسم نظرة على المشكلة الحالية في سوق الإيواء بالرياض والحل المبتكر الذي نقدمه. نحن نستهدف الفجوة بين الفنادق التقليدية والشقق المفروشة من خلال تقديم تجربة متكاملة تجمع بين أفضل ما في العالمين.</p>
+                    <div class="grid md:grid-cols-3 gap-8 text-center">
+                        <div class="bg-white/50 p-6 rounded-xl shadow-lg border-luxury transform transition duration-300 hover:scale-105">
+                            <h3 class="font-bold text-xl mb-2 text-[#A78B6D]">الفنادق</h3>
+                            <p class="text-gray-500">باهظة الثمن وقليلة الخصوصية، لا تناسب الإقامات الطويلة.</p>
+                        </div>
+                        <div class="bg-[#F7F2EB] p-6 rounded-xl shadow-2xl border-2 border-[#A78B6D] transform transition duration-300 hover:scale-110">
+                            <h3 class="font-bold text-xl mb-2 text-[#4B2C1C]">حلنا الهجين</h3>
+                            <ul class="space-y-2 text-[#4B2C1C] text-sm">
+                                <li>✓ إقامة مرنة (شهرية، أسبوعية)</li>
+                                <li>✓ خدمات فندقية متكاملة</li>
+                                <li>✓ خصوصية وراحة المنزل</li>
+                                <li>✓ تجربة ثقافية واجتماعية</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/50 p-6 rounded-xl shadow-lg border-luxury transform transition duration-300 hover:scale-105">
+                            <h3 class="font-bold text-xl mb-2 text-[#A78B6D]">الشقق المفروشة</h3>
+                            <p class="text-gray-500">تفتقر للخدمات والقيمة المضافة، وتجربة العميل غير متكاملة.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="market-ar" class="mb-24 scroll-mt-20 fade-in">
+                    <h2 class="text-3xl font-bold text-center mb-4 text-[#4B2C1C]">سوق واعد ونمو متسارع</h2>
+                    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">نستعرض هنا حجم الفرصة الهائلة في قطاع السياحة والإيواء السعودي، المدفوع برؤية 2030 والنمو الاقتصادي المتسارع في الرياض. الأرقام تؤكد أننا في المكان والوقت المناسبين لتقديم حلول إيواء مبتكرة.</p>
+                    <div class="grid md:grid-cols-2 gap-8 text-center">
+                        <div class="bg-white p-8 rounded-xl shadow-md transform transition duration-300 hover:scale-105">
+                            <p class="text-lg text-gray-500 mb-2">حجم سوق السياحة والإيواء في المملكة</p>
+                            <p class="text-5xl font-bold text-[#A78B6D]"><span class="counter" data-target="100">0</span>+ مليار ريال</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-md transform transition duration-300 hover:scale-105">
+                            <p class="text-lg text-gray-500 mb-2">مستهدف رؤية 2030</p>
+                            <p class="text-5xl font-bold text-[#A78B6D]"><span class="counter" data-target="100">0</span> مليون زائر</p>
+                        </div>
+                    </div>
+                    <div class="mt-12">
+                        <h3 class="text-2xl font-bold text-center mb-6">ميزتنا التنافسية</h3>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="bg-white p-5 rounded-lg shadow-sm text-center transform transition duration-300 hover:shadow-lg">
+                                <span class="text-4xl text-[#A78B6D]">🏢</span>
+                                <h4 class="font-bold mt-2">نموذج B2B</h4>
+                                <p class="text-sm text-gray-500 mt-1">تركيز على عقود الشركات لضمان إشغال شبه دائم.</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-lg shadow-sm text-center transform transition duration-300 hover:shadow-lg">
+                                <span class="text-4xl text-[#A78B6D]">🔄</span>
+                                <h4 class="font-bold mt-2">النموذج الهجين</h4>
+                                <p class="text-sm text-gray-500 mt-1">مرونة سعرية وجودة فندقية في منتج واحد.</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-lg shadow-sm text-center transform transition duration-300 hover:shadow-lg">
+                                <span class="text-4xl text-[#A78B6D]">🌟</span>
+                                <h4 class="font-bold mt-2">تجربة متكاملة</h4>
+                                <p class="text-sm text-gray-500 mt-1">نقدم تجربة فريدة تتجاوز مجرد السكن.</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-lg shadow-sm text-center transform transition duration-300 hover:shadow-lg">
+                                <span class="text-4xl text-[#A78B6D]">🤖</span>
+                                <h4 class="font-bold mt-2">كفاءة تشغيلية</h4>
+                                <p class="text-sm text-gray-500 mt-1">استخدام الذكاء الاصطناعي لتحسين التجربة.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="financials-ar" class="mb-24 scroll-mt-20 fade-in">
+                    <h2 class="text-3xl font-bold text-center mb-4 text-[#4B2C1C]">النموذج المالي والتوقعات</h2>
+                    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">يعرض هذا القسم نموذج الإيرادات المتنوع والأداء المتوقع للمشروع في مرحلته الأولى. الرسوم البيانية التفاعلية توضح مصادر الدخل المتعددة وإمكانات النمو الواعدة من خلال الخدمات المضافة.</p>
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-xl font-bold text-center mb-4">مصادر الدخل</h3>
+                            <div class="chart-container">
+                                <canvas id="revenueStreamsChartAr"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-center mb-4">الإيرادات السنوية المتوقعة (العقار الأول)</h3>
+                            <div class="chart-container h-[350px] md:h-[400px]">
+                                <canvas id="revenueProjectionChartAr"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="roadmap-ar" class="mb-24 scroll-mt-20 fade-in">
+                    <h2 class="text-3xl font-bold text-center mb-4 text-[#4B2C1C]">خارطة الطريق نحو التوسع</h2>
+                    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">نؤمن بالنمو المدروس والمستدام. توضح خارطة الطريق التفاعلية هذه خطتنا للتوسع خلال السنوات الثلاث الأولى، بدءًا من تشغيل العقار الأول وصولًا إلى زيادة القدرة الاستيعابية بشكل كبير.</p>
+                    <div class="md:flex">
+                        <div class="md:w-1/3">
+                            <div class="relative">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot active" data-year="1">
+                                        <div class="inner-dot"></div>
+                                    </div>
+                                    <h4 class="font-bold text-lg">السنة الأولى</h4>
+                                    <p class="text-gray-600">التشغيل الكامل</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot" data-year="2">
+                                        <div class="inner-dot"></div>
+                                    </div>
+                                    <h4 class="font-bold text-lg">السنة الثانية</h4>
+                                    <p class="text-gray-600">التوسع الأول</p>
+                                </div>
+                                    <div class="timeline-item">
+                                    <div class="timeline-dot" data-year="3">
+                                        <div class="inner-dot"></div>
+                                    </div>
+                                    <h4 class="font-bold text-lg">السنة الثالثة</h4>
+                                    <p class="text-gray-600">النمو والنطاق الأوسع</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 md:pr-8 mt-8 md:mt-0">
+                            <div id="roadmap-details-ar" class="bg-white p-8 rounded-lg shadow-lg min-h-[150px]">
+                                <h3 class="text-xl font-bold text-[#A78B6D]">السنة الأولى: الانطلاقة والتشغيل الكامل</h3>
+                                <p class="mt-2 text-gray-700">بدء التشغيل الكامل للعقار الأول الذي يضم 20 وحدة سكنية، مع التركيز على بناء علاقات قوية مع الشركاء من الشركات وتحقيق الإيرادات المستهدفة.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="investment-ar" class="mb-24 scroll-mt-20 fade-in">
+                        <h2 class="text-3xl font-bold text-center mb-4 text-[#4B2C1C]">الطلب الاستثماري</h2>
+                        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">لتسريع نمونا وتحقيق أهدافنا التوسعية، نسعى لتمويل بقيمة 2 مليون ريال. يوضح الرسم البياني التالي خطتنا الدقيقة لتوزيع هذا التمويل على الجوانب الرئيسية للمشروع لضمان أقصى درجات الكفاءة والعائد.</p>
+                    <div class="bg-white p-8 rounded-xl shadow-lg transform transition duration-300 hover:shadow-2xl">
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div class="text-center md:text-right">
+                                <p class="text-lg text-gray-500">التمويل المطلوب</p>
+                                <p class="text-5xl font-bold text-[#4B2C1C] my-2">2 مليون ريال</p>
+                                <p class="text-gray-600">لتسريع النمو وتوسيع العمليات وتجهيز الوحدات القادمة.</p>
+                            </div>
+                            <div>
+                                <div class="chart-container">
+                                        <canvas id="investmentChartAr"></canvas>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="team-ar" class="scroll-mt-20 fade-in">
+                        <h2 class="text-3xl font-bold text-center mb-4 text-[#4B2C1C]">الفريق المؤسس</h2>
+                        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">يقف وراء هذا المشروع فريق من أصحاب الخبرة العميقة في مجالات الضيافة وإدارة العمليات، مع شغف حقيقي بتقديم تجارب استثنائية. خبرتنا الممتدة تضمن تنفيذ الرؤية بكفاءة واحترافية.</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center transform transition duration-300 hover:scale-105">
+                            <div class="w-24 h-24 rounded-full mx-auto bg-gray-200 flex items-center justify-center text-4xl mb-4">👨‍💼</div>
+                            <h3 class="font-bold text-xl">عبدالإله الشنقيطي</h3>
+                            <p class="text-gray-600 mt-2">خبرة 10 سنوات في الضيافة والسياحة والطيران. تلقى تدريبات في إحدى أرقى مدارس الأعمال في باريس.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center transform transition duration-300 hover:scale-105">
+                            <div class="w-24 h-24 rounded-full mx-auto bg-gray-200 flex items-center justify-center text-4xl mb-4">👨‍💼</div>
+                            <h3 class="font-bold text-xl">حسام علوي</h3>
+                            <p class="text-gray-600 mt-2">خبرة 10 سنوات في إدارة العمليات والعلاقات والضيافة الراقية. تدرب في أستراليا على تحسين نمط المعيشة وجودة الحياة.</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="bg-[#1A1A1A] text-white mt-20">
+                <div class="container mx-auto px-6 py-4 text-center">
+                    <p>&copy; 2025 مستقبل الإقامة المرنة. جميع الحقوق محفوظة.</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- English Content -->
+        <div lang="en" class="content-container hidden">
+            <nav id="navbar-en" class="bg-[#F7F2EB]/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+                <div class="container mx-auto px-6 py-3">
+                    <div class="flex items-center justify-between">
+                        <h1 class="text-xl font-bold text-[#4B2C1C]">Flexible Living Future</h1>
+                        <div class="hidden md:flex items-center space-x-8 lg:space-x-10">
+                            <a href="#opportunity-en" class="nav-link px-2 py-1">Opportunity & Solution</a>
+                            <a href="#market-en" class="nav-link px-2 py-1">Market</a>
+                            <a href="#financials-en" class="nav-link px-2 py-1">Financial Model</a>
+                            <a href="#roadmap-en" class="nav-link px-2 py-1">Roadmap</a>
+                            <a href="#investment-en" class="nav-link px-2 py-1">Investment</a>
+                            <a href="#team-en" class="nav-link px-2 py-1">Team</a>
+                        </div>
+                        <button id="mobile-menu-button-en" class="md:hidden text-gray-700 focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        </button>
+                    </div>
+                    <div id="mobile-menu-en" class="hidden md:hidden mt-4 flex flex-col items-center space-y-2">
+                        <a href="#opportunity-en" class="nav-link w-full text-center py-2">Opportunity & Solution</a>
+                        <a href="#market-en" class="nav-link w-full text-center py-2">Market</a>
+                        <a href="#financials-en" class="nav-link w-full text-center py-2">Financial Model</a>
+                        <a href="#roadmap-en" class="nav-link w-full text-center py-2">Roadmap</a>
+                        <a href="#investment-en" class="nav-link w-full text-center py-2">Investment</a>
+                        <a href="#team-en" class="nav-link w-full text-center py-2">Team</a>
+                    </div>
+                </div>
+            </nav>
+
+            <main class="container mx-auto px-6 py-12">
+                <header id="hero-en" class="text-center text-white rounded-3xl overflow-hidden mb-20 p-12 md:p-24 fade-in shadow-xl">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg">The Future of Flexible Living in Riyadh</h1>
+                    <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md">A hybrid model combining the comforts of home and the flexibility of residence with integrated hotel services to meet the needs of a growing market.</p>
+                    <a href="#opportunity-en" class="inline-block mt-8 py-3 px-8 rounded-full border-2 border-white text-white font-bold hover:bg-white hover:text-[#4B2C1C] transition duration-300">Discover More</a>
+                </header>
+
+                <section id="opportunity-en" class="mb-24 scroll-mt-20 fade-in">
+                    <h2 class="text-3xl font-bold text-center mb-4 text-[#4B2C1C]">Bridging the Gap in the Accommodation Market</h2>
+                    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">This section provides an overview of the current problem in the Riyadh accommodation market and our innovative solution. We aim to bridge the gap between traditional hotels and furnished apartments by offering an integrated experience that combines the best of both worlds.</p>
+                    <div class="grid md:grid-cols-3 gap-8 text-center">
+                        <div class="bg-white/50 p-6 rounded-xl shadow-lg border-luxury transform transition duration-300 hover:scale-105">
+                            <h3 class="font-bold text-xl mb-2 text-[#A78B6D]">Hotels</h3>
+                            <p class="text-gray-500">Expensive and lack privacy, unsuitable for long stays.</p>
+                        </div>
+                        <div class="bg-[#F7F2EB] p-6 rounded-xl shadow-2xl border-2 border-[#A78B6D] transform transition duration-300 hover:scale-110">
+                            <h3 class="font-bold text-xl mb-2 text-[#4B2C1C]">Our Hybrid Solution</h3>
+                            <ul class="space-y-2 text-[#4B2C1C] text-sm">
+                                <li>✓ Flexible stays (monthly, weekly)</li>
+                                <li>✓ Integrated hotel services</li>
+                                <li>✓ Privacy and comfort of home</li>
+                                <li>✓ Cultural and social experience</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/50 p-6 rounded-xl shadow-lg border-luxury transform transition duration-300 hover:scale-105">
+                            <h3 class="font-bold text-xl mb-2 text-[#A78B6D]">Furnished Apartments</h3>
+                            <p class="text-gray-500">Lack services and added value, and the customer experience is not integrated.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="market-en" class="mb-24 scroll-mt-20 fade-in">
+                    <h2 class="text-3xl font-bold text-center mb-4 text-[#4B2C1C]">A Promising Market with Rapid Growth</h2>
+                    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Here we showcase the immense opportunity in the Saudi tourism and accommodation sector, driven by Vision 2030 and the accelerated economic growth in Riyadh. The numbers confirm that we are in the right place at the right time to provide innovative accommodation solutions.</p>
+                    <div class="grid md:grid-cols-2 gap-8 text-center">
+                        <div class="bg-white p-8 rounded-xl shadow-md transform transition duration-300 hover:scale-105">
+                            <p class="text-lg text-gray-500 mb-2">Saudi Tourism & Accommodation Market Size</p>
+                            <p class="text-5xl font-bold text-[#A78B6D]"><span class="counter" data-target="100">0</span>+ Billion SAR</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-md transform transition duration-300 hover:scale-105">
+                            <p class="text-lg text-gray-500 mb-2">Vision 2030 Target</p>
+                            <p class="text-5xl font-bold text-[#A78B6D]"><span class="counter" data-target="100">0</span> Million Visitors</p>
+                        </div>
+                    </div>
+                    <div class="mt-12">
+                        <h3 class="text-2xl font-bold text-center mb-6">Our Competitive Advantage</h3>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="bg-white p-5 rounded-lg shadow-sm text-center transform transition duration-300 hover:shadow-lg">
+                                <span class="text-4xl text-[#A78B6D]">🏢</span>
+                                <h4 class="font-bold mt-2">B2B Model</h4>
+                                <p class="text-sm text-gray-500 mt-1">Focus on corporate contracts to ensure near-permanent occupancy.</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-lg shadow-sm text-center transform transition duration-300 hover:shadow-lg">
+                                <span class="text-4xl text-[#A78B6D]">🔄</span>
+                                <h4 class="font-bold mt-2">Hybrid Model</h4>
+                                <p class="text-sm text-gray-500 mt-1">Pricing flexibility and hotel quality in one product.</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-lg shadow-sm text-center transform transition duration-300 hover:shadow-lg">
+                                <span class="text-4xl text-[#A78B6D]">🌟</span>
+                                <h4 class="font-bold mt-2">Integrated Experience</h4>
+                                <p class="text-sm text-gray-500 mt-1">We offer a unique experience that goes beyond just accommodation.</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-lg shadow-sm text-center transform transition duration-300 hover:shadow-lg">
+                                <span class="text-4xl text-[#A78B6D]">🤖</span>
+                                <h4 class="font-bold mt-2">Operational Efficiency</h4>
+                                <p class="text-sm text-gray-500 mt-1">Using artificial intelligence to enhance the experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="financials-en" class="mb-24 scroll-mt-20 fade-in">
+                    <h2 class="text-3xl font-bold text-center mb-4 text-[#4B2C1C]">Financial Model & Projections</h2>
+                    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">This section presents our diversified revenue model and the projected performance of the project in its first phase. The interactive charts illustrate multiple income sources and the promising growth potential through added services.</p>
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-xl font-bold text-center mb-4">Revenue Streams</h3>
+                            <div class="chart-container">
+                                <canvas id="revenueStreamsChartEn"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-center mb-4">Projected Annual Revenue (First Property)</h3>
+                                <div class="chart-container h-[350px] md:h-[400px]">
+                                <canvas id="revenueProjectionChartEn"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="roadmap-en" class="mb-24 scroll-mt-20 fade-in">
+                    <h2 class="text-3xl font-bold text-center mb-4 text-[#4B2C1C]">Roadmap for Expansion</h2>
+                    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">We believe in a thoughtful and sustainable growth. This interactive roadmap outlines our expansion plan over the first three years, from the operation of the first property to a significant increase in capacity.</p>
+                    <div class="md:flex">
+                        <div class="md:w-1/3">
+                            <div class="relative">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot active" data-year="1">
+                                        <div class="inner-dot"></div>
+                                    </div>
+                                    <h4 class="font-bold text-lg">Year One</h4>
+                                    <p class="text-gray-600">Full Operation</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot" data-year="2">
+                                        <div class="inner-dot"></div>
+                                    </div>
+                                    <h4 class="font-bold text-lg">Year Two</h4>
+                                    <p class="text-gray-600">First Expansion</p>
+                                </div>
+                                    <div class="timeline-item">
+                                    <div class="timeline-dot" data-year="3">
+                                        <div class="inner-dot"></div>
+                                    </div>
+                                    <h4 class="font-bold text-lg">Year Three</h4>
+                                    <p class="text-gray-600">Growth & Wider Scale</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 md:pl-8 mt-8 md:mt-0">
+                            <div id="roadmap-details-en" class="bg-white p-8 rounded-lg shadow-lg min-h-[150px]">
+                                <h3 class="text-xl font-bold text-[#A78B6D]">Year One: Launch and Full Operation</h3>
+                                <p class="mt-2 text-gray-700">Begin full operation of the first property, which includes 20 residential units, with a focus on building strong relationships with corporate partners and achieving target revenues.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="investment-en" class="mb-24 scroll-mt-20 fade-in">
+                        <h2 class="text-3xl font-bold text-center mb-4 text-[#4B2C1C]">Investment Request</h2>
+                        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">To accelerate our growth and achieve our expansion goals, we are seeking funding of 2 million SAR. The following chart shows our precise plan for allocating this funding to key aspects of the project to ensure maximum efficiency and return.</p>
+                    <div class="bg-white p-8 rounded-xl shadow-lg transform transition duration-300 hover:shadow-2xl">
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div class="text-center md:text-left">
+                                <p class="text-lg text-gray-500">Required Funding</p>
+                                <p class="text-5xl font-bold text-[#4B2C1C] my-2">2 Million SAR</p>
+                                <p class="text-gray-600">To accelerate growth, expand operations, and prepare future units.</p>
+                            </div>
+                            <div>
+                                <div class="chart-container">
+                                        <canvas id="investmentChartEn"></canvas>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="team-en" class="scroll-mt-20 fade-in">
+                        <h2 class="text-3xl font-bold text-center mb-4 text-[#4B2C1C]">The Founding Team</h2>
+                        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Behind this project is a team with deep experience in hospitality and operations management, and a genuine passion for delivering exceptional experiences. Our extensive expertise ensures the vision is executed efficiently and professionally.</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center transform transition duration-300 hover:scale-105">
+                            <div class="w-24 h-24 rounded-full mx-auto bg-gray-200 flex items-center justify-center text-4xl mb-4">👨‍💼</div>
+                            <h3 class="font-bold text-xl">Abdulilah Al-Shnqeeti</h3>
+                            <p class="text-gray-600 mt-2">10 years of experience in hospitality, tourism, and aviation. He trained at one of the most prestigious business schools in Paris.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center transform transition duration-300 hover:scale-105">
+                            <div class="w-24 h-24 rounded-full mx-auto bg-gray-200 flex items-center justify-center text-4xl mb-4">👨‍💼</div>
+                            <h3 class="font-bold text-xl">Husam Alawi</h3>
+                            <p class="text-gray-600 mt-2">10 years of experience in operations, client relations, and luxury hospitality. He trained in Australia on improving lifestyle and quality of life.</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="bg-[#1A1A1A] text-white mt-20">
+                <div class="container mx-auto px-6 py-4 text-center">
+                    <p>&copy; 2025 Flexible Living Future. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const langToggleButton = document.getElementById('lang-toggle-button');
+            const appContainer = document.getElementById('app-container');
+            const arContent = document.querySelector('[lang="ar"]');
+            const enContent = document.querySelector('[lang="en"]');
+            const langTextAr = document.getElementById('lang-text-ar');
+            const langTextEn = document.getElementById('lang-text-en');
+
+            const toggleLanguage = () => {
+                const isEnglish = enContent.classList.contains('hidden');
+                
+                if (isEnglish) {
+                    // Switch to English
+                    arContent.classList.add('hidden');
+                    enContent.classList.remove('hidden');
+                    document.documentElement.setAttribute('lang', 'en');
+                    document.documentElement.setAttribute('dir', 'ltr');
+                    langTextAr.classList.add('hidden');
+                    langTextEn.classList.remove('hidden');
+                } else {
+                    // Switch to Arabic
+                    arContent.classList.remove('hidden');
+                    enContent.classList.add('hidden');
+                    document.documentElement.setAttribute('lang', 'ar');
+                    document.documentElement.setAttribute('dir', 'rtl');
+                    langTextAr.classList.remove('hidden');
+                    langTextEn.classList.add('hidden');
+                }
+
+                // Re-render charts on language change to update font
+                if (window.revenueStreamsChartAr) window.revenueStreamsChartAr.destroy();
+                if (window.revenueStreamsChartEn) window.revenueStreamsChartEn.destroy();
+                if (window.revenueProjectionChartAr) window.revenueProjectionChartAr.destroy();
+                if (window.revenueProjectionChartEn) window.revenueProjectionChartEn.destroy();
+                if (window.investmentChartAr) window.investmentChartAr.destroy();
+                if (window.investmentChartEn) window.investmentChartEn.destroy();
+                initCharts();
+            };
+
+            langToggleButton.addEventListener('click', toggleLanguage);
+            
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButtonAr = document.getElementById('mobile-menu-button-ar');
+            const mobileMenuAr = document.getElementById('mobile-menu-ar');
+            mobileMenuButtonAr.addEventListener('click', () => { mobileMenuAr.classList.toggle('hidden'); });
+
+            const mobileMenuButtonEn = document.getElementById('mobile-menu-button-en');
+            const mobileMenuEn = document.getElementById('mobile-menu-en');
+            mobileMenuButtonEn.addEventListener('click', () => { mobileMenuEn.classList.toggle('hidden'); });
+
+            // --- Navigation Highlighting ---
+            const setActiveNavLink = (sectionId, lang) => {
+                document.querySelectorAll(`[lang="${lang}"] .nav-link`).forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.4 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const lang = entry.target.closest('.content-container').getAttribute('lang');
+                        setActiveNavLink(entry.target.id, lang);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => { observer.observe(section); });
+
+            // --- Counter Animation ---
+            function animateCounter(el) {
+                const target = +el.getAttribute('data-target');
+                let count = 0;
+                const duration = 2000;
+                const stepTime = Math.abs(Math.floor(duration / target));
+                const timer = setInterval(() => {
+                    count++;
+                    el.innerText = count;
+                    if (count === target) { clearInterval(timer); }
+                }, stepTime);
+            }
+
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.8 });
+
+            document.querySelectorAll('.counter').forEach(counter => { counterObserver.observe(counter); });
+
+            // --- Fade-in on scroll effect ---
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const fadeInObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            fadeElements.forEach(el => fadeInObserver.observe(el));
+
+            // --- Chart.js Configuration ---
+            const initCharts = () => {
+                if (document.documentElement.lang === 'en') {
+                    Chart.defaults.font.family = 'Playfair Display';
+                } else {
+                    Chart.defaults.font.family = 'Tajawal';
+                }
+
+                const revenueStreamsCtxAr = document.getElementById('revenueStreamsChartAr')?.getContext('2d');
+                if (revenueStreamsCtxAr) {
+                    window.revenueStreamsChartAr = new Chart(revenueStreamsCtxAr, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['إيرادات العقود (شركات)', 'إيرادات التجزئة (أفراد)', 'الخدمات المضافة'],
+                            datasets: [{
+                                label: 'مصادر الدخل',
+                                data: [70, 20, 10],
+                                backgroundColor: ['#4B2C1C', '#A78B6D', '#EBD8C9'],
+                                borderColor: '#F7F2EB',
+                                borderWidth: 4
+                            }]
+                        },
+                        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' }, tooltip: { callbacks: { label: (context) => `${context.label}: ${context.raw}%` } } } }
+                    });
+                }
+
+                const revenueProjectionCtxAr = document.getElementById('revenueProjectionChartAr')?.getContext('2d');
+                if(revenueProjectionCtxAr) {
+                    window.revenueProjectionChartAr = new Chart(revenueProjectionCtxAr, {
+                        type: 'bar',
+                        data: {
+                            labels: ['الإيرادات المتوقعة سنوياً'],
+                            datasets: [{
+                                label: 'إيرادات أساسية',
+                                data: [2880000],
+                                backgroundColor: '#4B2C1C',
+                                borderRadius: 5
+                            }, {
+                                label: 'مع الخدمات المضافة',
+                                data: [3500000],
+                                backgroundColor: '#A78B6D',
+                                borderRadius: 5
+                            }]
+                        },
+                        options: {
+                            responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, ticks: { callback: (value) => (value / 1000000) + ' مليون ريال' } } },
+                            plugins: { tooltip: { callbacks: { label: (context) => `${context.dataset.label}: ${new Intl.NumberFormat('ar-SA', { style: 'currency', currency: 'SAR' }).format(context.parsed.y)}` } } }
+                        }
+                    });
+                }
+
+                const investmentCtxAr = document.getElementById('investmentChartAr')?.getContext('2d');
+                if (investmentCtxAr) {
+                    window.investmentChartAr = new Chart(investmentCtxAr, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['تجهيز وتأثيث الوحدات', 'التسويق والانتشار', 'التكاليف التشغيلية', 'احتياطي للطوارئ'],
+                            datasets: [{
+                                label: 'توزيع الاستثمار',
+                                data: [50, 20, 20, 10],
+                                backgroundColor: ['#4B2C1C', '#A78B6D', '#EBD8C9', '#BCAAA4'],
+                                borderColor: '#F7F2EB',
+                                borderWidth: 4
+                            }]
+                        },
+                        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' }, tooltip: { callbacks: { label: (context) => `${context.label}: ${context.raw}%` } } } }
+                    });
+                }
+
+                const revenueStreamsCtxEn = document.getElementById('revenueStreamsChartEn')?.getContext('2d');
+                if (revenueStreamsCtxEn) {
+                    window.revenueStreamsChartEn = new Chart(revenueStreamsCtxEn, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Corporate Contracts Revenue', 'Retail (Individual) Revenue', 'Added Services'],
+                            datasets: [{
+                                label: 'Revenue Streams',
+                                data: [70, 20, 10],
+                                backgroundColor: ['#4B2C1C', '#A78B6D', '#EBD8C9'],
+                                borderColor: '#F7F2EB',
+                                borderWidth: 4
+                            }]
+                        },
+                        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' }, tooltip: { callbacks: { label: (context) => `${context.label}: ${context.raw}%` } } } }
+                    });
+                }
+
+                const revenueProjectionCtxEn = document.getElementById('revenueProjectionChartEn')?.getContext('2d');
+                if(revenueProjectionCtxEn) {
+                    window.revenueProjectionChartEn = new Chart(revenueProjectionCtxEn, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Projected Annual Revenue'],
+                            datasets: [{
+                                label: 'Base Revenue',
+                                data: [2880000],
+                                backgroundColor: '#4B2C1C',
+                                borderRadius: 5
+                            }, {
+                                label: 'With Added Services',
+                                data: [3500000],
+                                backgroundColor: '#A78B6D',
+                                borderRadius: 5
+                            }]
+                        },
+                        options: {
+                            responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, ticks: { callback: (value) => (value / 1000000) + ' M SAR' } } },
+                            plugins: { tooltip: { callbacks: { label: (context) => `${context.dataset.label}: ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'SAR' }).format(context.parsed.y)}` } } }
+                        }
+                    });
+                }
+
+                const investmentCtxEn = document.getElementById('investmentChartEn')?.getContext('2d');
+                if (investmentCtxEn) {
+                    window.investmentChartEn = new Chart(investmentCtxEn, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Unit Furnishing & Prep', 'Marketing & Outreach', 'Operational Costs', 'Contingency Fund'],
+                            datasets: [{
+                                label: 'Investment Distribution',
+                                data: [50, 20, 20, 10],
+                                backgroundColor: ['#4B2C1C', '#A78B6D', '#EBD8C9', '#BCAAA4'],
+                                borderColor: '#F7F2EB',
+                                borderWidth: 4
+                            }]
+                        },
+                        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' }, tooltip: { callbacks: { label: (context) => `${context.label}: ${context.raw}%` } } } }
+                    });
+                }
+            };
+            initCharts();
+
+            // --- Roadmap functionality ---
+            const roadmapDataAr = {
+                '1': { title: 'السنة الأولى: الانطلاقة والتشغيل الكامل', description: 'بدء التشغيل الكامل للعقار الأول الذي يضم 20 وحدة سكنية، مع التركيز على بناء علاقات قوية مع الشركاء من الشركات وتحقيق الإيرادات المستهدفة.' },
+                '2': { title: 'السنة الثانية: التوسع الأول', description: 'إضافة عقار ثانٍ لزيادة القدرة الاستيعابية، وتوسيع قاعدة العملاء من الشركات مع تطوير باقة الخدمات المضافة بناءً على ملاحظات العملاء.' },
+                '3': { title: 'السنة الثالثة: النمو والنطاق الأوسع', description: 'إضافة عقار ثالث للوصول إلى 60-70 وحدة سكنية، وتوسيع نطاق العمليات ليشمل فعاليات أكبر وتنويع مصادر الدخل بشكل أكبر.' }
+            };
+            const roadmapDataEn = {
+                '1': { title: 'Year One: Launch and Full Operation', description: 'Begin full operation of the first property, which includes 20 residential units, with a focus on building strong relationships with corporate partners and achieving target revenues.' },
+                '2': { title: 'Year Two: First Expansion', description: 'Add a second property to increase capacity, and expand the corporate client base while developing the added services package based on customer feedback.' },
+                '3': { title: 'Year Three: Growth & Wider Scale', description: 'Add a third property to reach 60-70 residential units, and expand the scope of operations to include larger events and further diversify revenue streams.' }
+            };
+
+            const updateRoadmap = (year, lang) => {
+                const details = document.getElementById(`roadmap-details-${lang}`);
+                const data = lang === 'ar' ? roadmapDataAr : roadmapDataEn;
+                details.innerHTML = `<h3 class="text-xl font-bold text-[#A78B6D]">${data[year].title}</h3><p class="mt-2 text-gray-700">${data[year].description}</p>`;
+            };
+
+            document.querySelectorAll('.timeline-dot').forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const year = dot.dataset.year;
+                    const lang = dot.closest('.content-container').getAttribute('lang');
+                    document.querySelectorAll(`[lang="${lang}"] .timeline-dot`).forEach(d => d.classList.remove('active'));
+                    dot.classList.add('active');
+                    updateRoadmap(year, lang);
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
