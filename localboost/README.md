@@ -24,6 +24,7 @@ The operating manual for LocalBoost. Each bot (Grok, Claude, ChatGPT) gets its i
 | `04-contact-and-consent.md` | Compliant outreach process and Arabic opt-in/opt-out wording |
 | `05-weekly-review.md` | Sunday review prompt and scorecard format |
 | `06-roadmap.md` | 30-day build plan and success checks |
+| `site/` | The LocalBoost website (Arabic + English, static) |
 | `07-chrome-setup-prompt.md` | Prompt for the Claude Chrome extension to organize the bots, Drive, and the CRM sheet |
 | `bots/` | Instructions for each bot |
 | `crm/` | CSV headers to import into Google Sheets |

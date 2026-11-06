@@ -20,6 +20,8 @@ A) Google Business Profile pack (Get Found and above)
 7. Review QR card text (Arabic): short ask, no incentive, e.g. "رأيك يهمنا — امسح الكود وقيّم تجربتك".
 8. Review reply drafts: one per real review provided, polite, specific, no defensiveness, and never revealing private customer details.
 
+BRAND: for any LocalBoost-branded material, follow the localboost-brand skill (navy #022754, orange #EA5C0A, rocket logo, IBM Plex Sans Arabic / Inter). Client websites use the CLIENT's brand, not LocalBoost's.
+
 B) Website (Get Chosen)
 - A single self-contained HTML file per site, Arabic-first (dir="rtl", lang="ar"), mobile-first, fast, with no external dependencies other than one Google Font (e.g. Tajawal or IBM Plex Sans Arabic).
 - Sections: Hero (name, one-line offer, WhatsApp + call buttons) · About · Services/Menu · Location (embedded map from the client's Maps link) · Hours · Footer (contact, Instagram, "© [business]").
