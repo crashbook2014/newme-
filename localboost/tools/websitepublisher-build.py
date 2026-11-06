@@ -1,7 +1,19 @@
 # Builds WebsitePublisher versions of localboost/site pages (CDN asset URLs, /en/index.html links, Optimizer tags).
 # Usage: python3 localboost/tools/websitepublisher-build.py localboost/site <output-dir>
 # Project 27483 -> https://project27483.websitepublisher.ai ; assets at https://cdn.websitepublisher.ai/custom/wid27483/
-import re, sys
+import re, sys, posixpath
+def load(site, f):
+    # site pages use relative paths; turn them back into root-relative ones for WebsitePublisher
+    h=open(f'{site}/{f}',encoding='utf-8').read()
+    d=posixpath.dirname('/'+f)
+    def fix(m):
+        url=m.group(2)
+        if re.match(r'^(https?:|#|data:|mailto:|tel:)',url): return m.group(0)
+        path,_,frag=url.partition('#')
+        a=posixpath.normpath(posixpath.join(d,path)) if path else '/'+f
+        if path.endswith('/') or path in ('.','./','..'): a=a.rstrip('/')+'/'
+        return m.group(1)+a+('#'+frag if frag else '')+'"'
+    return re.sub(r'((?:href|src)=")([^"]*)"',fix,h).replace('https://crashbook2014.github.io/newme-','https://localboost-zeto.netlify.app')
 SITE, OUT = sys.argv[1], sys.argv[2]
 CDN='https://cdn.websitepublisher.ai/custom/wid27483'
 NEW='https://project27483.websitepublisher.ai'
@@ -18,10 +30,10 @@ def common(h):
     assert '/assets/' not in h and 'netlify' not in h, [l for l in h.splitlines() if '/assets/' in l or 'netlify' in l][:3]
     return h
 for src,dst in [('index.html','index.html'),('en/index.html','en-index.html')]:
-    open(f'{OUT}/{dst}','w').write(common(open(f'{SITE}/{src}').read()))
+    open(f'{OUT}/{dst}','w').write(common(load(SITE,src)))
 
 # policies pages rebuilt with the home header/footer
-home={'ar':open(f'{SITE}/index.html').read(),'en':open(f'{SITE}/en/index.html').read()}
+home={'ar':load(SITE,'index.html'),'en':load(SITE,'en/index.html')}
 DOCCSS='''<style>
 .doc{max-width:780px;margin:0 auto;padding-block:64px}
 .doc h1{font-size:clamp(32px,4vw,44px);color:var(--navy);margin-bottom:12px}
@@ -32,7 +44,7 @@ DOCCSS='''<style>
 '''
 for lang,src,dst,title,desc in [('ar','policies.html','policies.html','السياسات | LocalBoost','سياسات LocalBoost: الفحص المجاني، العرض والدفع، الإلغاء والاسترجاع، رسوم الطرف الثالث، وملكية الحسابات.'),
                                  ('en','en/policies.html','en-policies.html','Policies | LocalBoost','LocalBoost policies: free audit, proposals and payment, cancellations and refunds, third-party fees, and account ownership.')]:
-    p=open(f'{SITE}/{src}').read(); h=home[lang]
+    p=load(SITE,src); h=home[lang]
     main=p[p.index('<main'):p.index('</main>')+7]
     main=main.replace('<main id="main" class="section">','<main id="main">').replace('<div class="wrap doc">','<div class="wrap doc">',1)
     header=h[h.index('<header>'):h.index('</header>')+9]
