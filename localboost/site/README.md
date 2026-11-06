@@ -17,7 +17,15 @@ assets/favicon.png    Rocket icon, cropped from the logo
 assets/og-image.png   1200×630 share image
 ```
 
-Paths are root-relative (`/assets/...`), so the site must be served from the domain root, as Netlify does. To preview it locally, run `python3 -m http.server` in this folder and open http://localhost:8000. Opening the file directly won't load the styles.
+All paths are relative, so the site works at a domain root, in a subfolder (GitHub Pages), or opened locally.
+
+## Hosting on GitHub Pages
+
+Address: **https://crashbook2014.github.io/newme-/**. The workflow `.github/workflows/pages.yml` publishes this folder on every push to `main` that changes it.
+
+One-time setup: on GitHub, open the repo's **Settings → Pages**, set **Source** to **GitHub Actions**, then open **Actions → "Deploy LocalBoost site to GitHub Pages" → Run workflow**.
+
+Own domain later: **Settings → Pages → Custom domain**. Then replace `https://crashbook2014.github.io/newme-` with your domain in the four HTML files (canonical, hreflang, og:image).
 
 ## Still to fill in
 
