@@ -40,10 +40,6 @@ Own domain later: **Settings → Pages → Custom domain**. Then replace `https:
 
 When you edit text, change **both** `index.html` and `en/index.html`.
 
-## Live on WebsitePublisher
+## WebsitePublisher (retired)
 
-The site is live at **https://project27483.websitepublisher.ai/** (project 27483), with English at `/en/index.html` and the policies pages at `/policies.html` and `/en/policies.html`.
-
-- Fonts, CSS, JS and images are uploaded to `https://cdn.websitepublisher.ai/custom/wid27483/` under `fonts/`, `css/`, `js/` and `img/`.
-- To republish after editing, run `python3 localboost/tools/websitepublisher-build.py localboost/site <out>` and upload the generated pages.
-- The free plan serves every page with `noindex`, so Google won't list the site until you move to a paid plan.
+The WebsitePublisher copy (project 27483) was deleted on 2026-11-06. GitHub Pages is now the only live site. To publish there again, `localboost/tools/websitepublisher-build.py` still builds compatible pages; the assets would need to be uploaded again.
