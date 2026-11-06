@@ -1,43 +1,33 @@
 # LocalBoost website
 
-A static site with no build step. Deploy this folder (`localboost/site/`) as the publish directory.
+A static site with no build step. Deploy this folder (`localboost/site/`), or `localboost/localboost-website.zip`, as the site root. The design is the founder's version: map hero, scroll-driven rocket launch, before/after, packages, FAQ, and contact.
 
 ```
-site/
-  index.html            Arabic home (RTL, default at /)
-  policies.html         Arabic policies
-  en/index.html         English home (LTR)
-  en/policies.html      English policies
-  assets/css/style.css  All styles (brand tokens at the top)
-  assets/js/site.js     Mobile menu + package picker (page works without it)
-  assets/fonts/         Self-hosted IBM Plex Sans Arabic + Inter (OFL licences included)
-  assets/logos/         ⚠ PLACEHOLDERS — replace with the approved logo files
-  assets/img/og-image.png  ⚠ PLACEHOLDER — 1200×630 share image
+index.html            Arabic home (RTL, default at /)
+en/index.html         English home (LTR, at /en/)
+policies.html         Arabic policies
+en/policies.html      English policies
+assets/css/home.css   Home page styles (brand tokens at the top)
+assets/css/style.css  Policies page styles
+assets/js/home.js     Rocket scroll animation (the page works without it)
+assets/fonts/         Self-hosted IBM Plex Sans Arabic + Inter (OFL licences included)
+assets/logo.png       Header/footer logo (real rocket logo)
+assets/logo-large.png Large logo
+assets/favicon.png    Rocket icon, cropped from the logo
+assets/og-image.png   1200×630 share image
 ```
 
-Paths are root-relative (`/assets/...`), so the site must be served from the domain root, as Netlify does. To preview it locally, run `python3 -m http.server` in this folder.
+Paths are root-relative (`/assets/...`), so the site must be served from the domain root, as Netlify does. To preview it locally, run `python3 -m http.server` in this folder and open http://localhost:8000. Opening the file directly won't load the styles.
 
-## Replace before going live
+## Still to fill in
 
-| File | What to put there |
-|---|---|
-| `assets/logos/localboost-lockup.png` | Full rocket lockup, colour, transparent background (header) |
-| `assets/logos/localboost-lockup-reversed.png` | Reversed lockup for the navy footer |
-| `assets/logos/localboost-icon.png` | Flat orange rocket on navy, 512×512 (favicon / app icon) |
-| `assets/img/og-image.png` | 1200×630 share image: lockup + Arabic tagline on navy |
-
-Keep the same file names and nothing else needs to change.
-
-## Visible placeholders (dashed orange boxes, CSS class `ph`)
-
-Search the HTML for `class="ph"` to find them all.
-
-| Where | Placeholder | Replace with |
+| Where | Text now | Replace with |
 |---|---|---|
-| Home `#contact` (AR + EN) | WhatsApp number coming soon | Number. Then also turn the disabled button into `<a class="btn btn--primary" href="https://wa.me/966…">`, and point the hero and package buttons straight to it if you like |
-| Home `#contact` | Contact hours | Real hours |
-| Home `#contact` | Email | Business email |
-| Home `#packages` | Meta Business AI price | Price outside the launch offer |
-| Home `#packages` | Launch offer availability | Remove the line, or the whole `.launch` box when the offer ends |
-| Policies | Deposit % / milestones | Payment terms |
-| Policies | Privacy policy | A real privacy policy (needed once you collect any customer data) |
+| Home `#contact` (AR + EN) | الرقم قريب / Number coming soon | WhatsApp number, as a `https://wa.me/966…` link |
+| Home `#contact` | كل يوم (الأوقات تتأكد قريب) | Real contact hours |
+| Packages, Get Found | Launch price 750 … "we confirm availability during the check" | Remove the line when the offer ends |
+| Policies | Deposit % / milestones placeholder | Payment terms |
+| Policies | Privacy policy placeholder | A real privacy policy |
+| Hero + before/after | Gradient photo placeholders | Real (permitted) shop photos, when you have a client |
+
+When you edit text, change **both** `index.html` and `en/index.html`.
