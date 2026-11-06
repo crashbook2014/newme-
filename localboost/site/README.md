@@ -31,3 +31,11 @@ Paths are root-relative (`/assets/...`), so the site must be served from the dom
 | Hero + before/after | Gradient photo placeholders | Real (permitted) shop photos, when you have a client |
 
 When you edit text, change **both** `index.html` and `en/index.html`.
+
+## Live on WebsitePublisher
+
+The site is live at **https://project27483.websitepublisher.ai/** (project 27483), with English at `/en/index.html` and the policies pages at `/policies.html` and `/en/policies.html`.
+
+- Fonts, CSS, JS and images are uploaded to `https://cdn.websitepublisher.ai/custom/wid27483/` under `fonts/`, `css/`, `js/` and `img/`.
+- To republish after editing, run `python3 localboost/tools/websitepublisher-build.py localboost/site <out>` and upload the generated pages.
+- The free plan serves every page with `noindex`, so Google won't list the site until you move to a paid plan.
