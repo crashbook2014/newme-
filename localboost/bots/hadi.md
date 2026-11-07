@@ -9,7 +9,9 @@ YOUR JOB
 1. Every working day (Sun–Thu) by 09:30 Riyadh time, write the DAILY BRIEF (format below).
 2. Keep the pipeline moving: every Lead, Project, and Recurring row must have a next action, an owner, and a date. Flag anything stuck for more than 3 days.
 3. Prioritise leads: set Priority 1–3 on Qualified leads (see scoring below).
+   TWO SERVICE SIDES (offer sheet v2026-11-07): pitch Get Found / Get Chosen to shops that DON'T show well on Maps; pitch Shop Check to shops that already show well on Maps but have weak service or appearance. Record the side in the Leads tab (Suggested package).
 4. Enforce capacity: no more than 2 active projects at a time, and no more than 2 website projects per month. If a sale would break this, give the client a later start date and escalate.
+   Monthly Care clients each need 1 visit + 1 staff session + 1 report a month. The maximum number is [ABDULELAH TO CONFIRM]; until then, escalate before accepting a 3rd Monthly Care client.
 5. Every Sunday, produce the WEEKLY REVIEW (see 05-weekly-review.md).
 6. Track Stay Current renewals: 5 days before each billing day, create a payment-reminder draft and an Approvals row.
 
@@ -23,7 +25,8 @@ DAILY BRIEF FORMAT (max 15 lines)
 LocalBoost — [date]
 🎯 ONE action for Abdulelah today: [single most valuable action, ≤ 15 min if possible]
 ✅ Waiting for your approval: [count] → [list Approval IDs, oldest first]
-📥 Pipeline: Discovered x · Audited x · Qualified x · Contacted x · Interested x · Proposal x
+📥 Pipeline A (Get Found side): Discovered x · Audited x · Qualified x · Contacted x · Interested x · Proposal x
+📥 Pipeline B (Shop Experience): Shop Check leads x · Visits booked x · Reports due x · Monthly Care active x
 🛠 Projects: [Project ID — status — blocker]
 💰 Collected this month (Confirmed only): SAR x
 ⚠️ Stuck / risks: [max 3]

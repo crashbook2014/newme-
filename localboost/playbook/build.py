@@ -104,6 +104,8 @@ toc = part("Contents", "What's inside", "Read Part 0 once. Then use the part for
       ("1", "Get Found · خلّهم يلقونك · 900 SAR", "A → K"),
       ("2", "Get Chosen · خلّهم يختارونك · 2,200 SAR", "A → L"),
       ("3", "Stay Current · خلّك محدّث · 299 SAR / month", "Monthly cycle"),
+      ("3B", "Shop Check · زيارة التقييم · 3,300 SAR (launch 1,800)", "S·A → S·H"),
+      ("3C", "Monthly Care · المتابعة الشهرية · 1,700 SAR / month", "Monthly cycle"),
       ("4", "Final review: the “before you press Deliver” gate", "All packages"),
       ("5", "Message templates (Arabic, ready to send)", "Copy & paste"),
       ("6", "When things go wrong", "Fixes & escalation")])
@@ -116,7 +118,7 @@ toc = part("Contents", "What's inside", "Read Part 0 once. Then use the part for
 
 # ---------------------------------------------------------------- PART 0
 p0 = part("Part 0", "Before any delivery", "These rules and the start gate apply to every package. If one item fails, you don't start.",
-  "<h3><span class='k'>0.1</span>The seven non-negotiable rules</h3>"
+  "<h3><span class='k'>0.1</span>The eight non-negotiable rules</h3>"
   + "<table><tr><th>#</th><th>Rule</th><th>Why it matters</th></tr>" + "".join(f"<tr><td>{i}</td><td><b>{a}</b></td><td>{b}</td></tr>" for i, (a, b) in enumerate([
       ("No work before payment is confirmed in your bank app.", "A screenshot from the client is not payment. Only you mark Finance → “Confirmed by founder”."),
       ("Nothing goes live without written client approval.", "Save the approval (WhatsApp/email screenshot) in 04-evidence. No approval = no publish."),
@@ -125,6 +127,7 @@ p0 = part("Part 0", "Before any delivery", "These rules and the start gate apply
       ("No guarantees, no fake reviews, no keyword-stuffed names.", "Breaking Google's rules can get the client's profile suspended. That ends the relationship."),
       ("One scope, in writing.", "Anything not in the proposal is a new decision: price it or decline it. No silent freebies."),
       ("Log it or it didn't happen.", "Every status change goes in the CRM Log tab with a reason. Evidence goes in Drive."),
+      ("Customers' privacy and the shop's money data are off limits.", "Photos inside a shop only with the owner's written permission, never customers' faces. Never ask for accounting, sales or bank data. Every money example says «مثال حسابي، مو وعد»."),
   ], 1)) + "</table>"
   + "<h3><span class='k'>0.2</span>The start gate: tick all before Day 1</h3>"
   + chk(["Proposal sent and accepted in writing (“موافق”) and saved",
@@ -294,7 +297,7 @@ p3 = part("Part 3", "Stay Current · خلّك محدّث", "299 SAR / month. Add
   + "</div></div>" + "</div>")
 
 # ---------------------------------------------------------------- PART 4  Final review
-p4 = part("Part 4", "Final review: before you press Deliver", "Print this page. Nothing is handed over until every box for that package is ticked. Any unticked box → fix it, then start the list again.",
+p4 = part("Part 4", "Final review: before you press Deliver", "Print these pages. Nothing is handed over until every box for that package is ticked. Any unticked box → fix it, then start the list again.",
   '<div class="compact"><h3><span class="k">ALL</span>Every package</h3>' + chk([
       "Payment confirmed by you (Finance tab), and the client's written approval saved in 04-evidence",
       "Every fact matches the intake exactly: name, phone, WhatsApp, hours, address, prices, services",
@@ -332,7 +335,16 @@ p4 = part("Part 4", "Final review: before you press Deliver", "Print this page. 
       "Every posted reply and update had client approval",
       "Numbers come from the owner's dashboard, or say «غير متوفر»",
       "One page, Arabic, with one practical suggestion for next month",
-      "Next billing date and amount correct"]) + "</div>")
+      "Next billing date and amount correct"])
+  + '<h3><span class="k">SX</span>Shop Check / Monthly Care report</h3>' + chk([
+      "Score adds up to 100 by the rubric; every deduction has a photo or a clear note",
+      "No customers' faces; staff appear only with the owner's permission",
+      "No staff member named in a negative finding",
+      "Every money example says «مثال حسابي، مو وعد», shows a gain bigger than the fee, and uses no real sales data",
+      "No accounting, sales or bank data requested or used",
+      "Top 5 fixes are practical and ordered, each with why and how",
+      "Prices match offer sheet v2026-11-07; consent saved for launch-price clients",
+      "Monthly: comparison with last month is correct; the fixes-held list matches the previous report"]) + "</div>")
 
 # ---------------------------------------------------------------- PART 5  Templates
 p5 = part("Part 5", "Message templates", "Arabic, ready to send after you approve. Replace the [brackets]. Sign as you decide: the brand file signs as <bdi dir=\"rtl\">«سعد من LocalBoost»</bdi> and the outreach files as <bdi dir=\"rtl\">«عبدالإله»</bdi>. Pick one and stay consistent.",
@@ -372,13 +384,30 @@ p5 += msg("5·6 Reply drafts for approval (Stay Current)", """
 ١. [التقييم باختصار] ← الرد: [..]
 ٢. ..
 رد بـ «موافق» وننشرها، أو عدّل اللي تبي.""")
+p5 += msg("5·8 Shop Check booking", """
+هلا [الاسم]، تم تأكيد زيارة التقييم لـ [اسم المحل] 🔭
+الزيارة بتكون خلال [الفترة]، وفريقك ما يدري عن الموعد عشان نشوف التجربة طبيعية.
+نحتاج منك موافقة مكتوبة على التصوير داخل المحل (بدون وجوه الزباين). رد بـ «موافق».""")
+p5 += msg("5·9 Report ready + results session", """
+هلا [الاسم]، تقرير زيارة التقييم جاهز ✅
+درجة المحل: [x] من 100، ومعها أهم 5 تعديلات.
+متى يناسبك نجلس [30–45 دقيقة] نشرح النتائج؟""")
+p5 += msg("5·10 Monthly Care offer (once)", """
+إذا حاب نتابع معك كل شهر ونتأكد إن التعديلات ثابتة: «المتابعة الشهرية» بـ 1,700 ريال شهرياً، أو 1,400 مع التزام 3 شهور.
+وإذا اشتركت خلال 7 أيام من زيارة التقييم، نخصم رسوم الزيارة من أول شهر.""")
+p5 += msg("5·11 Monthly Care report", """
+هلا [الاسم]، تقرير المتابعة لشهر [..] جاهز:
+• الدرجة: [x] من 100 (الشهر الماضي [y])
+• التعديلات الثابتة: [..]
+• نشتغل عليها الشهر الجاي: [..]
+وموعد جلسة الفريق الجاية: [..]""")
 p5 += msg("5·7 Renewal reminder", """
 هلا [الاسم]، تذكير بسيط: اشتراك «خلّك محدّث» لـ [اسم المحل] يتجدد بتاريخ [..] بمبلغ 299 ريال.
 إذا تبي توقفه، قل لي قبل التاريخ وما فيه أي مشكلة.""")
 
 # ---------------------------------------------------------------- PART 6  Problems
 p6 = part("Part 6", "When things go wrong", "Fast answers to the problems you'll actually meet. When in doubt: pause, tell the client honestly, decide yourself. Bots escalate, they don't improvise.",
-  "<table><tr><th>Problem</th><th>What to do</th></tr>" + "".join(f"<tr><td><b>{a}</b></td><td>{b}</td></tr>" for a, b in [
+  "<div class='compact'><table><tr><th>Problem</th><th>What to do</th></tr>" + "".join(f"<tr><td><b>{a}</b></td><td>{b}</td></tr>" for a, b in [
       ("Owner can't find how to add a Manager", "Send template 5·2 again with screenshots; offer a 5-minute call or a visit. Never ask for their password instead."),
       ("Profile isn't claimed or verified", "Only the owner can verify. Pause the project, explain why, and resume after verification. The target date moves; tell them in writing."),
       ("Profile is suspended", "Stop. Don't create a new listing. The owner files Google's reinstatement request with real proof of the business. Escalate to you."),
@@ -389,11 +418,71 @@ p6 = part("Part 6", "When things go wrong", "Fast answers to the problems you'll
       ("A wave of negative or fake reviews", "Don't argue publicly. Draft calm replies for approval, and the owner reports policy-violating reviews through Google. Never post counter-reviews."),
       ("Client unhappy after delivery", "Listen and compare with the written scope. Fix anything that's in scope quickly; for the rest, explain kindly. Refunds follow the policy: you decide."),
       ("Payment not received", "No work starts or continues. One polite reminder, then pause. Never mark it paid from a screenshot."),
+      ("Owner refuses photo permission (Shop Check)", "Do the visit with written notes only, and tell the owner the report will have fewer images. Never photograph secretly."),
+      ("Staff recognised you during the visit", "Note it; don't score the affected items. Repeat the visit another day (your decision on cost)."),
+      ("Owner wants names and blame in the report", "Keep the written report about the shop. Discuss individuals privately with the owner only."),
+      ("Owner offers to show sales numbers", "Politely decline: it's out of scope. Use only what a customer can see."),
       ("Client stops replying mid-project", "Max 3 reminders, 2 working days apart. Then Project → On hold (client unresponsive), and one final message saying you're ready when they are."),
   ]) + "</table>"
-  + '<div class="box ok"><h4>The one-line test before anything goes out</h4><p>“Is it <b>true</b>, <b>approved</b>, <b>paid for</b>, <b>in scope</b>, and <b>logged</b>?” If any answer is no, it doesn\'t go out.</p></div>')
+  + '<div class="box ok"><h4>The one-line test before anything goes out</h4><p>“Is it <b>true</b>, <b>approved</b>, <b>paid for</b>, <b>in scope</b>, and <b>logged</b>?” If any answer is no, it doesn\'t go out.</p></div>' + '</div>')
+
+# ---------------------------------------------------------------- PART 3B / 3C  Shop Experience (Stage 2 · Orbit)
+p3b = part("Part 3B · Stage 2 · Orbit", "Shop Check · زيارة التقييم", "3,300 SAR one-time (launch 1,800 for the first 5 shops, in exchange for written permission to use their results as an example). Barbers & small salons: 2,100 (launch 1,100).",
+  '<div class="box navy"><h4>What the client receives</h4>' + ul([
+      "One secret-shopper visit at a normal busy time (the owner knows, the staff don't)",
+      "Shop appearance: storefront, sign, display, menu/prices, staff look",
+      "Visible money leaks (no add-on offered, unclear prices, long waits, missing items)",
+      "A photo report with a score out of 100 (rubric: <code>templates/shop-check-report.md</code>)",
+      "Top 5 fixes, ordered by impact and effort",
+      "A results session with the owner"])
+  + '<p class="small"><b>Scope:</b> no accounting, no sales or bank data, no supplier contracts, no profit promises. <b>Pitch it to</b> shops that already show well on Maps but have weak service or appearance.</p></div>'
+  + step("S·A", "Agreement + permissions", who("you", "cli"),
+         ul(["Written scope and price (offer sheet v2026-11-07). Payment confirmed by you before the visit.",
+             "<b>Written permission to take photos inside the shop.</b> No permission → visit with notes only.",
+             "Launch-price clients: <b>written consent</b> to use their results as an example. Save it in 04-evidence.",
+             "Agree a visit window with the owner. The staff must not know the day.",
+             "<code>[ABDULELAH TO CONFIRM]</code> who pays for any purchase made during the visit."]))
+  + step("S·B", "Prepare", who("bot"),
+         ul(["Print the scoring sheet from <code>templates/shop-check-report.md</code>.",
+             "Plan the customer journey: approach → enter → ask/order → wait → pay → leave.",
+             "Pick a normal busy time, not opening minute or closing minute."]))
+  + step("S·C", "The visit (20–40 minutes)", who("you"),
+         ul(["Behave like a normal customer. Don't reveal who you are.",
+             "Note: greeting (yes/no, how long), cleanliness, display, price clarity, wait time, whether an add-on was offered, how you were thanked.",
+             "Photos, discreetly: storefront, sign, display, menu, shelves. <b>Never customers' faces.</b> Staff only if the owner allowed it.",
+             "Write your full notes within 30 minutes of leaving, while it's fresh."]))
+  + step("S·D", "Report draft", who("bot"),
+         ul(["Claude drafts the report from your notes and photos using the template: score per category, each finding with a photo or note, money leaks, and the top 5 fixes (problem → why it matters → the fix → effort).",
+             "Any money example says «مثال حسابي، مو وعد», shows a gain bigger than the fee, and never uses the shop's real sales data."]))
+  + step("S·E", "QC + your review", who("bot", "you"), "<p>QC checks the report; you run the <b>SX</b> checklist in Part 4.</p>")
+  + step("S·F", "Results session (30–45 min)", who("you", "cli"),
+         ul(["Owner only (or whoever the owner chooses). Start with what works.",
+             "Walk through the score and the top 5 fixes. Agree which 1–2 to start with this week.",
+             "The report is about the shop, never about blaming a named staff member."]))
+  + step("S·G", "Offer Monthly Care", who("you"),
+         "<p>Explain the deal exactly as written: subscribe within <b>7 days</b> of the Shop Check and the Shop Check fee comes off the first month. Offer once, with no pressure. <code>[ABDULELAH TO CONFIRM]</code> how the deal works when the fee is larger than the first month.</p>")
+  + step("S·H", "Close", who("bot"),
+         ul(["Project → Delivered; report PDF in 03-final; consents saved.",
+             "Day 7: one check-in (how are the first fixes going?)."])))
+
+p3c = part("Part 3C · Stage 2 · Orbit", "Monthly Care · المتابعة الشهرية", "1,700 SAR / month, or 1,400 / month with a 3-month commitment. Barbers & small salons: 1,100 / month. One secret-shopper visit, a fix check, checklists, a staff session and a report every month.",
+  '<div class="compact"><div class="box warn"><h4>Before the first month</h4>' + chk([
+      "A baseline score exists: the Shop Check, or the first month's visit",
+      "Monthly payment confirmed by you before the month's work starts",
+      "Commitment recorded (monthly or 3 months). <code>[ABDULELAH TO CONFIRM]</code> early-cancellation terms for the 3-month plan",
+      "Photo permission still valid; Recurring row created",
+      "Capacity: every client = 1 visit + 1 session + 1 report a month. <code>[ABDULELAH TO CONFIRM]</code> the maximum number of Monthly Care clients"]) + "</div>"
+  + "<h3><span class='k'>3C.1</span>The monthly cycle</h3>"
+  + "<table><tr><th>When</th><th>What</th><th>Who</th></tr>"
+  + "<tr><td><b>Billing day</b></td><td>Confirm payment. No payment = pause, no visit.</td><td>" + who("you") + "</td></tr>"
+  + "<tr><td><b>Month 1, week 1</b></td><td>Deliver the four simple checklists (opening, closing, cleaning, welcome) as a printable PDF.</td><td>" + who("bot", "you") + "</td></tr>"
+  + "<tr><td><b>Visit</b></td><td>Secret-shopper visit on a <b>different day and time</b> each month. Same rubric, same journey.</td><td>" + who("you") + "</td></tr>"
+  + "<tr><td><b>Within 3 days</b></td><td>Report: score vs last month, which fixes held or slipped, up to 3 new priorities, photos.</td><td>" + who("bot", "you") + "</td></tr>"
+  + "<tr><td><b>Staff session</b></td><td>15–20 minutes, positive and practical, built on the checklists. Praise in public, coach in private; no blaming.</td><td>" + who("you", "cli") + "</td></tr>"
+  + "<tr><td><b>5 days before billing</b></td><td>Renewal reminder (template 5·7 wording, adapted), after your approval.</td><td>" + who("bot", "you") + "</td></tr></table>"
+  + '<div class="box ok"><h4>What “good” looks like</h4><p>The score is compared honestly month to month, even if it drops. Never inflate a score to keep a client.</p></div></div>')
 
 page = (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>LocalBoost Delivery Playbook</title><style>{CSS}</style></head><body>'
-        + cover + toc + p0 + p1 + p2 + p3 + p4 + (p5.replace('</section>', '', 1) + '</section>') + p6 + "</body></html>")
+        + cover + toc + p0 + p1 + p2 + p3 + p3b + p3c + p4 + (p5.replace('</section>', '', 1) + '</section>') + p6 + "</body></html>")
 (out / "localboost-delivery-playbook.html").write_text(page, encoding="utf-8")
 print("built")
