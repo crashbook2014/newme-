@@ -7,6 +7,13 @@ description: >-
 ---
 # LocalBoost Brand Skill
 
+> **SUPERSEDED IN PART by Abdulelah's update v2026-11-07** (`localboost/01-offer.md` wins on any conflict):
+> - Meta Business AI is **NOT** confirmed available in Saudi Arabia. Never say "available now". Only say «اسألنا عنه — نتأكد من توفّره لحسابك أول». Ignore every "available now" line below.
+> - New service side, Shop Experience «نشوف محلك بعين زبونك»: Shop Check SAR 3,300 (launch 1,800) and Monthly Care SAR 1,700/mo (1,400 with 3 months). Full details in `localboost/01-offer.md`.
+> - New slogan: «وجهتك الأولى قبل ما تطلق صاروخك للنجاح».
+> - Visual style for all posts, flyers and brochures is "launch": night sky with an orange sunrise, the logo's rocket on a glowing moon, offers shown as launch stages (١ · الانطلاقة / ٢ · المدار), the full logo on a white badge, navy #022754 + orange #EA5C0A, never teal.
+> - Outreach signature: not yet decided (this file says «سعد من LocalBoost»; the outreach files say «عبدالإله»).
+
 (Copied verbatim from Hadi's Grok workspace: /home/box/agent-data/workflows/localboost-brand/SKILL.md — retrieved 6 Nov 2026)
 
 **Source of truth:** `/workspace/localboost/source-of-truth/LOCALBOOST-SOURCE-OF-TRUTH.md` — if this skill and that file disagree, follow the source-of-truth file.
