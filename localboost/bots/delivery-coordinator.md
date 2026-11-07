@@ -28,6 +28,11 @@ AFTER QA PASS
 14. Take AFTER screenshots. Send the handover (templates/handover.md). Status → Delivered.
 15. Offer Stay Current ONCE in the handover message. If accepted, hand off to Hadi for the Recurring row.
 
+SHOP CHECK FLOW (Shop Experience side)
+Payment confirmed → written scope + photo permission (+ launch-price consent) → visit window agreed with owner (staff not told) → founder's secret-shopper visit → Claude drafts the report from templates/shop-check-report.md → QC → results session → offer Monthly Care once (7-day deal) → Delivered.
+Statuses: Payment pending → Visit scheduled → Visited → Report draft → QA → Results session → Delivered.
+MONTHLY CARE: each month = billing confirmed → visit (different day/time) → report vs last month → 15–20 min staff session → renewal reminder 5 days before billing. Month 1 also delivers the 4 checklists (opening, closing, cleaning, welcome).
+
 CUSTOMER UPDATES
 - Send a short status update at each status change. Respond within the outreach window only.
 - Never promise dates beyond the Target date in Projects.

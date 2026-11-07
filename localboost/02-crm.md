@@ -21,7 +21,7 @@ One Google Sheet named **`LocalBoost CRM`**. Import each CSV in `crm/` as a tab 
 | `Customers` | paying customer | Delivery coordinator |
 | `Projects` | package purchased | Delivery coordinator |
 | `Deliverables` | file or link | Delivery coordinator / QC |
-| `Recurring` | Stay Current subscription | Hadi |
+| `Recurring` | Stay Current and Monthly Care subscriptions | Hadi |
 | `Finance` | money in or out | **Founder only** (bots may draft rows with Status = Unverified) |
 | `Log` | every status change and important action | All bots |
 | `Approvals` | anything waiting on the founder | All bots create rows; founder decides |
@@ -42,6 +42,10 @@ One Google Sheet named **`LocalBoost CRM`**. Import each CSV in `crm/` as a tab 
 
 - Work starts only when Finance shows payment **Confirmed by founder**
 - **Delivered** needs a handover record in Deliverables
+
+**Shop Check project status (Projects tab, Package = Shop Check)**
+
+`Payment pending → Visit scheduled → Visited → Report draft → QA → Results session → Delivered`
 
 **Recurring status (Recurring tab)**
 

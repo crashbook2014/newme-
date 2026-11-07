@@ -174,3 +174,61 @@ footer nav{display:flex;gap:16px}
 .lang{text-decoration:none}
 .skip{position:absolute;inset-inline-start:-999px;top:8px;z-index:100;background:var(--navy);color:#fff;padding:8px 14px;border-radius:8px}
 .skip:focus{inset-inline-start:8px}
+
+/* ===== v2026-11-07 · Launch stages + Stage 2 "Orbit" (shop experience) ===== */
+.slogan{margin-top:10px;font-size:17px;font-weight:700;color:var(--yellow)}
+.stage-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.stage-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(234,92,10,.12);color:var(--orange);font-weight:700;border-radius:999px;padding:6px 16px 6px 8px;font-size:14px}
+[dir=rtl] .stage-tag{padding:6px 8px 6px 16px}
+.stage-tag b{background:var(--orange);color:#fff;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:13px}
+.stage-tag.on-dark{background:rgba(255,255,255,.1);color:var(--yellow)}
+.stage-sub{font-weight:700;color:var(--soft);font-size:14px}
+.orbit .stage-sub{color:#b8c4d6}
+.orbit{position:relative;overflow:hidden;color:#fff;padding-block:110px 96px;
+  background:radial-gradient(130% 55% at 50% 118%,#ffb347 0%,#F6880F 12%,#EA5C0A 24%,rgba(234,92,10,.35) 38%,rgba(2,39,84,0) 58%),linear-gradient(180deg,#010d1f 0%,#021a3a 50%,#03306a 100%)}
+.orbit .wrap{position:relative;z-index:2}
+.orbit-head{text-align:center;max-width:720px;margin:0 auto 46px}
+.orbit h2{font-size:clamp(34px,4.6vw,56px);color:#fff}
+.orbit .lead{font-size:18px;color:#cdd8e8;margin-top:14px}
+.moon{position:absolute;z-index:1;inset-inline-end:7%;top:96px;width:170px;height:170px;border-radius:50%;
+  background:radial-gradient(circle at 34% 32%,#fffaf0 0%,#ffe9b8 38%,#f7c46f 72%,#e7a248 100%);
+  box-shadow:0 0 50px 14px rgba(255,211,50,.35),0 0 140px 60px rgba(234,92,10,.22);animation:glow 5s ease-in-out infinite}
+.moon::before,.moon::after{content:"";position:absolute;border-radius:50%;background:rgba(199,134,52,.28)}
+.moon::before{width:34px;height:34px;left:28%;top:52%}
+.moon::after{width:20px;height:20px;left:62%;top:30%}
+.moon img{position:absolute;width:120px;left:50%;top:-58px;transform:translateX(-50%) rotate(-10deg);filter:drop-shadow(0 8px 14px rgba(0,0,0,.35));animation:hover 4s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 70px 22px rgba(255,211,50,.45),0 0 170px 70px rgba(234,92,10,.28)}}
+@keyframes hover{50%{transform:translateX(-50%) translateY(-8px) rotate(-10deg)}}
+.ocards{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:920px;margin:0 auto}
+.ocard{position:relative;display:flex;flex-direction:column;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:30px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.ocard.hl{border:2px solid var(--orange);background:rgba(234,92,10,.10)}
+.ocard h3{font-size:24px;color:#fff}
+.ocard .en{font:600 13px var(--f-latin);color:#b8c4d6}
+.ocard .price{color:#fff}.ocard .price small{color:#b8c4d6}
+.ocard .launchtag{background:rgba(255,211,50,.14);color:var(--yellow)}
+.ocard ul{padding-inline-start:20px;margin:10px 0 18px;font-size:15px;color:#e3eaf4}
+.ocard .btn{margin-top:auto;align-self:flex-start}
+.oicon{font-size:26px}
+.deal,.barber{max-width:920px;margin:22px auto 0;display:flex;gap:14px;align-items:center;border-radius:18px;padding:18px 24px}
+.deal{background:linear-gradient(90deg,var(--orange),var(--amber));box-shadow:0 14px 34px rgba(234,92,10,.35)}
+.deal-ico{font-size:26px}
+.barber{border:2px dashed rgba(255,255,255,.35)}
+.deal p,.barber p{margin:0;font-size:16px}
+.calc{max-width:920px;margin:22px auto 0;background:#fff;color:var(--ink);border-radius:20px;padding:22px 26px;position:relative}
+.calc-tag{display:inline-block;background:var(--navy);color:var(--yellow);font-weight:700;font-size:13px;border-radius:999px;padding:4px 14px;margin-bottom:12px}
+.calc-row{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;text-align:center}
+.calc-row div{min-width:86px}
+.calc-row b{display:block;font-size:30px;color:var(--navy);line-height:1.1}
+.calc-row .big b{color:var(--orange);font-size:36px}
+.calc-row small{color:var(--soft);font-size:12.5px}
+.calc-row i{font-style:normal;font-size:26px;color:var(--orange);font-weight:700}
+.calc p{margin:12px 0 0;text-align:center;color:var(--soft);font-size:14.5px}
+.scope{max-width:920px;margin:18px auto 0;text-align:center;color:#b8c4d6;font-size:14px}
+@media (max-width:860px){
+  .orbit{padding-block:240px 64px}
+  .moon{inset-inline-end:auto;left:50%;transform:translateX(-50%);top:70px;width:130px;height:130px}
+  .moon img{width:96px;top:-46px}
+  .ocards{grid-template-columns:1fr}
+  .deal,.barber{align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){.moon,.moon img{animation:none}}

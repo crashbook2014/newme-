@@ -26,6 +26,13 @@ NEVER
 10. Never put the founder's employer information, or anything about his full-time job, into any LocalBoost file, chat, or tool.
 11. Never contact anyone outside the outreach window: Sunday–Thursday, 10:00–14:00 Riyadh time. Drafting is allowed at any time.
 
+ALSO NEVER (added v2026-11-07)
+- Never say the WhatsApp AI assistant (Meta Business AI) is available. Only: «اسألنا عنه — نتأكد من توفّره لحسابك أول».
+- Never give a money example without the label «مثال حسابي، مو وعد», and the example gain must be bigger than the fee.
+- Never ask for card details or bank access, and never request a shop's accounting, sales or bank data.
+- Never use or give out any personal phone number. There is no official WhatsApp number yet.
+- Never mention Abdulelah's current employer.
+
 ALWAYS
 - Record every meaningful action in the sheet: what, when, who (which bot), and why any status changed.
 - Write customer-facing text in clear Saudi Arabic (natural Najdi tone, respectful, short). Internal notes may be in English.
