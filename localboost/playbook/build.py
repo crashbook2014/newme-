@@ -196,7 +196,7 @@ p1 = part("Part 1", "Get Found · خلّهم يلقونك", "900 SAR one-time (l
   + step("1·H", "Apply the changes in Google Business Profile", who("you"),
          "<p>Signed in as LocalBoost (Manager) → open the profile → <b>Edit profile</b>. Work top to bottom:</p>"
          + "<table><tr><th>Section</th><th>What to do</th><th>Watch out</th></tr>"
-         + "<tr><td>Business name</td><td>Exactly the real-world name on the sign</td><td>Never add keywords or locations (“best barber Narjis”). This can get the profile suspended.</td></tr>"
+         + "<tr><td>Business name</td><td>Exactly the real-world name on the sign</td><td>Never add keywords or locations (“best barber in Riyadh”). This can get the profile suspended.</td></tr>"
          + "<tr><td>Category</td><td>Set the primary category; add only truly relevant secondary ones</td><td>Primary category matters most; don't add unrelated ones</td></tr>"
          + "<tr><td>Description</td><td>Paste the approved Arabic text</td><td>≤ 750 chars; no URLs or phone numbers</td></tr>"
          + "<tr><td>Location</td><td>Check the pin; move it to the real entrance if needed</td><td>Address edits may trigger re-verification</td></tr>"

@@ -213,11 +213,6 @@ footer nav{display:flex;gap:16px}
 .ocard ul{padding-inline-start:20px;margin:10px 0 18px;font-size:15px;color:#e3eaf4}
 .ocard .btn{margin-top:auto;align-self:flex-start}
 .oicon{font-size:26px}
-.deal,.barber{max-width:920px;margin:22px auto 0;display:flex;gap:14px;align-items:center;border-radius:18px;padding:18px 24px}
-.deal{background:linear-gradient(90deg,var(--orange),var(--amber));box-shadow:0 14px 34px rgba(234,92,10,.35)}
-.deal-ico{font-size:26px}
-.barber{border:2px dashed rgba(255,255,255,.35)}
-.deal p,.barber p{margin:0;font-size:16px}
 .calc{max-width:920px;margin:22px auto 0;background:#fff;color:var(--ink);border-radius:20px;padding:22px 26px;position:relative}
 .calc-tag{display:inline-block;background:var(--navy);color:var(--yellow);font-weight:700;font-size:13px;border-radius:999px;padding:4px 14px;margin-bottom:12px}
 .calc-row{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;text-align:center}
@@ -233,7 +228,6 @@ footer nav{display:flex;gap:16px}
   .moon{inset-inline-end:auto;left:50%;transform:translateX(-50%);top:70px;width:130px;height:130px}
   .moon img{width:96px;top:-46px}
   .ocards{grid-template-columns:1fr}
-  .deal,.barber{align-items:flex-start}
 }
 @media (prefers-reduced-motion:reduce){.moon,.moon img{animation:none}}
 

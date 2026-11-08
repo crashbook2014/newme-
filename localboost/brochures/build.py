@@ -124,8 +124,7 @@ h2 .n{{font:700 9pt Inter;color:#fff;background:var(--orange);border-radius:50%;
 .duo .box .pr{{font:700 13pt Inter;color:var(--navy);margin:.6mm 0 1.6mm}}
 .duo .box .pr small{{font:600 8pt Plex;color:var(--orange);display:block}}
 .strip{{border-radius:3mm;padding:2.6mm 4mm;font-size:9.2pt;margin-top:2.6mm}}
-.strip.deal{{background:linear-gradient(90deg,var(--orange),var(--amber));color:#fff}}
-.strip.barber{{border:.4mm dashed #b6c1d1}}
+.strip.note{{border:.4mm dashed #b6c1d1}}
 .next{{display:flex;gap:3mm;margin-top:3mm}}
 .next div{{flex:1;border:.3mm solid var(--line);border-radius:3mm;padding:2.8mm 3.6mm;font-size:8.9pt}}
 .next b{{color:var(--navy)}}
@@ -327,7 +326,7 @@ sx_p1 = (hero("٢ · المدار · تجربة المحل", "نشوف محلك 
            '<div><b>10</b><small>ريال إضافة صغيرة</small></div><i>×</i><div><b>10</b><small>زباين باليوم</small></div><i>×</i>'
            '<div><b>30</b><small>يوم</small></div><i>=</i><div class="big"><b>3,000</b><small>ريال بالشهر</small></div></div>'
            '<p>مقابل <span class="lat">1,700</span> ريال رسوم المتابعة الشهرية. مثلاً مشروب أو خدمة إضافية يقترحها الفريق بالشكل الصح.</p></div>'
-         + f'<div class="strip barber"><b>الدفع والإلغاء:</b> {SX_PAYMENT}</div>'
+         + f'<div class="strip note"><b>الدفع والإلغاء:</b> {SX_PAYMENT}</div>'
          + '</div>')
 sx_p2 = ('<div class="pad"><div class="sec" style="margin-top:0"><h2>كيف تمشي زيارة التقييم، من البداية للنهاية</h2>'
          + steps([("فحص مجاني واتفاق مكتوب", "نتفق على النطاق والسعر، وتعطينا إذن مكتوب للتصوير داخل المحل.", "أنت"),
