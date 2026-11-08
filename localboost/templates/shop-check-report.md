@@ -1,4 +1,4 @@
-# Shop Check Report Template — زيارة التقييم
+# Shop Check Report Template — زيارة التقييم (LB-CHK 3,300 · LB-MC 1,700/month)
 
 Used for every Shop Check and every Monthly Care visit. The score is out of 100 and stays the same every month, so months can be compared fairly.
 
@@ -9,10 +9,10 @@ Used for every Shop Check and every Monthly Care visit. The score is out of 100 
 | 1 | الواجهة واللوحة | 15 | Storefront clean and lit, sign readable from the street, entrance inviting |
 | 2 | النظافة والترتيب | 20 | Floor, counters, seats, washroom (if used), smell, clutter |
 | 3 | العرض والمنيو والأسعار | 15 | Display tidy and full, menu/price list clear, prices visible, nothing missing |
-| 4 | الاستقبال والتعامل | 20 | Greeting (and how fast), eye contact, helpfulness, thanks and goodbye |
+| 4 | الاستقبال والخدمة | 20 | Welcome (and how fast), service quality, helpfulness, thanks and goodbye |
 | 5 | سرعة الخدمة والانتظار | 10 | Wait time (record minutes), customer kept informed while waiting |
 | 6 | مظهر الفريق | 10 | Uniform/clean look, name badges (if used), phone use in front of customers |
-| 7 | فرص البيع اللي تضيع | 10 | Add-on offered? Bestsellers suggested? Payment easy? Anything a customer wanted but couldn't get? |
+| 7 | الفلوس اللي تضيع | 10 | Visible money leaks: waste, extra staff in quiet hours, missed sales (add-on offered? bestsellers suggested? anything a customer wanted but couldn't get?) |
 | | **المجموع** | **100** | |
 
 Deduct points only for something you saw, and give each deduction a photo or a clear note.

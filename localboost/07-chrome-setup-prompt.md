@@ -7,7 +7,7 @@ You are helping me (Abdulelah, founder of LocalBoost) organize my AI bot team in
 
 SOURCE OF TRUTH
 All bot instructions live in my GitHub repo:
-https://github.com/crashbook2014/newme-/tree/claude/lucid-archimedes-r0rp9u/localboost
+https://github.com/crashbook2014/newme-/tree/main/localboost
 Read these files first (open each one, use the "Raw" view to copy text exactly):
 - 00-operating-rules.md  (shared rules — goes FIRST in every bot)
 - 01-offer.md             (prices and packages)

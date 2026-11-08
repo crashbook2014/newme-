@@ -9,22 +9,30 @@ Hadi — produce the LocalBoost weekly scorecard for [last Sun]–[last Thu] fro
 
 WEEKLY SCORECARD — week ending [date]
 
-SALES
+SALES — SIDE 1 · MAPS PACKAGES (LB-GF / LB-GC / LB-SC)
 - New leads discovered: x (target 10)
 - Audits completed: x (target 5–10)
 - Messages approved / sent: x / x
 - Replies: x · Interested: x · Opt-outs: x
 - Proposals sent: x · Won: x · Lost: x (top reason)
 
+SALES — SIDE 2 · SHOP VISITS (LB-CHK / LB-MC)
+- Shop Check leads (visible on Maps, weak service/appearance): x
+- Shop Checks proposed / won: x / x
+- Visits done this week: x · Reports delivered: x · Results sessions held: x
+- Monthly Care offered / won: x / x
+
 DELIVERY
-- Active projects: x (max 2) — [Project ID: status]
+- Active projects: x (max 2) — [Project ID: package code: status]
+- Monthly Care visits due this week: x
 - Delivered this week: x
 - Projects past target date: x
 
 MONEY (Finance tab, Confirmed by founder only)
 - Collected this week: SAR x
 - Collected this month: SAR x
-- Stay Current active: x clients = SAR x/month
+- Stay Current (LB-SC) active: x clients = SAR x/month
+- Monthly Care (LB-MC) active: x clients = SAR x/month
 - Unverified / pending: SAR x
 
 FOUNDER TIME
