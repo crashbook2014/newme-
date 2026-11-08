@@ -82,7 +82,7 @@ Earlier Shop Check / Monthly Care launch prices, commitment discounts and the ba
 ## Payment terms
 
 `[FOUNDER DECISION]`: deposit %, payment schedule, Monthly Care cancellation terms, launch offer end date.
-Policy already published on the website: cancel before work starts → full refund; after → refund of the undelivered part; third-party fees (domain, hosting) are not refundable; monthly services can be stopped before the next month begins.
+Policy already published on the website: cancel before work starts → full refund; after → refund of the undelivered part; third-party fees (domain, hosting) are not refundable; Stay Current can be stopped before the next month begins. Monthly Care cancellation terms: `[FOUNDER DECISION]`.
 
 ## Who pitches what
 
