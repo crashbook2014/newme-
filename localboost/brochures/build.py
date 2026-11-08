@@ -22,6 +22,8 @@ CSS = f"""
 @font-face{{font-family:Plex;font-weight:400;src:url({F}/ibm-plex-sans-arabic-arabic-400-normal.woff2)}}
 @font-face{{font-family:Plex;font-weight:600;src:url({F}/ibm-plex-sans-arabic-arabic-600-normal.woff2)}}
 @font-face{{font-family:Plex;font-weight:700;src:url({F}/ibm-plex-sans-arabic-arabic-700-normal.woff2)}}
+@font-face{{font-family:Readex;font-weight:700;src:url({F}/readex-pro-arabic-700-normal.woff2);unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200E}}
+@font-face{{font-family:Readex;font-weight:700;src:url({F}/readex-pro-latin-700-normal.woff2);unicode-range:U+0000-00FF,U+2000-206F}}
 @font-face{{font-family:Inter;font-weight:400;src:url({F}/inter-latin-400-normal.woff2)}}
 @font-face{{font-family:Inter;font-weight:600;src:url({F}/inter-latin-600-normal.woff2)}}
 @font-face{{font-family:Inter;font-weight:700;src:url({F}/inter-latin-700-normal.woff2)}}
@@ -34,6 +36,7 @@ body{{font-family:Plex,Inter,sans-serif;color:var(--ink);font-size:10.4pt;line-h
 .page{{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;display:flex;flex-direction:column}}
 .page:last-child{{page-break-after:auto}}
 .pad{{padding:0 14mm}}
+h1,h2,h3{{font-family:Readex,Plex,sans-serif}}
 h2{{font-size:14.5pt;color:var(--navy);font-weight:700;margin-bottom:3mm;display:flex;align-items:center;gap:2.5mm}}
 h2 .n{{font:700 9pt Inter;color:#fff;background:var(--orange);border-radius:50%;width:6.2mm;height:6.2mm;display:grid;place-items:center;flex:none}}
 .top{{display:flex;justify-content:space-between;align-items:center;padding:7mm 14mm 5mm}}
@@ -48,6 +51,7 @@ h2 .n{{font:700 9pt Inter;color:#fff;background:var(--orange);border-radius:50%;
 .hero .moon{{position:absolute;left:22mm;top:8mm;width:27mm;height:27mm;border-radius:50%;
   background:radial-gradient(circle at 34% 32%,#fffaf0 0%,#ffe9b8 40%,#f7c46f 74%,#e7a248 100%);box-shadow:0 0 9mm 2.5mm rgba(255,211,50,.35),0 0 22mm 9mm rgba(234,92,10,.22)}}
 .hero .moon::before{{content:"";position:absolute;width:5mm;height:5mm;border-radius:50%;left:28%;top:55%;background:rgba(199,134,52,.3)}}
+.hero .moon .ring{{position:absolute;left:50%;top:50%;width:150%;height:60%;border:.45mm dashed var(--yellow);border-radius:50%;transform:translate(-50%,-50%) rotate(-18deg)}}
 .hero .moon img{{position:absolute;width:19mm;left:50%;top:-9mm;transform:translateX(-50%) rotate(-10deg)}}
 .hero .eyebrow{{display:inline-flex;align-items:center;gap:2mm;background:rgba(255,255,255,.1);border-radius:99px;padding:.6mm 3.4mm .6mm 1mm;font-weight:700;font-size:9.5pt;color:var(--yellow)}}
 .hero .eyebrow b{{background:var(--orange);color:#fff;border-radius:50%;width:5.6mm;height:5.6mm;display:grid;place-items:center;font-size:8.5pt}}
@@ -153,9 +157,9 @@ def page(body_p1, body_p2, title):
     cta = (f'<div class="cta"><div class="qr">{qr_svg}</div><div><h3>اطلب فحص الخريطة المجاني</h3>'
            f'<p>امسح الكود: نشوف ملف محلك على خرائط قوقل ونقولك وش ينقصه بالضبط. ٥ دقايق، بدون أي التزام.</p>'
            f'<span class="url">{SITE_URL}</span><span class="slogan">«وجهتك الأولى قبل ما تطلق صاروخك للنجاح»</span></div></div>'
-           f'<div class="legal"><span>LocalBoost · خدمة مستقلة في شمال الرياض: العارض · النرجس · الياسمين · طريق الملك سلمان</span>'
+           f'<div class="legal"><span>LocalBoost · خدمة مستقلة للمحلات في الرياض</span>'
            f'<span>غير تابعين لقوقل أو Meta</span></div>')
-    foot1 = '<div class="foot1"><span><b>LocalBoost</b> · العارض · النرجس · الياسمين · طريق الملك سلمان</span><span>قلب الصفحة ←</span></div>'
+    foot1 = '<div class="foot1"><span><b>LocalBoost</b> · سهل يلقونك. واضح. وجاهز لزبائنك.</span><span>قلب الصفحة ←</span></div>'
     return (f'<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>{html.escape(title)}</title>'
             f'<style>{CSS}</style></head><body>'
             f'<section class="page">{top}{body_p1}{foot1}</section>'
@@ -164,7 +168,7 @@ def page(body_p1, body_p2, title):
 def hero(eyebrow, name, en, promise, price, unit, launch=""):
     l = f'<div class="launch">{launch}</div>' if launch else ""
     num, label = eyebrow.split(" · ", 1)
-    return (f'<div class="hero"><div class="moon"><img src="{ROCKET}" alt=""></div><div class="eyebrow"><b>{num}</b>{label}</div><h1>{name}</h1><div class="en">{en}</div>'
+    return (f'<div class="hero"><div class="moon"><span class="ring"></span><img src="{ROCKET}" alt=""></div><div class="eyebrow"><b>{num}</b>{label}</div><h1>{name}</h1><div class="en">{en}</div>'
             f'<p class="promise">{promise}</p><div class="price"><b class="lat">{price}</b><small>{unit}</small>{l}</div></div>')
 
 def why(cards):
@@ -185,7 +189,7 @@ gf_p1 = (hero("١ · الانطلاقة · خلّهم يلقونك ويختار�
                "قائمة الخدمات أو المنيو بوصف واضح",
                "وصف للمحل بالعربي السعودي، واضح ومختصر",
                "ترتيب الصور: الواجهة، الداخل، الشغل، الفريق",
-               "زر واتساب وزر اتصال على الملف",
+               "أزرار واتساب واتصال والاتجاهات على الملف",
                "رابط تقييم مباشر وكرت QR جاهز للطباعة",
                "مسودات ردود على التقييمات، ما تنزل إلا بموافقتك",
                "صور قبل وبعد للتعديلات",
@@ -229,7 +233,7 @@ gc_p1 = (hero("١ · الانطلاقة · خلّهم يلقونك ويختار�
          + ul(["ملف قوقل كامل: التصنيف، الدبوس، الخدمات", "الساعات ومعها رمضان والعيد", "وصف عربي واضح وترتيب الصور",
                "زر واتساب واتصال + كرت QR للتقييمات"])
          + '<p style="font-weight:700;color:var(--navy);margin:3.5mm 0 2mm">٢) موقع بسيط للجوال</p>'
-         + ul(["حتى ٤ أقسام تقريباً: الرئيسية، من نحن، الخدمات، المنيو/الأسعار", "مصمم للجوال أولاً، وبالعربي أساساً",
+         + ul(["الرئيسية، من نحن، الخدمات/المنيو بالأسعار، والخريطة", "مصمم للجوال أولاً، وبالعربي أساساً",
                "ثنائي اللغة (عربي/إنجليزي) إذا اتفقنا عليه", "زر واتساب واتصال وخريطة الموقع داخل الصفحة",
                "صورك الحقيقية وشعارك وألوانك", "الدومين والاستضافة باسمك وبسعر التكلفة"])
          + '</div>'
@@ -298,29 +302,27 @@ sc_p2 = ('<div class="pad"><div class="sec" style="margin-top:0"><h2>كيف يم
            '<div><b>تبي موقع كمان؟</b><br>«خلّهم يختارونك»، <span class="lat">2,200 SAR</span>.</div></div></div>')
 
 # ------------------------------------------------------------------ 4. Shop Experience (Stage 2 · Orbit)
-RUBRIC = [("الواجهة واللوحة", 15), ("النظافة والترتيب", 20), ("العرض والمنيو والأسعار", 15), ("الاستقبال والتعامل", 20),
-          ("سرعة الخدمة والانتظار", 10), ("مظهر الفريق", 10), ("فرص البيع اللي تضيع", 10)]
+RUBRIC = [("الواجهة واللوحة", 15), ("النظافة والترتيب", 20), ("العرض والمنيو والأسعار", 15), ("الاستقبال والخدمة", 20),
+          ("سرعة الخدمة والانتظار", 10), ("مظهر الفريق", 10), ("الفلوس اللي تضيع", 10)]
 rubric = '<div class="rubric">' + "".join(
     f'<div><span class="pts">{pts}</span>{name}<div class="bar"><i style="width:{pts*5}%"></i></div></div>' for name, pts in RUBRIC) + \
     '<div><span class="pts">100</span><b>المجموع</b><div class="bar"><i style="width:100%"></i></div></div></div>'
 SX_PAYMENT = ("السعر وجدول الدفع مكتوبين في العرض قبل ما نبدأ. تلغي قبل الزيارة = ترجع فلوسك كاملة. "
-              "المتابعة الشهرية تقدر توقفها قبل بداية الشهر الجاي. بدون ضريبة قيمة مضافة.")
+              "شروط إلغاء المتابعة الشهرية: تتأكد قريب. بدون ضريبة قيمة مضافة.")
 SX_HONEST = ["ما نضمن أرباح ولا مبيعات ولا عدد زباين", "ما نطلب حسابات أو مبيعات أو بيانات بنك",
              "الصور داخل المحل بإذنك المكتوب، وبدون وجوه زباين", "أي أرقام في التقرير = مثال حسابي، مو وعد",
              "التقرير يتكلم عن المحل، ما يفضح أحد من الفريق", "مستقلين، ما نتبع قوقل ولا Meta"]
 sx_p1 = (hero("٢ · المدار · تجربة المحل", "نشوف محلك بعين زبونك", "Shop Check · Monthly Care",
               "ملفك يجيب الزبون لباب المحل… وبعدها تبدأ التجربة. نزور محلك كزبون عادي، ونقولك وش يشوف الزبون، ووين تضيع فلوس وهي قدام عينك.",
-              "3,300 SAR", "زيارة التقييم · مرة وحدة", "سعر الإطلاق 1,800 لأول 5 محلات<br>مقابل إذنك نستخدم نتايجك كمثال")
+              "3,300 SAR", "زيارة التقييم · زيارة وحدة")
          + '<div class="pad">'
          + '<div class="sec duo">'
-         + '<div class="box"><h3>زيارة التقييم</h3><div class="pr lat">3,300 SAR<small>الإطلاق 1,800 لأول 5 محلات</small></div>'
-         + ul(["زيارة كزبون سرّي", "مظهر المحل: الواجهة، اللوحة، العرض، المنيو، مظهر الفريق", "الفلوس اللي تضيع وهي قدام عينك",
-               "تقرير بالصور ودرجة من 100", "أهم 5 تعديلات", "جلسة نشرح فيها النتائج"], "ticks one") + '</div>'
-         + '<div class="box hl"><h3>المتابعة الشهرية</h3><div class="pr lat">1,700 SAR / شهر<small>أو 1,400 شهرياً مع التزام 3 شهور</small></div>'
+         + '<div class="box"><h3>زيارة التقييم</h3><div class="pr lat">3,300 SAR<small>زيارة وحدة</small></div>'
+         + ul(["زيارة كزبون سرّي: الاستقبال، الانتظار، الخدمة، النظافة", "مظهر المحل: الواجهة، اللوحة، العرض، المنيو، مظهر الفريق", "الفلوس اللي تضيع: الهدر، فريق زايد في أوقات الهدوء، مبيعات ضايعة",
+               "تقرير بالصور ودرجة من 100", "أهم 5 تعديلات حسب الأولوية", "جلسة نشرح فيها النتائج"], "ticks one") + '</div>'
+         + '<div class="box hl"><h3>المتابعة الشهرية</h3><div class="pr lat">1,700 SAR / شهر<small>متابعة شهرية</small></div>'
          + ul(["زيارة سرّية كل شهر ومقارنة بالشهر اللي قبله", "نتأكد إن التعديلات ثابتة", "قوائم بسيطة: الفتح، الإغلاق، النظافة، الاستقبال",
                "جلسة قصيرة مع الفريق", "تقرير شهري"], "ticks one") + '</div></div>'
-         + '<div class="strip deal"><b>عرض الانتقال للمدار:</b> اشترك في المتابعة الشهرية خلال 7 أيام من زيارة التقييم، ونخصم رسوم الزيارة من أول شهر.</div>'
-         + '<div class="strip barber"><b>✂ للحلاقين والصوالين الصغيرة:</b> زيارة التقييم <span class="lat">2,100</span> (الإطلاق <span class="lat">1,100</span>) · المتابعة الشهرية <span class="lat">1,100</span> شهرياً</div>'
          + '<div class="sec calc"><span class="tag">مثال حسابي، مو وعد</span><div class="row">'
            '<div><b>10</b><small>ريال إضافة صغيرة</small></div><i>×</i><div><b>10</b><small>زباين باليوم</small></div><i>×</i>'
            '<div><b>30</b><small>يوم</small></div><i>=</i><div class="big"><b>3,000</b><small>ريال بالشهر</small></div></div>'
@@ -331,15 +333,15 @@ sx_p2 = ('<div class="pad"><div class="sec" style="margin-top:0"><h2>كيف تم
          + steps([("فحص مجاني واتفاق مكتوب", "نتفق على النطاق والسعر، وتعطينا إذن مكتوب للتصوير داخل المحل.", "أنت"),
                   ("زيارة سرّية", "نزور المحل كزبون عادي، بدون ما يدري الفريق، في وقت شغل طبيعي.", "إحنا"),
                   ("تقرير بالصور", "كل ملاحظة معها صورة أو وصف واضح، ودرجة من 100.", "إحنا"),
-                  ("أهم 5 تعديلات", "مرتبة حسب الأثر والسهولة: وش المشكلة، وليش مهمة، وكيف تنحل.", "إحنا"),
+                  ("أهم 5 تعديلات", "مرتبة حسب الأولوية: وش المشكلة، وليش مهمة، وكيف تنحل.", "إحنا"),
                   ("جلسة النتائج", "نجلس معك ونشرح كل شي، ونتفق وش تبدأ فيه.", "أنت"),
                   ("المتابعة الشهرية (اختياري)", "زيارة كل شهر نتأكد فيها إن التعديلات ثابتة ونقارن الدرجة.", "إحنا")])
          + '</div><div class="sec"><h2>على وش نقيّم؟ الدرجة من 100</h2>' + rubric + '</div>'
          + '<div class="sec cols"><div><h2>وش نحتاج منك</h2>'
          + ul(["إذن مكتوب للتصوير داخل المحل", "أوقات الدوام والأوقات المزدحمة", "أي شي تبينا نركز عليه",
-               "موافقتك على استخدام النتايج كمثال (لسعر الإطلاق)"], "ticks one")
+               "رابط محلك على الخريطة"], "ticks one")
          + '</div><div><h2>وش ما تشمل</h2>'
-         + ul(["المحاسبة أو بيانات المبيعات أو البنك", "عقود الموردين", "وعود بأرباح أو مبيعات", "تدريب طويل أو توظيف"], "ticks one no")
+         + ul(["المحاسبة أو بيانات المبيعات أو البنك", "عقود الموردين", "وعود بأرباح أو مبيعات"], "ticks one no")
          + '</div></div>'
          + '<div class="sec honest"><h2>للأمانة</h2>' + ul(SX_HONEST, "") + '</div>'
          + '</div>')
