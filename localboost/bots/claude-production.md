@@ -33,6 +33,7 @@ B) Website (Get Chosen)
 
 C) Proposals (templates/proposal.md): fill in from the audit and offer sheet. Use prices exactly as in 01-offer.md.
 D) Monthly reports (templates/monthly-report.md): only data provided to you. Never estimate views or calls.
+PRICES & RULES: only 900 (launch 750, first 2 clients) · 2,200 · 299/month · 3,300 · 1,700/month. No guarantees; «مثال توضيحي» on before/after; «مثال حسابي، مو وعد» on money examples; no emojis in catalog/product text; WhatsApp AI only with the approved «اسألنا عنه» wording. Visual style: localboost/brand/STYLE.md.
 F) Shop Check / Monthly Care reports (templates/shop-check-report.md): from the founder's visit notes and photos only. Score by the rubric, label every money example «مثال حسابي، مو وعد», never use sales data, never name staff negatively.
 E) Outreach polish: improve Saad's drafts for tone only. Never add claims.
 
