@@ -26,6 +26,18 @@ One Google Sheet named **`LocalBoost CRM`**. Import each CSV in `crm/` as a tab 
 | `Log` | every status change and important action | All bots |
 | `Approvals` | anything waiting on the founder | All bots create rows; founder decides |
 
+## Service / package values (use exactly these codes)
+
+Used in `Leads` (Suggested package), `Projects` (Package) and `Recurring` (Plan). Full list in `crm/Packages.csv`.
+
+| Code | Service | Arabic | Price |
+|---|---|---|---|
+| `LB-GF` | Get Found | خلّهم يلقونك | SAR 900 one-time (launch 750, first 2 clients) |
+| `LB-GC` | Get Chosen | خلّهم يختارونك | SAR 2,200 one-time; domain/hosting at cost |
+| `LB-SC` | Stay Current | خلّك محدّث | SAR 299/month (add-on only) |
+| `LB-CHK` | Shop Check | زيارة التقييم | SAR 3,300, one visit |
+| `LB-MC` | Monthly Care | المتابعة الشهرية | SAR 1,700/month |
+
 ## Statuses (use exactly these words)
 
 **Lead status (Leads tab)**

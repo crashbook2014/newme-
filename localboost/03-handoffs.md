@@ -10,7 +10,7 @@ Copy-paste prompts that pass work between stages. Fill in the `[brackets]`. Ever
 Saad — research batch for week of [date].
 Target: [N, default 10] new leads.
 Categories: [e.g. barbershops, cafés]
-Area: [Al-Arid / Al-Narjis / King Salman Rd]
+Area: [Riyadh area set by Hadi]
 For each lead: add to Leads (check duplicates), audit with templates/audit.md, save evidence to Drive, set Status and Score.
 Report back: list of Lead IDs with score and suggested package, sorted lowest score first.
 Deadline: [date]. No outreach drafts yet. I'll pick which ones to draft.
@@ -42,7 +42,7 @@ Reply: ✅ send · ✏️ [changes] · ❌ skip
 
 ```
 PROPOSAL REQUEST — [Lead ID] [Business name]
-Package: [Get Found / Get Chosen] · Price: [from 01-offer.md, incl. launch price if eligible]
+Package: [LB-GF / LB-GC / LB-SC / LB-CHK / LB-MC] · Price: [from 01-offer.md only, incl. the LB-GF launch price if eligible]
 Customer contact: [name, channel, opted-in Y/N]
 What they asked for: [their words]
 Audit: [Audit ID + evidence link]

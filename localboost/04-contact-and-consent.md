@@ -23,7 +23,7 @@
 Every first-contact message points the prospect to an opt-in route:
 
 1. **Free-check request link:** a Google Form asking for the business name, Maps link, WhatsApp number, and a consent checkbox (wording below). The form submission is the evidence.
-2. **QR / wa.me link:** on the printed card left during in-person visits. When they message us first, that is the evidence.
+2. **QR / wa.me link:** on the printed card left during in-person visits, linking to https://linktr.ee/localboost.sa or https://wa.me/966557891433. When they message us first, that is the evidence.
 
 ### Consent checkbox wording (form)
 
@@ -41,7 +41,7 @@ Every first-contact message points the prospect to an opt-in route:
 
 ```
 السلام عليكم،
-معك عبدالإله من LocalBoost — نساعد المحلات في شمال الرياض يكون ملفهم في قوقل ماب كامل وواضح.
+معك عبدالإله من LocalBoost — نساعد المحلات في الرياض يكون ملفهم في قوقل ماب كامل وواضح.
 شفت ملف [اسم المحل] على الخريطة ولاحظت [ملاحظة حقيقية 1] و[ملاحظة حقيقية 2].
 أقدر أرسل لك فحص مجاني (٥ دقايق) فيه وش ينقص الملف بالضبط — بدون أي التزام.
 إذا يناسبك، عبّ هالنموذج أو رد على الإيميل: [رابط النموذج]
@@ -56,10 +56,10 @@ Every first-contact message points the prospect to an opt-in route:
 - Send one confirmation at most: `تم، ما راح نتواصل معك مرة ثانية. يعطيك العافية.`
 - No bot may ever reverse this. Only the founder may, and only if the business contacts us again first.
 
-## WhatsApp setup — before the business number goes live
+## WhatsApp setup — business number +966 55 789 1433 (live 9 Nov 2026)
 
-- [ ] A separate WhatsApp Business number for LocalBoost, not the founder's personal number
-- [ ] A business profile on that number: name, description, website, hours (10:00–14:00 Sun–Thu)
+- [x] A separate WhatsApp Business number for LocalBoost, not the founder's personal number: **+966 55 789 1433** (wa.me/966557891433)
+- [ ] A business profile on that number: name, description, link https://linktr.ee/localboost.sa, hours `[FOUNDER DECISION]`
 - [ ] Quick replies saved from the FAQ table in `01-offer.md`
 - [ ] A greeting message that names LocalBoost and explains how to opt out
 - [ ] Labels: `Lead`, `Opted-in`, `Customer`, `Do not contact`

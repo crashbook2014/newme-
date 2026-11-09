@@ -95,7 +95,7 @@ def part(n, title, sub, body): return f'<section class="part"><div class="part-h
 cover = f"""<section class="cover"><div class="logo"><img src="{LOGO}" alt="LocalBoost"></div>
 <div class="mid"><div class="eyebrow">INTERNAL · FOUNDER ONLY</div><h1>Delivery Playbook</h1>
 <p class="sub">How to deliver every LocalBoost package from A to Z: what you do, what the bots do, and exactly what you must review before anything reaches a client.</p></div>
-<div class="meta"><div><b>For</b>Abdulelah (founder)</div><div><b>Packages</b>Get Found · Get Chosen · Stay Current</div><div><b>Version</b>7 Nov 2026</div></div></section>"""
+<div class="meta"><div><b>For</b>Abdulelah (founder)</div><div><b>Packages</b>Get Found · Get Chosen · Stay Current</div><div><b>Version</b>8 Nov 2026</div></div></section>"""
 
 toc = part("Contents", "What's inside", "Read Part 0 once. Then use the part for the package you're delivering as a step-by-step checklist.",
   '<ul class="toc">'
@@ -104,7 +104,7 @@ toc = part("Contents", "What's inside", "Read Part 0 once. Then use the part for
       ("1", "Get Found · خلّهم يلقونك · 900 SAR", "A → K"),
       ("2", "Get Chosen · خلّهم يختارونك · 2,200 SAR", "A → L"),
       ("3", "Stay Current · خلّك محدّث · 299 SAR / month", "Monthly cycle"),
-      ("3B", "Shop Check · زيارة التقييم · 3,300 SAR (launch 1,800)", "S·A → S·H"),
+      ("3B", "Shop Check · زيارة التقييم · 3,300 SAR (one visit)", "S·A → S·H"),
       ("3C", "Monthly Care · المتابعة الشهرية · 1,700 SAR / month", "Monthly cycle"),
       ("4", "Final review: the “before you press Deliver” gate", "All packages"),
       ("5", "Message templates (Arabic, ready to send)", "Copy & paste"),
@@ -154,7 +154,7 @@ p0 = part("Part 0", "Before any delivery", "These rules and the start gate apply
       "<b>Google Drive + the LocalBoost CRM sheet</b>.",
       "<b>Claude</b>, the LocalBoost Production project, with the <code>H5 PRODUCTION</code> handoff.",
       "<b>A QR generator</b> (any free one) and a simple design tool for the QR card.",
-      "For Get Chosen: <b>a domain registrar</b> and <b>hosting</b> (GitHub Pages or Netlify work)."])
+      "For Get Chosen: <b>a domain registrar</b> and <b>hosting</b> (GitHub Pages or another static host works)."])
   + "</div></div>"
   + '<div class="box warn"><h4>Google changes its menus often</h4><p>Button names in this playbook (“Edit profile”, “Special hours”, “Ask for reviews”) can move or be renamed. If you can\'t find one, search the setting name in Google Business Profile Help. Don\'t improvise around a missing setting.</p></div>')
 
@@ -196,7 +196,7 @@ p1 = part("Part 1", "Get Found · خلّهم يلقونك", "900 SAR one-time (l
   + step("1·H", "Apply the changes in Google Business Profile", who("you"),
          "<p>Signed in as LocalBoost (Manager) → open the profile → <b>Edit profile</b>. Work top to bottom:</p>"
          + "<table><tr><th>Section</th><th>What to do</th><th>Watch out</th></tr>"
-         + "<tr><td>Business name</td><td>Exactly the real-world name on the sign</td><td>Never add keywords or locations (“best barber Narjis”). This can get the profile suspended.</td></tr>"
+         + "<tr><td>Business name</td><td>Exactly the real-world name on the sign</td><td>Never add keywords or locations (“best barber in Riyadh”). This can get the profile suspended.</td></tr>"
          + "<tr><td>Category</td><td>Set the primary category; add only truly relevant secondary ones</td><td>Primary category matters most; don't add unrelated ones</td></tr>"
          + "<tr><td>Description</td><td>Paste the approved Arabic text</td><td>≤ 750 chars; no URLs or phone numbers</td></tr>"
          + "<tr><td>Location</td><td>Check the pin; move it to the real entrance if needed</td><td>Address edits may trigger re-verification</td></tr>"
@@ -233,7 +233,7 @@ p2 = part("Part 2", "Get Chosen · خلّهم يختارونك", "2,200 SAR one-
              "Write the exclusions in the proposal: no online ordering, bookings, payments, blog, or ongoing content edits (those go in Stay Current)."]))
   + step("2·B", "Domain + hosting, in the client's name", who("cli", "you"),
          ul(["The client registers the domain with their own email as owner, or you register it <b>for</b> them with their approval and payment at cost, with the receipt saved.",
-             "Hosting: a free static host (e.g. GitHub Pages or Netlify) usually works for these sites. Create it under an account the <b>client</b> controls, or document how it will be transferred to them.",
+             "Hosting: a free static host (e.g. GitHub Pages) usually works for these sites. Create it under an account the <b>client</b> controls, or document how it will be transferred to them.",
              "Record every cost in the Finance tab as Unverified until you confirm it."]))
   + step("2·C", "Website content", who("cli", "bot"),
          ul(["From the intake: logo, colours, about text in their words, services/menu with prices, real photos, preferred domain.",
@@ -343,11 +343,11 @@ p4 = part("Part 4", "Final review: before you press Deliver", "Print these pages
       "Every money example says «مثال حسابي، مو وعد», shows a gain bigger than the fee, and uses no real sales data",
       "No accounting, sales or bank data requested or used",
       "Top 5 fixes are practical and ordered, each with why and how",
-      "Prices match offer sheet v2026-11-07; consent saved for launch-price clients",
+      "Prices match offer sheet v2026-11-08 exactly: 3,300 (one visit) and 1,700/month",
       "Monthly: comparison with last month is correct; the fixes-held list matches the previous report"]) + "</div>")
 
 # ---------------------------------------------------------------- PART 5  Templates
-p5 = part("Part 5", "Message templates", "Arabic, ready to send after you approve. Replace the [brackets]. Sign as you decide: the brand file signs as <bdi dir=\"rtl\">«سعد من LocalBoost»</bdi> and the outreach files as <bdi dir=\"rtl\">«عبدالإله»</bdi>. Pick one and stay consistent.",
+p5 = part("Part 5", "Message templates", "Arabic, ready to send after you approve. Replace the [brackets]. Sign every message <bdi dir=\"rtl\">«عبدالإله من LocalBoost»</bdi>.",
   msg("5·1 Kickoff (after payment confirmed)", """
 السلام عليكم [الاسم]،
 وصلت الدفعة، شكراً لك 🌟 نبدأ الحين على [اسم الباقة] لـ [اسم المحل].
@@ -393,8 +393,8 @@ p5 += msg("5·9 Report ready + results session", """
 درجة المحل: [x] من 100، ومعها أهم 5 تعديلات.
 متى يناسبك نجلس [30–45 دقيقة] نشرح النتائج؟""")
 p5 += msg("5·10 Monthly Care offer (once)", """
-إذا حاب نتابع معك كل شهر ونتأكد إن التعديلات ثابتة: «المتابعة الشهرية» بـ 1,700 ريال شهرياً، أو 1,400 مع التزام 3 شهور.
-وإذا اشتركت خلال 7 أيام من زيارة التقييم، نخصم رسوم الزيارة من أول شهر.""")
+إذا حاب نتابع معك كل شهر ونتأكد إن التعديلات ثابتة: «المتابعة الشهرية» بـ 1,700 ريال شهرياً.
+زيارة سرّية كل شهر، ونتأكد إن التعديلات ثابتة، وجلسة قصيرة مع الفريق، وتقرير شهري.""")
 p5 += msg("5·11 Monthly Care report", """
 هلا [الاسم]، تقرير المتابعة لشهر [..] جاهز:
 • الدرجة: [x] من 100 (الشهر الماضي [y])
@@ -427,7 +427,7 @@ p6 = part("Part 6", "When things go wrong", "Fast answers to the problems you'll
   + '<div class="box ok"><h4>The one-line test before anything goes out</h4><p>“Is it <b>true</b>, <b>approved</b>, <b>paid for</b>, <b>in scope</b>, and <b>logged</b>?” If any answer is no, it doesn\'t go out.</p></div>' + '</div>')
 
 # ---------------------------------------------------------------- PART 3B / 3C  Shop Experience (Stage 2 · Orbit)
-p3b = part("Part 3B · Stage 2 · Orbit", "Shop Check · زيارة التقييم", "3,300 SAR one-time (launch 1,800 for the first 5 shops, in exchange for written permission to use their results as an example). Barbers & small salons: 2,100 (launch 1,100).",
+p3b = part("Part 3B · Stage 2 · Orbit", "Shop Check · زيارة التقييم", "3,300 SAR, one visit (LB-CHK). Secret-shopper visit, shop appearance, visible money leaks, photo report, score out of 100, top 5 fixes by priority, results session.",
   '<div class="box navy"><h4>What the client receives</h4>' + ul([
       "One secret-shopper visit at a normal busy time (the owner knows, the staff don't)",
       "Shop appearance: storefront, sign, display, menu/prices, staff look",
@@ -439,9 +439,8 @@ p3b = part("Part 3B · Stage 2 · Orbit", "Shop Check · زيارة التقيي
   + step("S·A", "Agreement + permissions", who("you", "cli"),
          ul(["Written scope and price (offer sheet v2026-11-07). Payment confirmed by you before the visit.",
              "<b>Written permission to take photos inside the shop.</b> No permission → visit with notes only.",
-             "Launch-price clients: <b>written consent</b> to use their results as an example. Save it in 04-evidence.",
              "Agree a visit window with the owner. The staff must not know the day.",
-             "<code>[ABDULELAH TO CONFIRM]</code> who pays for any purchase made during the visit."]))
+             "<code>[FOUNDER DECISION]</code> who pays for any purchase made during the visit."]))
   + step("S·B", "Prepare", who("bot"),
          ul(["Print the scoring sheet from <code>templates/shop-check-report.md</code>.",
              "Plan the customer journey: approach → enter → ask/order → wait → pay → leave.",
@@ -460,18 +459,18 @@ p3b = part("Part 3B · Stage 2 · Orbit", "Shop Check · زيارة التقيي
              "Walk through the score and the top 5 fixes. Agree which 1–2 to start with this week.",
              "The report is about the shop, never about blaming a named staff member."]))
   + step("S·G", "Offer Monthly Care", who("you"),
-         "<p>Explain the deal exactly as written: subscribe within <b>7 days</b> of the Shop Check and the Shop Check fee comes off the first month. Offer once, with no pressure. <code>[ABDULELAH TO CONFIRM]</code> how the deal works when the fee is larger than the first month.</p>")
+         "<p>Offer Monthly Care (LB-MC, 1,700/month) once, with no pressure: a monthly visit compared with this one, a check that the fixes held, simple checklists, a short staff session and a monthly report.</p>")
   + step("S·H", "Close", who("bot"),
          ul(["Project → Delivered; report PDF in 03-final; consents saved.",
              "Day 7: one check-in (how are the first fixes going?)."])))
 
-p3c = part("Part 3C · Stage 2 · Orbit", "Monthly Care · المتابعة الشهرية", "1,700 SAR / month, or 1,400 / month with a 3-month commitment. Barbers & small salons: 1,100 / month. One secret-shopper visit, a fix check, checklists, a staff session and a report every month.",
+p3c = part("Part 3C · Stage 2 · Orbit", "Monthly Care · المتابعة الشهرية", "1,700 SAR / month (LB-MC). One secret-shopper visit, a fix check, checklists, a staff session and a report every month.",
   '<div class="compact"><div class="box warn"><h4>Before the first month</h4>' + chk([
       "A baseline score exists: the Shop Check, or the first month's visit",
       "Monthly payment confirmed by you before the month's work starts",
-      "Commitment recorded (monthly or 3 months). <code>[ABDULELAH TO CONFIRM]</code> early-cancellation terms for the 3-month plan",
+      "Cancellation terms recorded. <code>[FOUNDER DECISION]</code> Monthly Care cancellation terms",
       "Photo permission still valid; Recurring row created",
-      "Capacity: every client = 1 visit + 1 session + 1 report a month. <code>[ABDULELAH TO CONFIRM]</code> the maximum number of Monthly Care clients"]) + "</div>"
+      "Capacity: every client = 1 visit + 1 session + 1 report a month. <code>[FOUNDER DECISION]</code> the maximum number of Monthly Care clients"]) + "</div>"
   + "<h3><span class='k'>3C.1</span>The monthly cycle</h3>"
   + "<table><tr><th>When</th><th>What</th><th>Who</th></tr>"
   + "<tr><td><b>Billing day</b></td><td>Confirm payment. No payment = pause, no visit.</td><td>" + who("you") + "</td></tr>"

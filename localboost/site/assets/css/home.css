@@ -1,4 +1,8 @@
 /* LocalBoost home — design from the founder's version; fonts self-hosted */
+@font-face{font-family:"Readex Pro";font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/readex-pro-arabic-500-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Readex Pro";font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/readex-pro-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212}
+@font-face{font-family:"Readex Pro";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/readex-pro-arabic-700-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Readex Pro";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/readex-pro-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212}
 @font-face{font-family:"IBM Plex Sans Arabic";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
 @font-face{font-family:"IBM Plex Sans Arabic";font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
 @font-face{font-family:"IBM Plex Sans Arabic";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
@@ -14,7 +18,7 @@
   --navy:#022754; --orange:#EA5C0A; --amber:#F6880F; --yellow:#FFD332;
   --mist:#F2F2F2; --ink:#0A1F3D; --paper:#ffffff; --map:#e8eef3; --line:#d9e0ea; --ok:#16794a; --bad:#b03a2e;
   --night:#010d1f; --soft:#5d6b80;
-  --f-display:'IBM Plex Sans Arabic','Noto Sans Arabic',system-ui,sans-serif;
+  --f-display:'Readex Pro','IBM Plex Sans Arabic','Noto Sans Arabic',system-ui,sans-serif;
   --f-body:'IBM Plex Sans Arabic',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;
   --f-latin:'Inter','IBM Plex Sans Arabic',system-ui,sans-serif;
   color-scheme:light;
@@ -209,11 +213,6 @@ footer nav{display:flex;gap:16px}
 .ocard ul{padding-inline-start:20px;margin:10px 0 18px;font-size:15px;color:#e3eaf4}
 .ocard .btn{margin-top:auto;align-self:flex-start}
 .oicon{font-size:26px}
-.deal,.barber{max-width:920px;margin:22px auto 0;display:flex;gap:14px;align-items:center;border-radius:18px;padding:18px 24px}
-.deal{background:linear-gradient(90deg,var(--orange),var(--amber));box-shadow:0 14px 34px rgba(234,92,10,.35)}
-.deal-ico{font-size:26px}
-.barber{border:2px dashed rgba(255,255,255,.35)}
-.deal p,.barber p{margin:0;font-size:16px}
 .calc{max-width:920px;margin:22px auto 0;background:#fff;color:var(--ink);border-radius:20px;padding:22px 26px;position:relative}
 .calc-tag{display:inline-block;background:var(--navy);color:var(--yellow);font-weight:700;font-size:13px;border-radius:999px;padding:4px 14px;margin-bottom:12px}
 .calc-row{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;text-align:center}
@@ -229,6 +228,22 @@ footer nav{display:flex;gap:16px}
   .moon{inset-inline-end:auto;left:50%;transform:translateX(-50%);top:70px;width:130px;height:130px}
   .moon img{width:96px;top:-46px}
   .ocards{grid-template-columns:1fr}
-  .deal,.barber{align-items:flex-start}
 }
 @media (prefers-reduced-motion:reduce){.moon,.moon img{animation:none}}
+
+/* ===== v2026-11-08 · custom line icons (no emojis) + orbit ring ===== */
+.ico{width:26px;height:26px;display:inline-block;vertical-align:-6px;color:var(--orange)}
+.ico.sm{width:18px;height:18px;vertical-align:-4px}
+.pico{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:14px;background:#fff1e7}
+.pico.on-dark{background:rgba(255,211,50,.12)}
+.pico.on-dark .ico{color:var(--yellow)}
+.search .ico{color:var(--soft)}
+.moon .ring{position:absolute;left:50%;top:50%;width:150%;height:62%;border:2px dashed var(--yellow);border-radius:50%;transform:translate(-50%,-50%) rotate(-18deg);opacity:.85;pointer-events:none}
+
+/* ===== v2026-11-09 · live WhatsApp + Linktree in contact ===== */
+.contact .walink{color:#fff;text-decoration:none;font-family:var(--f-latin);border-bottom:1px dashed rgba(255,255,255,.5)}
+.contact-cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+.contact-cta .btn .ico{color:#fff}
+.pill.on-dark{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#fff}
+.pill.on-dark .ico{color:var(--yellow)}
+footer nav a{margin-inline-start:4px}
