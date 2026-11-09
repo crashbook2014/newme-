@@ -1,6 +1,6 @@
 # LocalBoost website
 
-A static site with no build step. Deploy this folder (`localboost/site/`), or `localboost/localboost-website.zip`, as the site root. The design is the founder's version: map hero, scroll-driven rocket launch, before/after, packages (`#packages`, stage ١), shop-visit section (`#orbit`, stage ٢), FAQ, and contact. **Keep the `#packages` and `#orbit` anchors stable**: the WhatsApp catalog links to them. Prices and wording follow `localboost/01-offer.md` v2026-11-08; visuals follow `localboost/brand/STYLE.md`.
+A static site with no build step. Deploy this folder (`localboost/site/`), or `localboost/localboost-website.zip`, as the site root. The design is the founder's version: map hero, scroll-driven rocket launch, before/after, an animated journey panel (`#journey`: sign → launch → pass the alien → moon, 12 s loop, static final frame for reduced-motion users), packages (`#packages`, stage ١), shop-visit section (`#orbit`, stage ٢), FAQ, and contact. **Keep the `#packages` and `#orbit` anchors stable**: the WhatsApp catalog links to them. Prices and wording follow `localboost/01-offer.md` v2026-11-08; visuals follow `localboost/brand/STYLE.md`.
 
 ```
 index.html            Arabic home (RTL, default at /)
@@ -29,13 +29,12 @@ Own domain later: **Settings → Pages → Custom domain**. Then replace `https:
 
 ## Contact (live)
 
-WhatsApp **+966 55 789 1433**. Buttons open `https://wa.me/966557891433` with the pre-filled free-check request (Arabic on `/`, English on `/en/`). The Linktree `https://linktr.ee/localboost.sa` appears in the contact section and every footer, and as `sameAs` in the structured data.
+WhatsApp **+966 55 789 1433**. Buttons open `https://wa.me/966557891433` with the pre-filled free-check request (Arabic on `/`, English on `/en/`). The Linktree `https://linktr.ee/localboost.sa` appears in the contact section and every footer, and as `sameAs` in the structured data. Hours: every day 8:00 AM – midnight (`openingHours: Mo-Su 08:00-24:00`).
 
 ## Still to fill in
 
 | Where | Text now | Replace with |
 |---|---|---|
-| Home `#contact` | تتأكد قريب / To be confirmed soon | Real contact hours |
 | Packages, Get Found | Launch price 750 … "we confirm availability during the check" | Remove the line when the offer ends |
 | Policies | Deposit % / milestones, Monthly Care cancellation terms | Payment terms `[FOUNDER DECISION]` |
 | Policies | Privacy policy placeholder | A real privacy policy |

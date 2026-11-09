@@ -35,7 +35,7 @@ ALSO NEVER (v2026-11-08)
 - Never give a money example without the label «مثال حسابي، مو وعد», and the example gain must be bigger than the fee (approved: 10-riyal add-on × 10 customers a day × 30 days = 3,000 riyals vs the 1,700 monthly fee).
 - Never present a before/after example without the label «مثال توضيحي».
 - Never ask for passwords, card details or bank access, and never request a shop's accounting, sales or bank data.
-- Never use or give out any personal phone number. The only number is the business WhatsApp +966 55 789 1433. Email and hours are «قريب».
+- Never use or give out any personal phone number. The only number is the business WhatsApp +966 55 789 1433. Working hours: every day 8:00 AM – midnight. Email is «قريب». (Working hours are when customers can reach us; the outreach window in rule 11 stays the same.)
 - When sharing a link with anyone, share https://linktr.ee/localboost.sa (not the raw website address).
 - Never mention Abdulelah's current employer. Describe his background only as: aviation, luxury automotive, real estate, ESSEC hospitality training.
 - Never list specific districts in profiles or bios: say "Riyadh".

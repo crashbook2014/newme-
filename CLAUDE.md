@@ -14,7 +14,8 @@ This repo holds LocalBoost's website (`localboost/site/`, published on GitHub Pa
 - **The link to share (QR codes, brochures, bios, outreach, catalog):** https://linktr.ee/localboost.sa
 - **Official WhatsApp (business):** +966 55 789 1433 · click-to-chat https://wa.me/966557891433
 - **Website:** https://crashbook2014.github.io/newme-/ (it stays hosted here; older hosting links are dead). The Linktree points people to it.
-- **Email, hours:** not decided yet. Write «قريب» / "coming soon".
+- **Working hours:** every day, 8:00 AM – 12:00 midnight (Riyadh time) · «يومياً من ٨ الصبح إلى ١٢ بالليل».
+- **Email:** not decided yet. Write «قريب» / "coming soon".
 
 ## 2. Services and prices (the only prices allowed anywhere)
 | Code | Service | Arabic | Price |
@@ -42,7 +43,7 @@ Not confirmed available in Saudi Arabia. Never write that it's available. Only:
 ## 5. Website (GitHub Pages, `localboost/site/`)
 - Arabic RTL by default at `/`, English at `/en/` (the EN button switches between them; every string exists in both files).
 - Sections: map hero, rocket launch scroll, before/after, packages (`#packages`), shop-visit section (`#orbit`), FAQ, contact. **Keep `#packages` and `#orbit` stable**: the WhatsApp catalog links to them.
-- Contact: WhatsApp +966 55 789 1433 (buttons open https://wa.me/966557891433 with the pre-filled free-check request), Linktree https://linktr.ee/localboost.sa, hours «تتأكد قريب». No other phone number.
+- Contact: WhatsApp +966 55 789 1433 (buttons open https://wa.me/966557891433 with the pre-filled free-check request), Linktree https://linktr.ee/localboost.sa, hours «يومياً من ٨ الصبح إلى ١٢ بالليل» / "Daily, 8:00 AM – 12:00 midnight". No other phone number.
 - Test at 390 px wide (no sideways scroll) before committing.
 
 ## 6. Instruction pack (`localboost/`)

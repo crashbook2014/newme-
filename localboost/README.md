@@ -40,6 +40,5 @@ The operating manual for LocalBoost. Each bot (Grok, Claude, ChatGPT) gets its i
 These are marked `[FOUNDER DECISION]` or «قريب» in the files. Bots must not fill them in themselves.
 
 1. **Business email** (used for first contact and Google Business Profile manager invites)
-2. **Contact hours** (the site shows «تتأكد قريب»)
-3. **Payment terms:** deposit %, payment schedule, and Monthly Care cancellation terms
-4. **Launch offer end date** for the Get Found launch price (750 for the first 2 clients)
+2. **Payment terms:** deposit %, payment schedule, and Monthly Care cancellation terms
+3. **Launch offer end date** for the Get Found launch price (750 for the first 2 clients)

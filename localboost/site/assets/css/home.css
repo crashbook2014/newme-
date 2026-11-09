@@ -247,3 +247,74 @@ footer nav{display:flex;gap:16px}
 .pill.on-dark{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#fff}
 .pill.on-dark .ico{color:var(--yellow)}
 footer nav a{margin-inline-start:4px}
+
+
+/* ===== v2026-11-09 · Journey panel (sign → launch → pass the alien → moon) · 12s loop ===== */
+.journey{padding-block:72px}
+.jcard{max-width:860px;margin:0 auto;border-radius:24px;overflow:hidden;background:#010d1f;box-shadow:0 24px 60px rgba(2,39,84,.22)}
+.jsvg{display:block;width:100%;height:auto}
+.jsvg *{transform-box:fill-box}
+.jsteps{list-style:none;margin:0;padding:12px 14px 16px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:#022754}
+.jsteps li{display:flex;align-items:center;justify-content:center;gap:8px;padding:8px 6px;border-radius:999px;color:#9fb0c7;font-weight:600;font-size:14px;background:rgba(255,255,255,.05);transition:none}
+.jsteps b{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);color:#fff;font-size:12px;flex:none}
+/* final (static) state = what reduced-motion users see */
+.jsteps .js4{background:rgba(234,92,10,.18);color:#fff}.jsteps .js4 b{background:#EA5C0A}
+.jship{transform:translate(522px,62px)}
+.jowner{opacity:0}.jsign{stroke-dasharray:60;stroke-dashoffset:0}
+.jgasp,.jbubble{opacity:0}
+.jflag,.jspark{opacity:1}
+.jspeed{opacity:0}
+@media (prefers-reduced-motion:no-preference){
+  .jship{animation:jship 12s ease-in-out infinite}
+  .jowner{animation:jowner 12s linear infinite}
+  .jrider{animation:jrider 12s linear infinite}
+  .jsign{animation:jsign 12s ease-out infinite}
+  .jspeed{animation:jspeed 12s linear infinite}
+  .jbob{animation:jbob 2.4s ease-in-out infinite}
+  .jwave{animation:jwave .9s ease-in-out infinite;transform-origin:left bottom}
+  .jalien{animation:jalienspin 12s ease-in-out infinite;transform-origin:center}
+  .jeyes{animation:jeyes 12s ease-in-out infinite;transform-origin:center}
+  .jsmile{animation:jsmile 12s linear infinite}
+  .jgasp{animation:jgasp 12s linear infinite}
+  .jcup{animation:jcup 12s ease-in infinite;transform-origin:center}
+  .jsteam{animation:jsteam 1.6s ease-in-out infinite}
+  .jbubble{animation:jbubble 12s ease-out infinite;transform-origin:center bottom}
+  .jflag{animation:jflag 12s ease-out infinite;transform-origin:left bottom}
+  .jspark{animation:jspark 12s ease-out infinite;transform-origin:center}
+  .jglow{animation:jglow 12s ease-in-out infinite;transform-origin:center}
+  .tw{animation:tw 3s ease-in-out infinite}
+  .jsteps li{animation:jstepoff 12s linear infinite}
+  .jsteps .js1{animation-name:js1}.jsteps .js2{animation-name:js2}.jsteps .js3{animation-name:js3}.jsteps .js4{animation-name:js4}
+}
+@keyframes jship{
+  0%,13%{transform:translate(168px,262px) rotate(0)}
+  12.5%{transform:translate(168px,260px) rotate(-3deg)}
+  28%{transform:translate(260px,205px)}
+  42%{transform:translate(372px,148px)}
+  56%{transform:translate(462px,96px)}
+  66%,92%{transform:translate(522px,62px)}
+  97%{transform:translate(522px,62px);opacity:1}
+  99%{opacity:0}100%{transform:translate(168px,262px);opacity:0}
+}
+@keyframes jowner{0%,11%{opacity:1}12.5%,98%{opacity:0}100%{opacity:1}}
+@keyframes jrider{0%,11%{opacity:0}12.5%,97%{opacity:1}99%,100%{opacity:0}}
+@keyframes jsign{0%,2%{stroke-dashoffset:60}10%,96%{stroke-dashoffset:0}100%{stroke-dashoffset:60}}
+@keyframes jspeed{0%,13%{opacity:0}16%,60%{opacity:1}66%,100%{opacity:0}}
+@keyframes jwave{0%,100%{transform:rotate(0)}50%{transform:rotate(-18deg)}}
+@keyframes jbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes jalienspin{0%,40%{transform:translate(372px,150px) rotate(0)}45%{transform:translate(372px,150px) rotate(-26deg)}52%{transform:translate(372px,150px) rotate(14deg)}58%,100%{transform:translate(372px,150px) rotate(0)}}
+@keyframes jeyes{0%,40%{transform:scale(1)}44%,62%{transform:scale(1.45)}70%,100%{transform:scale(1)}}
+@keyframes jsmile{0%,40%{opacity:1}41%,66%{opacity:0}70%,100%{opacity:1}}
+@keyframes jgasp{0%,40%{opacity:0}41%,66%{opacity:1}70%,100%{opacity:0}}
+@keyframes jcup{0%,41%{transform:translate(0,0) rotate(0);opacity:1}55%{transform:translate(26px,-38px) rotate(220deg);opacity:1}64%{transform:translate(40px,-10px) rotate(400deg);opacity:0}96%{opacity:0;transform:translate(0,0)}100%{opacity:1}}
+@keyframes jsteam{0%,100%{opacity:.2}50%{opacity:.8}}
+@keyframes jbubble{0%,43%{opacity:0;transform:scale(.4)}47%{opacity:1;transform:scale(1.08)}50%,64%{opacity:1;transform:scale(1)}68%,100%{opacity:0;transform:scale(.8)}}
+@keyframes jflag{0%,68%{opacity:0;transform:scale(0)}73%{opacity:1;transform:scale(1.15)}76%,96%{opacity:1;transform:scale(1)}99%,100%{opacity:0}}
+@keyframes jspark{0%,70%{opacity:0;transform:scale(.3) rotate(0)}76%{opacity:1;transform:scale(1.15) rotate(20deg)}84%{transform:scale(.9) rotate(35deg)}92%{opacity:1;transform:scale(1.05) rotate(45deg)}99%,100%{opacity:0}}
+@keyframes jglow{0%,66%{opacity:.5;transform:scale(1)}76%,94%{opacity:1;transform:scale(1.25)}100%{opacity:.5;transform:scale(1)}}
+@keyframes tw{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes js1{0%,13%{background:rgba(234,92,10,.18);color:#fff}14%,100%{background:rgba(255,255,255,.05);color:#9fb0c7}}
+@keyframes js2{0%,13%{background:rgba(255,255,255,.05);color:#9fb0c7}14%,40%{background:rgba(234,92,10,.18);color:#fff}41%,100%{background:rgba(255,255,255,.05);color:#9fb0c7}}
+@keyframes js3{0%,40%{background:rgba(255,255,255,.05);color:#9fb0c7}41%,64%{background:rgba(234,92,10,.18);color:#fff}65%,100%{background:rgba(255,255,255,.05);color:#9fb0c7}}
+@keyframes js4{0%,64%{background:rgba(255,255,255,.05);color:#9fb0c7}65%,100%{background:rgba(234,92,10,.18);color:#fff}}
+@media (max-width:860px){.journey{padding-block:56px}.jsteps{grid-template-columns:1fr 1fr}.jsteps li{font-size:13px}}
