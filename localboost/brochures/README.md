@@ -16,10 +16,10 @@ All facts come from `localboost/01-offer.md`. The Stay Current monthly report ex
 ## Rebuild after a change
 
 ```
-python3 localboost/brochures/build.py localboost/brochures/qr-website.svg <out-dir>
+python3 localboost/brochures/build.py localboost/brochures/qr-linktree.svg <out-dir>
 node localboost/brochures/render.js <out-dir>      # needs Playwright; warns if a page overflows
 ```
 
-Then copy the PDFs here. If the website address changes, regenerate `qr-website.svg` (npm package `qrcode`) and update `SITE_URL` in `build.py`.
+Then copy the PDFs here. The QR code and the printed link point to the Linktree **linktr.ee/localboost.sa** (`qr-linktree.svg`, `SITE_URL` in `build.py`). If it ever changes, regenerate the QR with the npm package `qrcode`.
 
-**When the WhatsApp number is live:** add it to the CTA in `build.py` and rebuild.
+The CTA shows the business WhatsApp **+966 55 789 1433** (`WA_TEXT` in `build.py`).

@@ -10,7 +10,8 @@ import sys, pathlib, html
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]          # localboost/
 ASSETS = ROOT / "site" / "assets"
-SITE_URL = "crashbook2014.github.io/newme-"
+SITE_URL = "linktr.ee/localboost.sa"   # the shared link (QR + text); website: crashbook2014.github.io/newme-
+WA_TEXT = 'واتساب: <bdi dir="ltr" class="lat">+966 55 789 1433</bdi>'
 
 qr_svg = pathlib.Path(sys.argv[1]).read_text()
 out = pathlib.Path(sys.argv[2]); out.mkdir(parents=True, exist_ok=True)
@@ -94,12 +95,13 @@ h2 .n{{font:700 9pt Inter;color:#fff;background:var(--orange);border-radius:50%;
 .example td{{padding:.9mm 0;border-bottom:.25mm solid var(--mist)}}
 .example td:last-child{{text-align:left;color:var(--soft)}}
 /* footer CTA */
-.cta{{margin-top:auto;background:var(--navy);color:#fff;padding:7mm 14mm;display:flex;align-items:center;gap:7mm}}
+.cta{{margin-top:auto;background:var(--navy);color:#fff;padding:5mm 14mm;display:flex;align-items:center;gap:7mm}}
 .cta .qr{{background:#fff;padding:2.2mm;border-radius:2.5mm;width:30mm;height:30mm;flex:none}}
 .cta .qr svg{{width:100%;height:100%;display:block}}
 .cta h3{{font-size:15pt;line-height:1.3}}
 .cta p{{color:#c9d5e6;font-size:9.6pt;margin-top:1mm}}
 .cta .url{{font:600 9.6pt Inter;color:var(--yellow);margin-top:1.6mm;display:block;direction:ltr;unicode-bidi:isolate;text-align:right}}
+.cta .wa{{display:block;margin-top:1mm;font-size:10pt;font-weight:700;color:#fff}}
 .cta .slogan{{display:block;margin-top:1.4mm;font-size:9pt;color:#ffd9b3;font-weight:700}}
 .legal{{background:#011430;color:#8fa1bb;font-size:7.6pt;padding:2.6mm 14mm;display:flex;justify-content:space-between}}
 .foot1{{margin-top:auto;padding:4mm 14mm;display:flex;justify-content:space-between;align-items:center;border-top:.3mm solid var(--line);font-size:8.6pt;color:var(--soft)}}
@@ -154,8 +156,8 @@ PAYMENT = ("السعر وجدول الدفع مكتوبين في العرض قب
 def page(body_p1, body_p2, title):
     top = (f'<div class="top"><img src="{LOGO}" alt="LocalBoost"><span class="tag">سهل يلقونك. واضح. وجاهز لزبائنك.</span></div>')
     cta = (f'<div class="cta"><div class="qr">{qr_svg}</div><div><h3>اطلب فحص الخريطة المجاني</h3>'
-           f'<p>امسح الكود: نشوف ملف محلك على خرائط قوقل ونقولك وش ينقصه بالضبط. ٥ دقايق، بدون أي التزام.</p>'
-           f'<span class="url">{SITE_URL}</span><span class="slogan">«وجهتك الأولى قبل ما تطلق صاروخك للنجاح»</span></div></div>'
+           f'<p>امسح الكود لكل روابطنا، أو راسلنا على واتساب. فحص مجاني ٥ دقايق، بدون أي التزام.</p>'
+           f'<span class="url">{SITE_URL}</span><span class="wa">{WA_TEXT}</span><span class="slogan">«وجهتك الأولى قبل ما تطلق صاروخك للنجاح»</span></div></div>'
            f'<div class="legal"><span>LocalBoost · خدمة مستقلة للمحلات في الرياض</span>'
            f'<span>غير تابعين لقوقل أو Meta</span></div>')
     foot1 = '<div class="foot1"><span><b>LocalBoost</b> · سهل يلقونك. واضح. وجاهز لزبائنك.</span><span>قلب الصفحة ←</span></div>'
