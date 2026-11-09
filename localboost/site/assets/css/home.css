@@ -318,3 +318,19 @@ footer nav a{margin-inline-start:4px}
 @keyframes js3{0%,40%{background:rgba(255,255,255,.05);color:#9fb0c7}41%,64%{background:rgba(234,92,10,.18);color:#fff}65%,100%{background:rgba(255,255,255,.05);color:#9fb0c7}}
 @keyframes js4{0%,64%{background:rgba(255,255,255,.05);color:#9fb0c7}65%,100%{background:rgba(234,92,10,.18);color:#fff}}
 @media (max-width:860px){.journey{padding-block:56px}.jsteps{grid-template-columns:1fr 1fr}.jsteps li{font-size:13px}}
+
+/* ===== v2026-11-09b · phone polish ===== */
+/* (3) floating WhatsApp button, phones only */
+.wa-float{display:none}
+@media (max-width:860px){
+  .wa-float{display:grid;place-items:center;position:fixed;z-index:70;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));
+    width:56px;height:56px;border-radius:50%;background:var(--orange);color:#fff;box-shadow:0 10px 26px rgba(234,92,10,.45),0 0 0 4px rgba(255,255,255,.9)}
+  .wa-float .ico{color:#fff;width:28px;height:28px;vertical-align:0}
+  /* (1) launch section: keep step labels on one line and clear of the rocket */
+  .steps .step{white-space:nowrap}
+  .steps .step[data-at=".15"]{right:auto!important;left:31%!important;top:89%!important;text-align:start!important}
+  /* (4) journey: bigger characters, edge-to-edge card */
+  .jcard{margin-inline:-12px;border-radius:18px}
+  .jbig{transform:scale(1.45);transform-origin:center}
+  .jbig-ship{transform:scale(1.3)}
+}
