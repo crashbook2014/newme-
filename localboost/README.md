@@ -3,7 +3,7 @@
 The operating manual for LocalBoost. Each bot (Grok, Claude, ChatGPT) gets its instructions from this folder, and the Google Sheet is the single source of truth for all records.
 
 **Founder:** Abdulelah Alshanqiti, final authority on everything external, financial, or contractual.
-**Current version:** offer sheet v2026-11-08 (5 services: LB-GF 900 · LB-GC 2,200 · LB-SC 299/mo · LB-CHK 3,300 · LB-MC 1,700/mo). Website: https://crashbook2014.github.io/newme-/ · Repo-wide summary: [`../CLAUDE.md`](../CLAUDE.md)
+**Current version:** offer sheet v2026-11-08 (5 services: LB-GF 900 · LB-GC 2,200 · LB-SC 299/mo · LB-CHK 3,300 · LB-MC 1,700/mo). Share link: https://linktr.ee/localboost.sa · WhatsApp: +966 55 789 1433 · Website: https://crashbook2014.github.io/newme-/ · Repo-wide summary: [`../CLAUDE.md`](../CLAUDE.md)
 
 ## How to use this pack
 
@@ -39,8 +39,7 @@ The operating manual for LocalBoost. Each bot (Grok, Claude, ChatGPT) gets its i
 
 These are marked `[FOUNDER DECISION]` or «قريب» in the files. Bots must not fill them in themselves.
 
-1. **Official WhatsApp number** (the site shows «الرقم قريب»)
-2. **Business email** (used for first contact and Google Business Profile manager invites)
-3. **Contact hours** (the site shows «تتأكد قريب»)
-4. **Payment terms:** deposit %, payment schedule, and Monthly Care cancellation terms
-5. **Launch offer end date** for the Get Found launch price (750 for the first 2 clients)
+1. **Business email** (used for first contact and Google Business Profile manager invites)
+2. **Contact hours** (the site shows «تتأكد قريب»)
+3. **Payment terms:** deposit %, payment schedule, and Monthly Care cancellation terms
+4. **Launch offer end date** for the Get Found launch price (750 for the first 2 clients)

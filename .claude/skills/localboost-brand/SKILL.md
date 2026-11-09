@@ -17,8 +17,8 @@ description: >-
 - **Slogan:** «وجهتك الأولى قبل ما تطلق صاروخك للنجاح»
 - **Two sides of one offer:** ١ «خلّهم يلقونك ويختارونك» (Maps profile + simple website) · ٢ «نشوف محلك بعين زبونك» (secret-shopper visits, shop appearance, visible money leaks, light SOPs).
 - Not affiliated with Google or Meta. Clients own all their accounts.
-- **Website (only official link):** https://crashbook2014.github.io/newme-/
-- **WhatsApp number, email, hours:** «قريب».
+- **Link to share everywhere:** https://linktr.ee/localboost.sa · **WhatsApp (business):** +966 55 789 1433 (https://wa.me/966557891433) · **Website:** https://crashbook2014.github.io/newme-/
+- **Email, hours:** «قريب».
 
 ## Prices (the only ones allowed)
 LB-GF Get Found 900 (launch 750 for the first 2 clients) · LB-GC Get Chosen 2,200 + domain/hosting at cost · LB-SC Stay Current 299/month (add-on only) · LB-CHK Shop Check 3,300 (one visit) · LB-MC Monthly Care 1,700/month.

@@ -10,8 +10,10 @@ This version replaces every older price and service list (source: Abdulelah's ma
 - **Tagline:** «سهل يلقونك. واضح. وجاهز لزبائنك.» / "Findable. Clear. Ready for customers."
 - **Slogan:** «وجهتك الأولى قبل ما تطلق صاروخك للنجاح»
 - Not affiliated with Google or Meta. Clients own all their accounts.
-- **Website (the only official link):** https://crashbook2014.github.io/newme-/
-- **Official WhatsApp number, email, hours:** «قريب» / "coming soon".
+- **The link to share (QR codes, brochures, bios, outreach, catalog):** https://linktr.ee/localboost.sa
+- **Official WhatsApp (business):** +966 55 789 1433 · click-to-chat https://wa.me/966557891433
+- **Website:** https://crashbook2014.github.io/newme-/ (it stays hosted here; older hosting links are dead). The Linktree points people to it.
+- **Email, hours:** not decided yet. Write «قريب» / "coming soon".
 
 ## Two sides of one offer
 
@@ -76,7 +78,7 @@ Earlier Shop Check / Monthly Care launch prices, commitment discounts and the ba
 - **Money examples** are labelled «مثال حسابي، مو وعد» and show a gain bigger than the fee. Approved example: a 10-riyal add-on × 10 customers a day × 30 days = 3,000 riyals, vs the 1,700 monthly fee.
 - Never ask for passwords, card details or bank access.
 - No message goes to any shop without Abdulelah approving the exact text.
-- No personal phone numbers. The official WhatsApp number isn't decided yet («قريب»).
+- The only phone number we ever give is the business WhatsApp +966 55 789 1433. No personal numbers.
 - No VAT is charged currently.
 
 ## Payment terms

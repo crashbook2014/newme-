@@ -11,8 +11,10 @@ This repo holds LocalBoost's website (`localboost/site/`, published on GitHub Pa
 - **Slogan:** «وجهتك الأولى قبل ما تطلق صاروخك للنجاح»
 - **Two sides of one offer:** ١ «خلّهم يلقونك ويختارونك»: Google Maps profile + simple website. ٢ «نشوف محلك بعين زبونك»: secret-shopper visits, shop appearance, visible money leaks, light SOPs.
 - Not affiliated with Google or Meta. Clients own all their accounts.
-- **Website (the only official link):** https://crashbook2014.github.io/newme-/ (older hosting links are dead).
-- **Official WhatsApp number, email, hours:** not decided yet. Write «قريب» / "coming soon".
+- **The link to share (QR codes, brochures, bios, outreach, catalog):** https://linktr.ee/localboost.sa
+- **Official WhatsApp (business):** +966 55 789 1433 · click-to-chat https://wa.me/966557891433
+- **Website:** https://crashbook2014.github.io/newme-/ (it stays hosted here; older hosting links are dead). The Linktree points people to it.
+- **Email, hours:** not decided yet. Write «قريب» / "coming soon".
 
 ## 2. Services and prices (the only prices allowed anywhere)
 | Code | Service | Arabic | Price |
@@ -40,7 +42,7 @@ Not confirmed available in Saudi Arabia. Never write that it's available. Only:
 ## 5. Website (GitHub Pages, `localboost/site/`)
 - Arabic RTL by default at `/`, English at `/en/` (the EN button switches between them; every string exists in both files).
 - Sections: map hero, rocket launch scroll, before/after, packages (`#packages`), shop-visit section (`#orbit`), FAQ, contact. **Keep `#packages` and `#orbit` stable**: the WhatsApp catalog links to them.
-- Contact: WhatsApp «الرقم قريب», hours «تتأكد قريب». No personal number.
+- Contact: WhatsApp +966 55 789 1433 (buttons open https://wa.me/966557891433 with the pre-filled free-check request), Linktree https://linktr.ee/localboost.sa, hours «تتأكد قريب». No other phone number.
 - Test at 390 px wide (no sideways scroll) before committing.
 
 ## 6. Instruction pack (`localboost/`)
