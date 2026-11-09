@@ -239,3 +239,11 @@ footer nav{display:flex;gap:16px}
 .pico.on-dark .ico{color:var(--yellow)}
 .search .ico{color:var(--soft)}
 .moon .ring{position:absolute;left:50%;top:50%;width:150%;height:62%;border:2px dashed var(--yellow);border-radius:50%;transform:translate(-50%,-50%) rotate(-18deg);opacity:.85;pointer-events:none}
+
+/* ===== v2026-11-09 · live WhatsApp + Linktree in contact ===== */
+.contact .walink{color:#fff;text-decoration:none;font-family:var(--f-latin);border-bottom:1px dashed rgba(255,255,255,.5)}
+.contact-cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+.contact-cta .btn .ico{color:#fff}
+.pill.on-dark{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#fff}
+.pill.on-dark .ico{color:var(--yellow)}
+footer nav a{margin-inline-start:4px}

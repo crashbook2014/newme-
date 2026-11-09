@@ -27,11 +27,14 @@ One-time setup: on GitHub, open the repo's **Settings → Pages**, set **Source*
 
 Own domain later: **Settings → Pages → Custom domain**. Then replace `https://crashbook2014.github.io/newme-` with your domain in the four HTML files (canonical, hreflang, og:image).
 
+## Contact (live)
+
+WhatsApp **+966 55 789 1433**. Buttons open `https://wa.me/966557891433` with the pre-filled free-check request (Arabic on `/`, English on `/en/`). The Linktree `https://linktr.ee/localboost.sa` appears in the contact section and every footer, and as `sameAs` in the structured data.
+
 ## Still to fill in
 
 | Where | Text now | Replace with |
 |---|---|---|
-| Home `#contact` (AR + EN) | الرقم قريب / Number coming soon | WhatsApp number, as a `https://wa.me/966…` link |
 | Home `#contact` | تتأكد قريب / To be confirmed soon | Real contact hours |
 | Packages, Get Found | Launch price 750 … "we confirm availability during the check" | Remove the line when the offer ends |
 | Policies | Deposit % / milestones, Monthly Care cancellation terms | Payment terms `[FOUNDER DECISION]` |
