@@ -59,7 +59,7 @@ Every first-contact message points the prospect to an opt-in route:
 ## WhatsApp setup — business number +966 55 789 1433 (live 9 Nov 2026)
 
 - [x] A separate WhatsApp Business number for LocalBoost, not the founder's personal number: **+966 55 789 1433** (wa.me/966557891433)
-- [ ] A business profile on that number: name, description, link https://linktr.ee/localboost.sa, hours `[FOUNDER DECISION]`
+- [ ] A business profile on that number: name, description, link https://linktr.ee/localboost.sa, hours every day 8:00 AM – 12:00 midnight
 - [ ] Quick replies saved from the FAQ table in `01-offer.md`
 - [ ] A greeting message that names LocalBoost and explains how to opt out
 - [ ] Labels: `Lead`, `Opted-in`, `Customer`, `Do not contact`
