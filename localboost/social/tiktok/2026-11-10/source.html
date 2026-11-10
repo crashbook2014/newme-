@@ -1,0 +1,170 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Readex;src:url(../../../site/assets/fonts/readex-pro-arabic-700-normal.woff2);font-weight:700}
+@font-face{font-family:Readex;src:url(../../../site/assets/fonts/readex-pro-latin-700-normal.woff2);font-weight:700;unicode-range:U+0000-00FF}
+@font-face{font-family:Readex;src:url(../../../site/assets/fonts/readex-pro-arabic-500-normal.woff2);font-weight:500}
+@font-face{font-family:Plex;src:url(../../../site/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2);font-weight:400}
+@font-face{font-family:Plex;src:url(../../../site/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2);font-weight:600}
+@font-face{font-family:Plex;src:url(../../../site/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2);font-weight:700}
+@font-face{font-family:Plex;src:url(../../../site/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2);font-weight:600;unicode-range:U+0000-00FF}
+@font-face{font-family:Inter;src:url(../../../site/assets/fonts/inter-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:Inter;src:url(../../../site/assets/fonts/inter-latin-600-normal.woff2);font-weight:600}
+:root{--navy:#022754;--orange:#EA5C0A;--amber:#F6880F;--yellow:#FFD332}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333}
+.s{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:Plex;color:#fff;
+ background:radial-gradient(1100px 520px at 50% 108%,rgba(234,92,10,.55),rgba(246,136,15,.18) 45%,transparent 70%),linear-gradient(180deg,#010d1f 0%,#021a3c 55%,#022754 100%);margin-bottom:20px}
+.stars{position:absolute;inset:0}
+.top{position:absolute;top:84px;left:72px;right:72px;height:96px;display:flex;align-items:center;justify-content:space-between}
+.badge{background:#fff;border-radius:26px;padding:20px 30px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.badge img{height:52px;display:block}
+.code{font-family:Inter;font-weight:700;font-size:26px;letter-spacing:.14em;color:#c9d3e0;border:2px solid rgba(201,211,224,.45);border-radius:999px;padding:14px 24px;direction:ltr}
+.moon{position:absolute}
+.moon .disc{position:absolute;inset:0;border-radius:50%;
+ background:radial-gradient(circle at 35% 30%,#ffffff 0%,#e9edf3 35%,#c3ccd8 75%,#9eabbc 100%);
+ box-shadow:0 0 80px 20px rgba(220,230,245,.35),0 0 200px 60px rgba(200,215,240,.15)}
+.moon .cr{position:absolute;border-radius:50%;background:rgba(140,155,175,.35)}
+.moon .ring{position:absolute;border:5px dashed var(--yellow);border-radius:50%;transform:rotate(-14deg)}
+.moon img{position:absolute}
+.wrap{position:absolute;left:72px;right:72px}
+.kick{display:inline-block;font-family:Readex;font-weight:500;font-size:32px;color:var(--navy);background:var(--yellow);border-radius:999px;padding:10px 28px}
+h1{font-family:Readex;font-weight:700;font-size:92px;line-height:1.22;margin-top:30px}
+h1 em{font-style:normal;color:var(--amber)}
+h2{font-family:Readex;font-weight:700;font-size:70px;line-height:1.25}
+h2 em{font-style:normal;color:var(--amber)}
+.sub{font-size:42px;line-height:1.6;color:#dbe3ee;margin-top:28px}
+.num{display:inline-grid;place-items:center;width:104px;height:104px;border-radius:50%;background:var(--orange);font-family:Readex;font-weight:700;font-size:58px;box-shadow:0 0 0 8px rgba(234,92,10,.25);margin-bottom:28px}
+.why{font-size:40px;line-height:1.6;color:#dbe3ee;margin-top:22px}
+.card{background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.14);border-radius:36px;padding:34px 40px;margin-top:36px}
+.card h3{font-family:Readex;font-weight:700;font-size:38px;color:var(--yellow);margin-bottom:18px;display:flex;align-items:center;gap:14px}
+.li{display:flex;gap:20px;font-size:37px;line-height:1.5;margin:14px 0;align-items:flex-start}
+.ck{flex:none;width:44px;height:44px;margin-top:8px;border-radius:50%;background:rgba(255,211,50,.16);display:grid;place-items:center}
+.ck svg{width:26px;height:26px}
+.no{flex:none;width:44px;height:44px;margin-top:8px;border-radius:50%;background:rgba(234,92,10,.22);display:grid;place-items:center}
+.tip{margin-top:34px;border-right:8px solid var(--orange);padding:6px 30px 6px 0;font-size:37px;line-height:1.55;color:#fff}
+.tip b{color:var(--amber);font-family:Readex;font-weight:700}
+.foot{position:absolute;left:72px;right:72px;top:1556px;display:flex;justify-content:space-between;align-items:center;font-size:28px;color:#aab8cc}
+.pg{font-family:Inter;font-weight:700;color:#fff;direction:ltr;font-size:30px}
+.chips{display:flex;flex-wrap:wrap;gap:18px;margin-top:44px}
+.chip{font-family:Readex;font-weight:500;font-size:36px;border:2px solid rgba(255,255,255,.3);border-radius:999px;padding:14px 30px}
+.chip span{color:var(--yellow);margin-left:10px}
+.swipe{margin-top:56px;font-family:Readex;font-weight:700;font-size:40px;color:var(--yellow);display:flex;align-items:center;gap:16px}
+.ex{background:#fff;color:var(--navy);border-radius:30px;padding:28px 34px;margin-top:30px;font-size:36px;line-height:1.55;position:relative}
+.ex .lbl{position:absolute;top:-22px;right:30px;background:var(--navy);color:#fff;font-size:26px;border-radius:999px;padding:4px 20px;border:2px solid #fff}
+.steps{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.st{display:flex;gap:20px;align-items:center;font-size:37px}
+.st i{font-style:normal;flex:none;width:56px;height:56px;border-radius:50%;border:3px solid var(--yellow);color:var(--yellow);display:grid;place-items:center;font-family:Readex;font-weight:700;font-size:32px}
+.cta{margin-top:40px;background:var(--orange);border-radius:30px;padding:30px 36px;box-shadow:0 14px 40px rgba(234,92,10,.45)}
+.cta b{display:block;font-family:Readex;font-weight:700;font-size:44px}
+.cta span{font-size:33px;color:#ffe9dc}
+.avoid{font-size:33px;color:#c9d3e0;margin-top:26px;line-height:1.55}
+.avoid b{color:#ffb38a}
+</style></head><body>
+
+<!-- ======= 1 COVER ======= -->
+<section class="s" id="s1">
+ <svg class="stars" data-c="1"></svg>
+ <div class="top"><div class="badge"><img src="../../../site/assets/logo-large.png"></div><div class="code">LB-GF · STAGE 1</div></div>
+ <div class="moon" style="left:340px;top:290px;width:400px;height:400px">
+  <div class="ring" style="left:-80px;right:-80px;top:120px;bottom:120px"></div>
+  <div class="disc"></div>
+  <div class="cr" style="left:90px;top:240px;width:66px;height:66px"></div>
+  <div class="cr" style="left:260px;top:270px;width:40px;height:40px"></div>
+  <div class="cr" style="left:240px;top:120px;width:28px;height:28px"></div>
+  <img src="../../../site/assets/favicon.png" style="left:110px;top:-110px;width:200px;transform:rotate(-8deg);filter:drop-shadow(0 0 30px rgba(246,136,15,.6))">
+ </div>
+ <div class="wrap" style="top:770px">
+  <span class="kick">نصيحة اليوم · ٣ أشياء</span>
+  <h1>زبونك شاف محلك… <em>قبل ما يشوفه</em></h1>
+  <p class="sub">قبل ما يدخل، فتح ملفك على قوقل ماب وقارنك باللي جنبك. هذي الثلاثة اللي يحكم عليها، وتقدر تصلحها <b style="color:#fff">اليوم بنفسك ومجاناً</b>.</p>
+  <div class="chips"><div class="chip"><span>١</span>الصور</div><div class="chip"><span>٢</span>الساعات</div><div class="chip"><span>٣</span>ردودك على التقييمات</div></div>
+  <div class="swipe">اسحب
+   <svg width="56" height="30" viewBox="0 0 56 30" fill="none" stroke="#FFD332" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M52 15H6M18 3 6 15l12 12"/></svg></div>
+ </div>
+ <div class="foot"><span>مستقلين · مو تابعين لقوقل · حساباتك باسمك</span><span class="pg">1 / 4</span></div>
+</section>
+
+<!-- ======= 2 PHOTOS ======= -->
+<section class="s" id="s2">
+ <svg class="stars" data-c="2"></svg>
+ <div class="top"><div class="badge"><img src="../../../site/assets/logo-large.png"></div><div class="code">LB-GF · STAGE 1</div></div>
+ <div class="moon" style="left:60px;top:240px;width:150px;height:150px">
+  <div class="ring" style="left:-34px;right:-34px;top:46px;bottom:46px;border-width:3px"></div><div class="disc"></div>
+  <img src="../../../site/assets/favicon.png" style="left:40px;top:-46px;width:80px">
+ </div>
+ <div class="wrap" style="top:250px">
+  <div class="num">١</div>
+  <h2>أول ٣ صور<br>= <em>واجهة محلك الجديدة</em></h2>
+  <p class="why">الزبون غالباً ما يفتح كل الألبوم. أول اللي يشوفه هو اللي يحكم عليه، حتى لو محلك أحلى من الصور.</p>
+  <div class="card"><h3>سوّها اليوم</h3>
+   <div class="li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD332" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span>الواجهة في النهار، من الرصيف المقابل، واللوحة مقروءة</span></div>
+   <div class="li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD332" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span>الداخل وهو مرتّب ومضاء، قبل وقت الزحمة</span></div>
+   <div class="li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD332" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span>أشهر منتج أو خدمة عندك، قريب وواضح</span></div>
+  </div>
+  <p class="avoid"><b>تجنّب:</b> صور مظلمة · وجوه زبائن بدون إذن · الشعار بدل صورة حقيقية</p>
+  <div class="tip"><b>نصيحة زيادة:</b> حدّث صورك كل شهر. الصورة القديمة تقول للزبون: «هالمحل محد يتابعه».</div>
+ </div>
+ <div class="foot"><span>مستقلين · مو تابعين لقوقل · حساباتك باسمك</span><span class="pg">2 / 4</span></div>
+</section>
+
+<!-- ======= 3 HOURS ======= -->
+<section class="s" id="s3">
+ <svg class="stars" data-c="3"></svg>
+ <div class="top"><div class="badge"><img src="../../../site/assets/logo-large.png"></div><div class="code">LB-GF · STAGE 1</div></div>
+ <div class="moon" style="left:60px;top:240px;width:150px;height:150px">
+  <div class="ring" style="left:-34px;right:-34px;top:46px;bottom:46px;border-width:3px"></div><div class="disc"></div>
+  <img src="../../../site/assets/favicon.png" style="left:40px;top:-46px;width:80px">
+ </div>
+ <div class="wrap" style="top:250px">
+  <div class="num">٢</div>
+  <h2>ساعات غلط<br>= <em>زبون تخسره مرتين</em></h2>
+  <p class="why">مرة لما يوصل ويلقاه مسكّر، ومرة لما يكتب تقييم عن المشوار اللي راح عليه.</p>
+  <div class="card"><h3>سوّها اليوم</h3>
+   <div class="li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD332" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span>راجع ساعات الأسبوع يوم يوم، خصوصاً الجمعة</span></div>
+   <div class="li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD332" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span>أضف «ساعات خاصة» لرمضان والعيد واليوم الوطني قبلها بأسبوع</span></div>
+   <div class="li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD332" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span>سكّرت فجأة؟ عدّلها من جوالك في دقيقة، قبل ما يتحرك الزبون</span></div>
+  </div>
+  <p class="avoid"><b>تجنّب:</b> «مفتوح ٢٤ ساعة» وأنت مو كذا · ساعات تختلف بين قوقل واللوحة والانستقرام</p>
+  <div class="tip"><b>اختبار سريع:</b> اسأل صديق يدوّر محلك الحين ويقولك وش مكتوب. إذا تفاجأت، زبونك بيتفاجأ قبلك.</div>
+ </div>
+ <div class="foot"><span>مستقلين · مو تابعين لقوقل · حساباتك باسمك</span><span class="pg">3 / 4</span></div>
+</section>
+
+<!-- ======= 4 REVIEWS + CTA ======= -->
+<section class="s" id="s4">
+ <svg class="stars" data-c="4"></svg>
+ <div class="top"><div class="badge"><img src="../../../site/assets/logo-large.png"></div><div class="code">LB-GF · STAGE 1</div></div>
+ <div class="moon" style="left:60px;top:240px;width:150px;height:150px">
+  <div class="ring" style="left:-34px;right:-34px;top:46px;bottom:46px;border-width:3px"></div><div class="disc"></div>
+  <img src="../../../site/assets/favicon.png" style="left:40px;top:-46px;width:80px">
+ </div>
+ <div class="wrap" style="top:250px">
+  <div class="num">٣</div>
+  <h2>ردّك على التقييم<br><em>يقراه الزبون الجاي</em></h2>
+  <p class="why">صاحب التقييم قال كلمته. ردّك يوصل للي لسى يقارن بينك وبين غيرك.</p>
+  <div class="steps">
+   <div class="st"><i>١</i>اشكره وسمِّ الخدمة اللي أخذها</div>
+   <div class="st"><i>٢</i>وضّح أو اعتذر، وقل وش غيّرت</div>
+   <div class="st"><i>٣</i>ادعه يرجع، بدون مبالغة</div>
+  </div>
+  <div class="ex" style="margin-top:46px"><span class="lbl">مثال توضيحي</span>«شكراً على ملاحظتك عن الانتظار يوم الخميس. أضفنا موظف وقت الذروة، ونتشرف بزيارتك الجاية.»</div>
+  <p class="avoid"><b>تجنّب:</b> الجدال · نفس الرد للكل · خصم مقابل تقييم</p>
+  <div class="cta"><b>تبي نشيّك على الثلاثة في محلك؟</b><span>فحص مجاني ٥ دقايق · الرابط في البايو</span></div>
+ </div>
+ <div class="foot"><span>مستقلين · مو تابعين لقوقل · حساباتك باسمك</span><span class="pg">4 / 4</span></div>
+</section>
+
+<script>
+// tiny far stars + a hidden constellation (rocket outline) per slide
+function rnd(s){return()=>{s=(s*9301+49297)%233280;return s/233280}}
+document.querySelectorAll('svg.stars').forEach(svg=>{
+ const r=rnd(+svg.dataset.c*77+5);svg.setAttribute('viewBox','0 0 1080 1920');let h='';
+ for(let i=0;i<70;i++){const x=r()*1080,y=r()*1500,o=.25+r()*.6,s=.8+r()*2;h+=`<circle cx="${x}" cy="${y}" r="${s}" fill="#fff" opacity="${o}"/>`}
+ // constellation: a small rocket, faint, in a quiet corner
+ const ox=150, oy=+svg.dataset.c===1?330:1730;
+ const P=[[0,-70],[22,-30],[22,30],[44,58],[0,40],[-44,58],[-22,30],[-22,-30]].map(([x,y])=>[ox+x,oy+y]);
+ h+=`<polyline points="${P.map(p=>p.join(',')).join(' ')} ${P[0].join(',')}" fill="none" stroke="#c9d3e0" stroke-width="1.5" stroke-dasharray="3 7" opacity=".35"/>`;
+ P.forEach(p=>h+=`<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#fff" opacity=".7"/>`);
+ svg.innerHTML=h;});
+</script>
+</body></html>
