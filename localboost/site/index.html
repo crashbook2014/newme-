@@ -55,9 +55,6 @@
     <path d="M-50 560 C 300 470, 640 640, 1330 430" stroke="#ffd9a8" stroke-width="22" fill="none"/>
     <rect x="80" y="110" width="220" height="140" rx="20" fill="#d7ead3"/>
     <rect x="900" y="590" width="260" height="150" rx="20" fill="#d7ead3"/>
-    <text x="150" y="700" font-family="IBM Plex Sans Arabic" font-size="16" fill="#8a9bb0">حي النرجس</text>
-    <text x="1010" y="80" font-family="IBM Plex Sans Arabic" font-size="16" fill="#8a9bb0">حي العارض</text>
-    <text x="1030" y="410" font-family="IBM Plex Sans Arabic" font-size="16" fill="#8a9bb0">طريق الملك سلمان</text>
   </svg>
   <span class="pin" style="top:22%;left:14%"></span><span class="pin" style="top:70%;left:44%"></span><span class="pin" style="top:18%;left:48%"></span><span class="pin" style="top:84%;left:10%"></span>
   <div class="wrap hero-grid">
@@ -71,6 +68,7 @@
         <a class="pill" href="#packages" data-i="forkA"><svg class="ico sm" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg> محلي ما يطلع في الخريطة</a>
         <a class="pill" href="#orbit" data-i="forkB"><svg class="ico sm" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1.5-2 4-2 6 2 0 4.5-.5 6-2"/><path d="M9 15 6 12l3-6c2.5-3.5 6.5-4 9-4 0 2.5-.5 6.5-4 9l-6 3z"/><circle cx="15" cy="9" r="1.6"/></svg> محلي ظاهر، أبي زباين يرجعون</a>
       </div>
+      <p class="hero-note" data-i="hnote">فحص مجاني · النتيجة توصلك مكتوبة خلال اليوم</p>
     </div>
     <div class="shop" aria-hidden="true">
       <div class="listing">
@@ -85,6 +83,7 @@
     </div>
   </div>
 </section>
+<div class="trust" role="list"><span role="listitem">وثيقة عمل حر <span class="lat">FL-154321011</span></span><span role="listitem">حساباتك تبقى باسمك</span><span role="listitem">ما نطلب كلمات مرور</span><span role="listitem">بدون ضريبة · أسعار مكتوبة</span></div>
 
 <!-- 2 · Launch -->
 <section class="launch" id="launch" aria-labelledby="h2l">
@@ -232,7 +231,7 @@
 <!-- 4 · Packages -->
 <section class="block pk-sec" id="packages" aria-labelledby="h2p">
   <div class="wrap">
-    <div class="stage-row"><span class="stage-tag"><b>١</b>الانطلاقة</span><span class="stage-sub">خلّهم يلقونك ويختارونك</span></div>
+    <div class="stage-row"><span class="stage-tag"><b>١</b>الظهور</span><span class="stage-sub">خلّهم يلقونك ويختارونك</span></div>
     <div class="center"><h2 id="h2p" data-i="p0">اختار اللي يناسب محلك</h2><p data-i="p00">أسعار واضحة، بدون ضريبة، والحسابات كلها باسمك.</p></div>
     <div class="pk">
       <div class="pcard">
@@ -241,6 +240,7 @@
         <div class="price lat">SAR 900</div>
         <span class="launchtag" data-i="g1l">سعر الإطلاق 750 لأول عميلين — نأكد لك توفره في الفحص</span>
         <ul><li data-i="g1a">ملف قوقل كامل: التصنيف، الدبوس، الخدمات</li><li data-i="g1b">ساعات تشمل رمضان والعيد</li><li data-i="g1c">وصف عربي واضح وترتيب الصور</li><li data-i="g1d">أزرار واتساب واتصال والاتجاهات + كرت QR للتقييمات</li><li data-i="g1e">مسودات ردود على التقييمات لموافقتك</li></ul>
+        <p class="got" data-i="got1">تستلم: ملف جاهز + كرت QR · خلال ٥ أيام عمل · جولتين تعديل</p>
         <a class="btn" href="https://wa.me/966557891433?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D8%A7%D9%84%D9%81%D8%AD%D8%B5%20%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%86%D9%8A%20%D9%84%D9%85%D8%AD%D9%84%D9%8A%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AE%D8%B1%D9%8A%D8%B7%D8%A9" target="_blank" rel="noopener" data-i="start">ابدأ بالفحص المجاني</a>
       </div>
       <div class="pcard hl">
@@ -250,6 +250,7 @@
         <div class="price lat">SAR 2,200</div>
         <span class="muted" style="font-size:13px" data-i="g2n">الدومين والاستضافة بالتكلفة</span>
         <ul><li data-i="g2a">كل اللي في «خلّهم يلقونك»</li><li data-i="g2b">موقع جوال بسيط: الرئيسية، عنّا، الخدمات/المنيو بالأسعار، الخريطة</li><li data-i="g2c">واتساب + اتصال + خريطة</li><li data-i="g2d">عربي، وثنائي اللغة إذا اتفقنا</li></ul>
+        <p class="got" data-i="got2">تستلم: ملف + موقع باسمك · خلال ١٠ أيام عمل · جولتين تعديل</p>
         <a class="btn" href="https://wa.me/966557891433?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D8%A7%D9%84%D9%81%D8%AD%D8%B5%20%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%86%D9%8A%20%D9%84%D9%85%D8%AD%D9%84%D9%8A%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AE%D8%B1%D9%8A%D8%B7%D8%A9" target="_blank" rel="noopener" data-i="start2">ابدأ بالفحص المجاني</a>
       </div>
     </div>
@@ -334,6 +335,7 @@
 
 <!-- 6 · Contact -->
 <section class="block final" id="contact" aria-labelledby="h2x">
+  <div class="final-art" aria-hidden="true"><span class="fglow"></span><span class="fmoon"></span><span class="fring"></span><span class="frk"></span></div>
   <div class="wrap">
     <h2 id="h2x" data-i="x0">خلنا نشوف ملفك على الخريطة</h2>
     <p data-i="x1">فحص مجاني ٥ دقايق، ونقولك وش ناقص بالضبط.</p>
@@ -343,6 +345,7 @@
       <div><small data-i="x6">المنطقة</small><b data-i="x7">الرياض</b></div>
     </div>
     <div class="contact-cta"><a class="btn" href="https://wa.me/966557891433?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D8%A7%D9%84%D9%81%D8%AD%D8%B5%20%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%86%D9%8A%20%D9%84%D9%85%D8%AD%D9%84%D9%8A%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AE%D8%B1%D9%8A%D8%B7%D8%A9" target="_blank" rel="noopener"><svg class="ico sm" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg> <span data-i="x8">راسلنا على واتساب</span></a><a class="pill on-dark" href="https://linktr.ee/localboost.sa" target="_blank" rel="noopener"><svg class="ico sm" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg> <span data-i="x9">كل روابطنا</span></a></div>
+    <p class="final-trust" data-i="ftrust">وثيقة عمل حر <span class="lat">FL-154321011</span> · مستقلين · حساباتك تبقى باسمك</p>
   </div>
 </section>
 </main>
