@@ -21,11 +21,11 @@ All paths are relative, so the site works at a domain root, in a subfolder (GitH
 
 ## Hosting on GitHub Pages
 
-Address: **https://crashbook2014.github.io/newme-/**. The workflow `.github/workflows/pages.yml` publishes this folder on every push to `main` that changes it. **Deploy only when Abdulelah says deploy**, which means don't merge to `main` without that instruction.
+Address: **https://localboostsa.store/** (www.localboostsa.store redirects here). DNS is at Cloudflare: four A records and four AAAA records on `@` pointing to GitHub Pages, plus a `www` CNAME to `crashbook2014.github.io`, all set to **DNS only** (grey cloud) so GitHub can issue the HTTPS certificate. The `CNAME` file in this folder tells GitHub Pages the custom domain. The workflow `.github/workflows/pages.yml` publishes this folder on every push to `main` that changes it. **Deploy only when Abdulelah says deploy**, which means don't merge to `main` without that instruction.
 
 One-time setup: on GitHub, open the repo's **Settings → Pages**, set **Source** to **GitHub Actions**, then open **Actions → "Deploy LocalBoost site to GitHub Pages" → Run workflow**.
 
-Own domain later: **Settings → Pages → Custom domain**. Then replace `https://crashbook2014.github.io/newme-` with your domain in the four HTML files (canonical, hreflang, og:image).
+The custom domain is set in **Settings → Pages → Custom domain** and verified under your account's **Settings → Pages**. `robots.txt` and `sitemap.xml` point to the new address.
 
 ## Contact (live)
 
