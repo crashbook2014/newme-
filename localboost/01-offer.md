@@ -12,7 +12,7 @@ This version replaces every older price and service list (source: Abdulelah's ma
 - Not affiliated with Google or Meta. Clients own all their accounts.
 - **The link to share (QR codes, brochures, bios, outreach, catalog):** https://linktr.ee/localboost.sa
 - **Official WhatsApp (business):** +966 55 789 1433 · click-to-chat https://wa.me/966557891433
-- **Website:** https://crashbook2014.github.io/newme-/ (it stays hosted here; older hosting links are dead). The Linktree points people to it.
+- **Website:** https://localboostsa.store/ (GitHub Pages with a custom domain; the old crashbook2014.github.io/newme-/ address forwards here). The Linktree points people to it.
 - **Working hours:** every day, 8:00 AM – 12:00 midnight (Riyadh time) · «يومياً من ٨ الصبح إلى ١٢ بالليل».
 - **Email:** not decided yet. Write «قريب» / "coming soon".
 

@@ -17,7 +17,7 @@ description: >-
 - **Slogan:** «وجهتك الأولى قبل ما تطلق صاروخك للنجاح»
 - **Two sides of one offer:** ١ «خلّهم يلقونك ويختارونك» (Maps profile + simple website) · ٢ «نشوف محلك بعين زبونك» (secret-shopper visits, shop appearance, visible money leaks, light SOPs).
 - Not affiliated with Google or Meta. Clients own all their accounts.
-- **Link to share everywhere:** https://linktr.ee/localboost.sa · **WhatsApp (business):** +966 55 789 1433 (https://wa.me/966557891433) · **Website:** https://crashbook2014.github.io/newme-/
+- **Link to share everywhere:** https://linktr.ee/localboost.sa · **WhatsApp (business):** +966 55 789 1433 (https://wa.me/966557891433) · **Website:** https://localboostsa.store/
 - **Hours:** every day 8:00 AM – midnight «يومياً من ٨ الصبح إلى ١٢ بالليل» · **Email:** «قريب».
 
 ## Prices (the only ones allowed)

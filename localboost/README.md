@@ -3,7 +3,7 @@
 The operating manual for LocalBoost. Each bot (Grok, Claude, ChatGPT) gets its instructions from this folder, and the Google Sheet is the single source of truth for all records.
 
 **Founder:** Abdulelah Alshanqiti, final authority on everything external, financial, or contractual.
-**Current version:** offer sheet v2026-11-08 (5 services: LB-GF 900 · LB-GC 2,200 · LB-SC 299/mo · LB-CHK 3,300 · LB-MC 1,700/mo). Share link: https://linktr.ee/localboost.sa · WhatsApp: +966 55 789 1433 · Website: https://crashbook2014.github.io/newme-/ · Repo-wide summary: [`../CLAUDE.md`](../CLAUDE.md)
+**Current version:** offer sheet v2026-11-08 (5 services: LB-GF 900 · LB-GC 2,200 · LB-SC 299/mo · LB-CHK 3,300 · LB-MC 1,700/mo). Share link: https://linktr.ee/localboost.sa · WhatsApp: +966 55 789 1433 · Website: https://localboostsa.store/ · Repo-wide summary: [`../CLAUDE.md`](../CLAUDE.md)
 
 ## How to use this pack
 
