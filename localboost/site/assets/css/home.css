@@ -357,3 +357,10 @@ footer nav a{margin-inline-start:4px}
 .final-trust{margin-top:18px!important;font-size:13px!important;font-weight:600;color:var(--yellow);opacity:1!important}
 @media (max-width:980px){.final-art{display:none}}
 @media (max-width:560px){.trust{font-size:13.5px;justify-content:flex-start}#packages .pcard .price{font-size:30px}}
+
+/* ===== v2026-11-15 · internal links to service and tips pages ===== */
+.more{display:inline-block;margin:10px 0 2px;font-weight:700;color:var(--orange);text-decoration:underline;text-underline-offset:3px}
+.more.on-dark{color:var(--yellow)}
+.more-link{text-align:center;margin:14px 0 0}
+.faq a{color:var(--orange);font-weight:700}
+footer nav{flex-wrap:wrap;gap:8px 16px}
