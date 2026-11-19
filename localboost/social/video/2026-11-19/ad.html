@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>LocalBoost ad 60s</title>
+<style>
+@font-face{font-family:Readex;src:url(../../../site/assets/fonts/readex-pro-arabic-700-normal.woff2);font-weight:700}
+@font-face{font-family:Readex;src:url(../../../site/assets/fonts/readex-pro-latin-700-normal.woff2);font-weight:700;unicode-range:U+0000-00FF}
+@font-face{font-family:Readex;src:url(../../../site/assets/fonts/readex-pro-arabic-500-normal.woff2);font-weight:500}
+@font-face{font-family:Readex;src:url(../../../site/assets/fonts/readex-pro-latin-500-normal.woff2);font-weight:500;unicode-range:U+0000-00FF}
+@font-face{font-family:Plex;src:url(../../../site/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2);font-weight:400}
+@font-face{font-family:Plex;src:url(../../../site/assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2);font-weight:600}
+@font-face{font-family:Plex;src:url(../../../site/assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2);font-weight:700}
+@font-face{font-family:Plex;src:url(../../../site/assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2);font-weight:600;unicode-range:U+0000-00FF}
+@font-face{font-family:Inter;src:url(../../../site/assets/fonts/inter-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:Inter;src:url(../../../site/assets/fonts/inter-latin-700-normal.woff2);font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#010d1f}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden}
+svg#w{position:absolute;inset:0}
+.cap{position:absolute;left:0;right:0;bottom:56px;text-align:center;color:#fff;opacity:0;pointer-events:none}
+.cap .ar{font-family:Readex;font-weight:700;font-size:62px;line-height:1.25;text-shadow:0 4px 24px rgba(1,13,31,.85)}
+.cap .en{font-family:Inter;font-weight:600;font-size:30px;color:#FFD332;margin-top:6px;direction:ltr;text-shadow:0 3px 16px rgba(1,13,31,.9)}
+.cap .sm{display:inline-block;margin-top:14px;font-family:Plex;font-weight:600;font-size:26px;background:rgba(2,39,84,.85);border:1.5px solid rgba(255,211,50,.6);border-radius:999px;padding:6px 22px}
+#badge{position:absolute;top:44px;right:56px;background:#fff;border-radius:22px;padding:14px 22px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+#badge img{height:46px;display:block}
+#ex{position:absolute;top:56px;left:56px;font-family:Plex;font-weight:600;font-size:24px;color:#fff;border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:6px 20px;background:rgba(2,39,84,.6);opacity:0}
+/* phone listing */
+#phone{position:absolute;left:1300px;top:120px;width:500px;height:790px;background:#fff;border-radius:48px;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 10px #0b1f3f;overflow:hidden;font-family:Plex;color:#0A1F3D;padding:0 0 20px}
+#phone .map{height:150px;background:#e8edf3;position:relative;overflow:hidden}
+#phone .ttl{font-family:Readex;font-weight:700;font-size:36px;color:#022754;padding:18px 28px 0}
+#phone .sub{font-size:22px;color:#4A5A72;padding:2px 28px 0}
+#phone .sub .st{color:#F6880F;letter-spacing:2px}
+#phone .photos{display:flex;gap:10px;padding:16px 28px 0}
+#phone .photos i{flex:1;height:104px;border-radius:14px;position:relative;overflow:hidden}
+#phone .row{margin:16px 28px 0;border-radius:16px;padding:14px 18px;font-size:23px;font-weight:600;display:flex;align-items:center;gap:12px;position:relative}
+#phone .rev{margin:14px 28px 0;font-size:21px}
+#phone .bubble{background:#f2f4f8;border-radius:16px;padding:12px 16px;position:relative}
+#phone .reply{margin-top:8px;margin-inline-start:36px;background:#022754;color:#fff;border-radius:16px;padding:10px 16px;font-size:20px}
+#phone .btns{display:flex;gap:10px;padding:16px 28px 0}
+#phone .btns b{flex:1;text-align:center;border-radius:999px;padding:12px 0;font-size:22px;font-weight:700}
+.chk{position:absolute;left:-14px;top:-14px;width:40px;height:40px;border-radius:50%;background:#EA5C0A;color:#fff;font:700 24px/40px Inter;text-align:center;box-shadow:0 4px 12px rgba(234,92,10,.5)}
+#stamp{position:absolute;left:40px;bottom:46px;font-family:Readex;font-weight:700;font-size:44px;color:#EA5C0A;border:5px solid #EA5C0A;border-radius:18px;padding:4px 22px;transform:rotate(-12deg);opacity:0;background:rgba(255,255,255,.9)}
+/* end card */
+#end{position:absolute;inset:0;opacity:0;text-align:center;color:#fff}
+#end .logo{display:inline-block;margin-top:330px;background:#fff;border-radius:28px;padding:22px 34px;box-shadow:0 16px 50px rgba(0,0,0,.45)}
+#end .logo img{height:78px;display:block}
+#end h2{font-family:Readex;font-weight:700;font-size:70px;margin-top:34px}
+#end .en{font-family:Inter;font-weight:600;font-size:32px;color:#FFD332;margin-top:6px;direction:ltr}
+#end .pill{display:inline-block;margin-top:28px;background:#EA5C0A;border-radius:999px;padding:14px 40px;font-family:Readex;font-weight:700;font-size:38px;box-shadow:0 12px 36px rgba(234,92,10,.5)}
+#end .pill span{font-family:Inter;font-weight:600;font-size:28px;margin-inline-start:14px;opacity:.95}
+#end .links{margin-top:26px;font-family:Inter;font-weight:600;font-size:30px;direction:ltr;color:#e8eef7}
+#end .links b{color:#FFD332}
+#end .fine{margin-top:14px;font-family:Plex;font-weight:600;font-size:22px;color:#aab8cc}
+</style></head>
+<body><div id="stage">
+<svg id="w" viewBox="0 0 1920 1080" width="1920" height="1080" direction="ltr">
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#010d1f"/><stop offset=".65" stop-color="#022754"/><stop id="skyb" offset="1" stop-color="#03306a"/></linearGradient>
+ <radialGradient id="sun" cx=".5" cy="1" r=".6"><stop offset="0" stop-color="#FFD332" stop-opacity=".95"/><stop offset=".25" stop-color="#F6880F" stop-opacity=".75"/><stop offset=".55" stop-color="#EA5C0A" stop-opacity=".32"/><stop offset="1" stop-color="#EA5C0A" stop-opacity="0"/></radialGradient>
+ <radialGradient id="moonG" cx=".35" cy=".32" r=".75"><stop offset="0" stop-color="#fffaf0"/><stop offset=".45" stop-color="#ffe9b8"/><stop offset=".8" stop-color="#f7c46f"/><stop offset="1" stop-color="#e7a248"/></radialGradient>
+ <radialGradient id="glowY" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFD332" stop-opacity=".55"/><stop offset="1" stop-color="#FFD332" stop-opacity="0"/></radialGradient>
+ <radialGradient id="glowO" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F6880F" stop-opacity=".75"/><stop offset="1" stop-color="#EA5C0A" stop-opacity="0"/></radialGradient>
+ <radialGradient id="lamp" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFD332" stop-opacity=".5"/><stop offset="1" stop-color="#F6880F" stop-opacity="0"/></radialGradient>
+ <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7ead6"/><stop offset="1" stop-color="#ead2ad"/></linearGradient>
+ <pattern id="shm" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="4" fill="#fff"/><path d="M0 0h2v2H0zM2 2h2v2H2z" fill="#d7262e" opacity=".9"/></pattern>
+ <mask id="kcMask"><rect width="1920" height="1080" fill="#fff"/><path d="M1158 560 Q1180 455 1202 560 Z" fill="#000"/></mask>
+</defs>
+<rect width="1920" height="1080" fill="url(#sky)"/>
+<g id="stars"></g>
+<ellipse id="sunE" cx="960" cy="1120" rx="1300" ry="420" fill="url(#sun)"/>
+
+<!-- CITY -->
+<g id="city"><g id="cityCam">
+ <g id="bldBack"></g>
+ <g id="landmarks">
+  <path d="M640 1080 L700 520 L760 1080 Z" fill="#052a57" stroke="#0b3a72" stroke-width="2"/>
+  <circle cx="700" cy="610" r="20" fill="#FFD332" opacity=".9"/><circle cx="700" cy="610" r="44" fill="url(#glowY)"/>
+  <path d="M1132 1080 L1150 440 Q1180 395 1210 440 L1228 1080 Z" fill="#052a57" stroke="#0b3a72" stroke-width="2" mask="url(#kcMask)"/>
+  <path d="M1162 520 H1198" stroke="#0b3a72" stroke-width="5"/>
+ </g>
+ <g id="bldFront"></g>
+ <g id="pins"></g>
+</g></g>
+
+<!-- moon + rocket (shared) -->
+<g id="moonG1" transform="translate(1590 230)">
+ <circle r="190" fill="url(#glowY)"/>
+ <ellipse rx="150" ry="40" fill="none" stroke="#FFD332" stroke-width="3" stroke-dasharray="10 10" transform="rotate(-16)" opacity=".9" id="ringBack"/>
+ <circle r="82" fill="url(#moonG)"/>
+ <circle cx="-22" cy="18" r="14" fill="#c78634" opacity=".22"/><circle cx="28" cy="-24" r="9" fill="#c78634" opacity=".22"/><circle cx="24" cy="32" r="6" fill="#c78634" opacity=".2"/>
+</g>
+<g id="trail"></g>
+<g id="rocketW"><image href="../../../site/assets/favicon.png" x="-55" y="-55" width="110" height="110"/></g>
+
+<!-- CAFE STREET -->
+<g id="cafe" opacity="0">
+ <rect x="0" y="860" width="1920" height="220" fill="#0b2f60"/>
+ <rect x="0" y="860" width="1920" height="10" fill="#174a8a"/>
+ <g id="cafeShift">
+  <g id="cafePinG" transform="translate(960 300)"></g>
+  <rect x="760" y="430" width="400" height="430" fill="#f4efe6"/>
+  <rect x="760" y="430" width="400" height="430" fill="#022754" id="facadeShade" opacity=".35"/>
+  <rect x="815" y="378" width="290" height="70" rx="14" fill="#022754" stroke="#FFD332" stroke-width="3"/>
+  <text x="960" y="426" font-family="Readex" font-weight="700" font-size="38" fill="#FFD332" text-anchor="middle" direction="rtl">قهوة الفجر</text>
+  <g id="awning"></g>
+  <rect id="win" x="790" y="590" width="180" height="170" rx="8" fill="#2b3a52" stroke="#022754" stroke-width="6"/>
+  <g id="winGlow" opacity="0"><rect x="790" y="590" width="180" height="170" rx="8" fill="#ffd9a0"/><circle cx="880" cy="640" r="70" fill="url(#lamp)"/><rect x="805" y="700" width="150" height="10" fill="#c98a4b"/></g>
+  <rect x="1010" y="600" width="120" height="260" rx="6" fill="#022754"/>
+  <rect id="doorGlow" x="1018" y="608" width="104" height="252" rx="4" fill="#ffd9a0" opacity="0"/>
+  <circle cx="1030" cy="740" r="6" fill="#FFD332"/>
+  <g id="chime" opacity="0" transform="translate(1070 585)"><path d="M-30 -10 q-10 -14 0 -28 M30 -10 q10 -14 0 -28 M-48 -4 q-16 -22 0 -44 M48 -4 q16 -22 0 -44" stroke="#FFD332" stroke-width="5" fill="none" stroke-linecap="round"/><circle r="9" fill="#FFD332"/></g>
+  <g id="owner"></g>
+  <g id="crew" opacity="0"></g>
+  <g id="flash" opacity="0"><circle cx="960" cy="640" r="320" fill="#fff"/></g>
+  <g id="customer" opacity="0"></g>
+ </g>
+ <g id="landRocket" opacity="0"><g id="landRocketIn"><image href="../../../site/assets/favicon.png" x="-80" y="-80" width="160" height="160" transform="rotate(-45)"/></g><g id="dust"></g></g>
+ <g id="walkers"></g>
+</g>
+
+<!-- INSIDE -->
+<g id="inside" opacity="0">
+ <rect width="1920" height="1080" fill="url(#wall)"/>
+ <rect x="0" y="780" width="1920" height="300" fill="#b9814f"/>
+ <rect x="0" y="780" width="1920" height="12" fill="#8f5d33"/>
+ <rect x="140" y="170" width="520" height="380" rx="18" fill="#022754"/>
+ <rect x="140" y="170" width="520" height="380" rx="18" fill="none" stroke="#c98a4b" stroke-width="14"/>
+ <g id="inStars"></g>
+ <ellipse cx="400" cy="560" rx="380" ry="80" fill="url(#sun)" opacity=".7"/>
+ <g transform="translate(1250 0)"><path d="M0 0 V170" stroke="#5b3a1f" stroke-width="4"/><path d="M-50 210 Q0 150 50 210 Z" fill="#EA5C0A"/><circle cy="240" r="140" fill="url(#lamp)"/></g>
+ <g transform="translate(1600 0)"><path d="M0 0 V120" stroke="#5b3a1f" stroke-width="4"/><path d="M-45 160 Q0 105 45 160 Z" fill="#EA5C0A"/><circle cy="190" r="120" fill="url(#lamp)"/></g>
+ <rect x="1380" y="560" width="540" height="230" fill="#022754"/><rect x="1380" y="545" width="540" height="22" fill="#c98a4b"/>
+ <rect x="1500" y="440" width="150" height="110" rx="12" fill="#4A5A72"/><rect x="1520" y="470" width="40" height="40" rx="6" fill="#c9d3e1"/>
+ <g id="alienG" transform="translate(900 700)"></g>
+ <rect x="700" y="700" width="440" height="22" rx="10" fill="#7a4a24"/><rect x="900" y="720" width="40" height="160" fill="#5b3a1f"/>
+ <g transform="translate(1060 690)"><path d="M-20 -30 h40 q-3 30 -20 30 q-17 0 -20 -30z" fill="#fff" stroke="#022754" stroke-width="3"/><path d="M-18 -22 h36" stroke="#EA5C0A" stroke-width="5"/><path id="steam" d="M-6 -40 q-8 -12 0 -24 M8 -40 q8 -12 0 -24" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/></g>
+ <g id="sparkles" opacity="0"></g>
+ <g id="minis" opacity="0"></g>
+</g>
+</svg>
+
+<div id="phone">
+ <div class="map"><svg viewBox="0 0 500 150" width="500" height="150"><rect width="500" height="150" fill="#e8edf3"/><path d="M0 100 C120 80 220 130 500 60" stroke="#fff" stroke-width="18" fill="none"/><path d="M180 0 L240 150" stroke="#fff" stroke-width="12"/><g id="mapPin" transform="translate(300 98)"><path d="M0 0 C-14 -18 -18 -26 -18 -34 A18 18 0 1 1 18 -34 C18 -26 14 -18 0 0Z" fill="#8a97a8"/><circle cy="-34" r="7" fill="#fff"/></g></svg></div>
+ <div class="ttl">قهوة الفجر</div>
+ <div class="sub">مقهى · <span class="st" id="stars5">★★★★☆</span> <span style="font-family:Inter">4.1</span></div>
+ <div class="photos" id="photos"><i></i><i></i><i></i></div>
+ <div class="row" id="hours"></div>
+ <div class="rev"><div class="bubble"><span style="color:#F6880F">★★☆☆☆</span> «انتظرت كثير وما أحد رد…»<span id="dust2"></span></div><div class="reply" id="reply">شكراً على ملاحظتك. رتّبنا وقت الذروة، ونتشرف بزيارتك.</div></div>
+ <div class="btns" id="btns"><b>واتساب</b><b>اتصال</b><b>الاتجاهات</b></div>
+ <div id="stamp">موافق</div>
+</div>
+
+<div id="ex">مثال توضيحي · Illustrative</div>
+<div id="badge"><img src="../../../site/assets/logo-large.png" alt="LocalBoost"></div>
+<div class="cap" id="c0"><div class="ar">الرياض ما تنام… وزبونك يدوّر عليك الحين</div><div class="en">Riyadh never sleeps, and customers are searching right now</div></div>
+<div class="cap" id="c1"><div class="ar">محلك موجود… بس ما يبان</div><div class="en">Your shop is there… but unseen</div></div>
+<div class="cap" id="c2" style="right:560px;left:40px;font-size:0"><style>#c2 .ar,#c3 .ar{font-size:52px}</style><div class="ar">صور قديمة · ساعات غلط · تقييمات بدون رد</div><div class="en">Old photos · wrong hours · unanswered reviews</div></div>
+<div class="cap" id="c3" style="right:560px;left:40px"><div class="ar">نكمّل ملفك صح… وكل شي يبقى باسمك</div><div class="en">We complete your profile, and it stays in your name</div><div class="sm" id="c3s">ما ينزل شي إلا بموافقتك · Nothing goes live without your OK</div></div>
+<div class="cap" id="c4"><div class="ar">سهل يلقونك. واضح. وجاهز لزبائنك.</div><div class="en">Findable. Clear. Ready for customers.</div></div>
+<div class="cap" id="c5"><div class="ar">ونشوف محلك بعين زبونك</div><div class="en">And we see your shop through your customer's eyes</div></div>
+<div class="cap" id="c6"><div class="ar">وجهتك الأولى قبل ما تطلق صاروخك للنجاح</div><div class="en">Your first stop before you launch your rocket to success</div></div>
+
+<div id="end">
+ <div class="logo"><img src="../../../site/assets/logo-large.png" alt="LocalBoost"></div>
+ <h2>لا تخسر زبون يدوّر عليك</h2>
+ <div class="en">Don't lose the customers already looking for you</div>
+ <div class="pill">فحص مجاني ٥ دقايق<span>Free 5-minute check</span></div>
+ <div class="links"><b>WhatsApp</b> +966 55 789 1433 · linktr.ee/localboost.sa · localboostsa.store</div>
+ <div class="fine">مستقلين، مو تابعين لقوقل · Independent, not affiliated with Google</div>
+</div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id), NS='http://www.w3.org/2000/svg';
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), E=(t,a,b)=>cl((t-a)/(b-a)), lerp=(a,b,k)=>a+(b-a)*k;
+const io=k=>k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2, oc=k=>1-Math.pow(1-k,3);
+function rng(s){return()=>{s=(s*9301+49297)%233280;return s/233280}}
+const R=rng(11);
+const mix=(c1,c2,k)=>{const p=c=>[1,3,5].map(i=>parseInt(c.substr(i,2),16));const a=p(c1),b=p(c2);return'#'+a.map((v,i)=>Math.round(lerp(v,b[i],k)).toString(16).padStart(2,'0')).join('')};
+
+// stars
+let sh='';const stars=[];for(let i=0;i<120;i++){const x=R()*1920,y=R()*640,r=.6+R()*1.8;stars.push(R()*6);sh+=`<circle cx="${x}" cy="${y}" r="${r}" fill="#fff"/>`}$('stars').innerHTML=sh;
+let ish='';for(let i=0;i<30;i++)ish+=`<circle cx="${160+R()*480}" cy="${190+R()*300}" r="${.8+R()*2}" fill="#fff" opacity="${.4+R()*.6}"/>`;$('inStars').innerHTML=ish;
+
+// buildings
+function blds(seed,base,col,win,minH,maxH){const r=rng(seed);let x=-20,h='';const tops=[];while(x<1940){const w=60+r()*110,hh=minH+r()*(maxH-minH),y=1080-hh;
+ h+=`<rect x="${x}" y="${y}" width="${w}" height="${hh}" fill="${col}"/>`;
+ for(let wy=y+24;wy<1060;wy+=34)for(let wx=x+12;wx<x+w-14;wx+=26)if(r()<win)h+=`<rect x="${wx}" y="${wy}" width="9" height="13" fill="#FFD332" opacity="${.25+r()*.5}"/>`;
+ tops.push([x+w/2,y]);x+=w+6+r()*14}return[h,tops]}
+const [bb]=blds(3,0,'#04224a',.12,260,560);$('bldBack').innerHTML=bb;
+const [bf,tops]=blds(7,0,'#06306a',.22,120,330);$('bldFront').innerHTML=bf;
+// pins
+const pinD='M0 0 C-14 -18 -18 -26 -18 -34 A18 18 0 1 1 18 -34 C18 -26 14 -18 0 0Z';
+const pins=[];let ph='';
+const pr=rng(5);
+tops.forEach((p,i)=>{if(i%1===0){const x=p[0],y=p[1]-20-pr()*120;const lit0=pr()<.55?1:0;pins.push({x,y,lit0,ord:pr(),flick:pr()*10});
+ ph+=`<g transform="translate(${x} ${y})"><circle class="pg" cy="-34" r="48" fill="url(#glowO)"/><path class="pp" d="${pinD}"/><circle cy="-34" r="7" fill="#fff"/></g>`}});
+$('pins').innerHTML=ph;
+// target cafe pin = a dim one near center
+let tgt=pins.reduce((b,p,i)=>(!p.lit0&&Math.abs(p.x-980)<Math.abs(pins[b].x-980)&&p.y>560)?i:b,0);if(pins[tgt].lit0)pins[tgt].lit0=0;
+const pinEls=[...$('pins').children];
+
+// awning
+let aw='';for(let i=0;i<10;i++){aw+=`<path d="M${740+i*44} 470 L${784+i*44} 470 L${780+i*42} 545 L${760+i*40} 545 Z" fill="${i%2?'#fff':'#EA5C0A'}"/>`}$('awning').innerHTML=`<path d="M740 470 H1180 L1160 545 H760 Z" fill="#EA5C0A"/>`+aw;
+$('cafePinG').innerHTML=`<circle id="cpGlow" cy="-60" r="120" fill="url(#glowO)" opacity="0"/><circle id="cpRing" cy="-60" r="60" fill="none" stroke="#FFD332" stroke-width="5" opacity="0"/><g transform="scale(2.6)"><path id="cpPin" d="${pinD}" fill="#6b7a90"/><circle cy="-34" r="7" fill="#fff"/></g>`;
+
+// people
+function man(mood,arm){const mouth=mood==='smile'?'<path d="M-2.2 -35.2 Q0 -33.2 2.2 -35.2" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round"/>':mood==='sad'?'<path d="M-2 -34 Q0 -35.6 2 -34" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round"/><path d="M-3.6 -41.8 l2.4 .9 M3.6 -41.8 l-2.4 .9" stroke="#022754" stroke-width=".9"/>':'<path d="M-1.6 -34.6 H1.6" stroke="#fff" stroke-width="1"/>';
+ const sl=(d)=>`<path d="${d}" fill="none" stroke="#022754" stroke-width="6.4" stroke-linecap="round"/><path d="${d}" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round"/>`;
+ let arms=sl('M-9 -29 Q-13 -18 -11 -10');
+ if(arm==='phone')arms+=sl('M9 -29 Q14 -24 8 -24')+'<rect x="4" y="-31" width="5.5" height="9" rx="1" fill="#022754"/><rect x="4.8" y="-30" width="3.9" height="6.5" fill="#dfe8ff"/>';
+ else if(arm==='thumb')arms+=sl('M9 -29 Q17 -33 16 -42')+'<circle cx="16" cy="-43" r="2.8" fill="#E9B98B" stroke="#022754" stroke-width="1"/><path d="M16 -45 v-4" stroke="#022754" stroke-width="1.6" stroke-linecap="round"/>';
+ else arms+=sl('M9 -29 Q13 -18 11 -10');
+ return `<ellipse cx="-4" cy="0" rx="4" ry="1.6" fill="#3a2a20"/><ellipse cx="4" cy="0" rx="4" ry="1.6" fill="#3a2a20"/><path d="M-10 -31 Q0 -35 10 -31 L12 0 Q0 2.5 -12 0 Z" fill="#fff" stroke="#022754" stroke-width="1.3"/><path d="M0 -31 V-20" stroke="#022754" stroke-width=".8" opacity=".5"/>${arms}
+ <path d="M-10 -42 Q0 -57 10 -42 L13 -24 Q7 -29 5 -35 L-5 -35 Q-7 -29 -13 -24 Z" fill="url(#shm)" stroke="#022754" stroke-width="1.3"/><circle cx="0" cy="-38" r="6.2" fill="#E9B98B" stroke="#022754" stroke-width="1.2"/><path d="M-5.6 -35.5 Q0 -27 5.6 -35.5 Q3 -30 0 -29.8 Q-3 -30 -5.6 -35.5Z" fill="#3a2a20"/><circle cx="-2.2" cy="-39" r=".9" fill="#022754"/><circle cx="2.2" cy="-39" r=".9" fill="#022754"/>${mouth}<ellipse cx="0" cy="-46.5" rx="8.6" ry="2.6" fill="none" stroke="#141414" stroke-width="2.2"/>`}
+function woman(arm){const sl=(d)=>`<path d="${d}" fill="none" stroke="#000" stroke-width="5.2" stroke-linecap="round"/>`;
+ let arms=sl('M-9 -29 Q-13 -18 -11 -10');arms+=arm==='phone'?sl('M9 -29 Q14 -24 8 -24')+'<rect x="4" y="-31" width="5.5" height="9" rx="1" fill="#022754"/><rect x="4.8" y="-30" width="3.9" height="6.5" fill="#dfe8ff"/>':sl('M9 -29 Q13 -18 11 -10');
+ return `<path d="M-10 -31 Q0 -35 10 -31 L13 0 Q0 2.5 -13 0 Z" fill="#1b1b1f" stroke="#000" stroke-width="1"/>${arms}<circle cx="0" cy="-38.5" r="7.6" fill="#1b1b1f"/><ellipse cx=".6" cy="-37.8" rx="4.4" ry="5.2" fill="#E9B98B"/><circle cx="-1.2" cy="-38.6" r=".8" fill="#022754"/><circle cx="2.4" cy="-38.6" r=".8" fill="#022754"/><path d="M-.8 -35.4 Q.6 -34.2 2 -35.4" fill="none" stroke="#7a3b2a" stroke-width=".9" stroke-linecap="round"/>`}
+function astro(arm){return `<rect x="-8" y="-12" width="6" height="12" rx="2" fill="#fff" stroke="#022754" stroke-width="1.2"/><rect x="2" y="-12" width="6" height="12" rx="2" fill="#fff" stroke="#022754" stroke-width="1.2"/><rect x="-12" y="-30" width="4" height="16" rx="2" fill="#c9d3e1" stroke="#022754"/>
+ <rect x="-10" y="-31" width="20" height="21" rx="6" fill="#fff" stroke="#022754" stroke-width="1.3"/><rect x="-10" y="-23" width="20" height="4" fill="#EA5C0A"/>
+ <path d="M-9 -28 Q-15 -20 -12 -13" stroke="#022754" stroke-width="6.4" fill="none" stroke-linecap="round"/><path d="M-9 -28 Q-15 -20 -12 -13" stroke="#fff" stroke-width="4.4" fill="none" stroke-linecap="round"/>
+ ${arm==='camera'?'<path d="M9 -28 Q16 -30 17 -34" stroke="#022754" stroke-width="6.4" fill="none" stroke-linecap="round"/><path d="M9 -28 Q16 -30 17 -34" stroke="#fff" stroke-width="4.4" fill="none" stroke-linecap="round"/><rect x="14" y="-41" width="11" height="8" rx="2" fill="#022754"/><circle cx="21" cy="-37" r="2.4" fill="#c9d3e1"/>':'<path d="M9 -28 Q17 -24 20 -30" stroke="#022754" stroke-width="6.4" fill="none" stroke-linecap="round"/><path d="M9 -28 Q17 -24 20 -30" stroke="#fff" stroke-width="4.4" fill="none" stroke-linecap="round"/>'}
+ <circle cx="0" cy="-40" r="10" fill="#fff" stroke="#022754" stroke-width="1.4"/><ellipse cx="1" cy="-40" rx="6.8" ry="5" fill="#022754"/><path d="M-2 -43 q2 -1.5 4 0" stroke="#fff" stroke-width="1.2" fill="none" opacity=".8"/>`}
+function alien(nod){return `<g transform="rotate(${nod})"><path d="M0 -40 L-4 -54" stroke="#022754" stroke-width="2"/><circle cx="-4" cy="-56" r="4" fill="#EA5C0A"/>
+ <ellipse cx="0" cy="-20" rx="18" ry="22" fill="#FFD332" stroke="#022754" stroke-width="2"/><rect x="-14" y="-31" width="28" height="12" rx="5" fill="#141414"/><path d="M-10 -28 l5 0" stroke="#fff" stroke-width="1.6" opacity=".7"/><path d="M-6 -9 Q0 -5 6 -9" fill="none" stroke="#022754" stroke-width="2" stroke-linecap="round"/></g>`}
+
+$('owner').innerHTML='';
+const W=[{k:'man',x0:-200,x1:2150,t0:6.2,t1:14.2,s:5.4},{k:'woman',x0:2150,x1:-250,t0:6.8,t1:14.6,s:5.2},{k:'man',x0:-260,x1:2150,t0:8.2,t1:15,s:5.0}];
+$('walkers').innerHTML=W.map((w,i)=>`<g id="wk${i}"><g class="wkIn">${w.k==='man'?man('neutral','phone'):woman('phone')}</g></g>`).join('');
+// dust + sparkles
+let dh='';for(let i=0;i<14;i++)dh+=`<circle cx="0" cy="0" r="${10+R()*22}" fill="#FFD332" opacity=".5" data-a="${R()*Math.PI}" data-d="${60+R()*160}"/>`;$('dust').innerHTML=dh;
+let sp='';for(let i=0;i<10;i++){const a=i/10*Math.PI*2;sp+=`<path d="M0 -14 L4 -4 L14 0 L4 4 L0 14 L-4 4 L-14 0 L-4 -4Z" fill="#FFD332" data-a="${a}"/>`}$('sparkles').innerHTML=sp;
+// mini shops
+const MI=[['حلاق','Barbershop','<rect x="-14" y="-70" width="28" height="80" rx="14" fill="#fff"/><path d="M-14 -50 L14 -62 M-14 -24 L14 -36 M-14 2 L14 -10" stroke="#EA5C0A" stroke-width="8"/>'],
+ ['مطعم','Restaurant','<circle cy="-30" r="42" fill="#fff"/><circle cy="-30" r="28" fill="none" stroke="#c9d3e1" stroke-width="4"/><path d="M-60 -70 V10 M-68 -70 V-46 Q-60 -38 -52 -46 V-70 M60 -70 Q74 -50 60 -30 V10" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/>'],
+ ['عيادة','Clinic','<rect x="-46" y="-76" width="92" height="92" rx="22" fill="#fff"/><path d="M0 -60 V0 M-30 -30 H30" stroke="#EA5C0A" stroke-width="16" stroke-linecap="round"/>']];
+$('minis').innerHTML=MI.map((m,i)=>`<g id="mini${i}" transform="translate(${480+i*480} 560)"><rect x="-190" y="-230" width="380" height="440" rx="36" fill="#022754"/><g transform="translate(0 40)">${m[2]}</g>
+ <g transform="translate(0 -120)"><circle class="mg" cy="-34" r="70" fill="url(#glowO)" opacity="0"/><g transform="scale(1.6)"><path class="mp" d="${pinD}" fill="#6b7a90"/><circle cy="-34" r="7" fill="#fff"/></g></g>
+ <text y="150" text-anchor="middle" font-family="Readex" font-weight="700" font-size="46" fill="#fff" direction="rtl">${m[0]}</text><text y="190" text-anchor="middle" font-family="Inter" font-weight="600" font-size="24" fill="#FFD332">${m[1]}</text></g>`).join('');
+
+// rocket path (opening streak to orbit)
+const orbit=(a)=>{const rx=150,ry=40,r=-16*Math.PI/180;const x=rx*Math.cos(a),y=ry*Math.sin(a);return[1590+x*Math.cos(r)-y*Math.sin(r),230+x*Math.sin(r)+y*Math.cos(r)]};
+function streak(k){// bezier from left to orbit entry
+ const p0=[-120,420],p1=[500,40],p2=[1100,420],p3=orbit(Math.PI*0.9);const u=1-k;return[0,1].map(i=>u*u*u*p0[i]+3*u*u*k*p1[i]+3*u*k*k*p2[i]+k*k*k*p3[i])}
+
+const caps=[['c0',.6,5.6],['c1',7.2,13.6],['c2',15,19.8],['c3',21,29.8],['c4',31,37.8],['c5',38.6,45.6],['c6',47,53.8]];
+
+function setPin(el,lit,glowK){el.querySelector('.pp').setAttribute('fill',mix('#6b7a90','#EA5C0A',lit));el.querySelector('.pg').setAttribute('opacity',(lit*glowK).toFixed(3))}
+
+function render(t){
+ // sky dawn
+ const dawn=t<46?lerp(.35,.85,E(t,0,6)):lerp(.85,1,E(t,46,54));
+ $('sunE').setAttribute('opacity',dawn.toFixed(3));
+ [...$('stars').children].forEach((s,i)=>s.setAttribute('opacity',(.35+.6*Math.abs(Math.sin(t*1.3+stars[i]))).toFixed(2)));
+ // scenes
+ const cityA=Math.max(1-E(t,6.3,7.0), E(t,45.7,46.5)*(1-E(t,53.6,54.3)));
+ const cafeA=E(t,6.3,7.0)*(1-E(t,37.8,38.5));
+ const inA=E(t,37.8,38.5)*(1-E(t,45.7,46.5));
+ const endA=E(t,53.6,54.4);
+ $('city').setAttribute('opacity',cityA.toFixed(3));$('cafe').setAttribute('opacity',cafeA.toFixed(3));$('inside').setAttribute('opacity',inA.toFixed(3));
+ $('end').style.opacity=endA;
+ // moon visible in city + end
+ const moonA=Math.max(cityA,endA);$('moonG1').setAttribute('opacity',moonA.toFixed(3));
+ $('moonG1').setAttribute('transform',t>=53.6?`translate(${lerp(1590,960,io(E(t,53.6,54.6)))} ${lerp(230,170,io(E(t,53.6,54.6)))}) scale(${lerp(1,.9,E(t,53.6,54.6))})`:'translate(1590 230)');
+ // city camera
+ const tp=pins[tgt];let cam='';
+ if(t<4.6){const s=lerp(1.35,1,io(E(t,0,4.6)));cam=`translate(960 600) scale(${s}) translate(-960 -600)`}
+ else if(t<7.2){const k=io(E(t,4.6,7.0)),s=lerp(1,4.2,k);const cx=lerp(960,960,k),cy=lerp(600,300+34*4.2,k);const px=lerp(960,tp.x,k),py=lerp(600,tp.y,k);cam=`translate(${cx} ${cy}) scale(${s}) translate(${-px} ${-py})`}
+ else{const s=lerp(1.25,1,io(E(t,45.7,50)));cam=`translate(960 600) scale(${s}) translate(-960 -600)`}
+ $('cityCam').setAttribute('transform',cam);
+ pins.forEach((p,i)=>{let lit=p.lit0;
+  if(i===tgt)lit=0.12+0.1*Math.sin(t*9+p.flick)*(Math.sin(t*3.1)>0?1:0);
+  else if(!p.lit0){lit=.12+.08*Math.sin(t*7+p.flick);}
+  if(t>45.6){const st=46.3+p.ord*6.5;lit=Math.max(lit,oc(E(t,st,st+.5)));if(i===tgt)lit=1}
+  setPin(pinEls[i],cl(lit),.9+.1*Math.sin(t*2+i))});
+ // rocket & trail
+ let rk=null,ang=0;
+ if(t<4.2){const k=io(E(t,0.2,4.2));rk=streak(k);const d=streak(Math.min(1,k+.01));ang=Math.atan2(d[1]-rk[1],d[0]-rk[0])}
+ else if(t<7.2||t>45.6&&t<53.8){const a=Math.PI*.9+(t-4.2)*1.4;rk=orbit(a);const d=orbit(a+.02);ang=Math.atan2(d[1]-rk[1],d[0]-rk[0])}
+ else if(t>=53.8){const a=Math.PI*.9+(t-4.2)*1.4;const o=orbit(a);const k=io(E(t,53.6,54.6));rk=[lerp(o[0],960+(o[0]-1590)*.9,k),lerp(o[1],170+(o[1]-230)*.9,k)];const d=orbit(a+.02);ang=Math.atan2(d[1]-o[1],d[0]-o[0])}
+ if(rk){$('rocketW').setAttribute('opacity',Math.max(cityA,endA).toFixed(3));$('rocketW').setAttribute('transform',`translate(${rk[0]} ${rk[1]}) rotate(${ang*180/Math.PI+45}) scale(${t>=53.6?.85:1})`)}else $('rocketW').setAttribute('opacity',0);
+ let tr='';if(t<6.5){for(let k=0;k<=E(t,0.2,4.2);k+=.02){const p=streak(io(k));tr+=`<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="#FFD332" opacity="${(.8*(1-E(t,4.5,6.5))).toFixed(2)}"/>`}}$('trail').innerHTML=tr;
+ // CAFE
+ const shift=-260*io(E(t,14,15.2))+260*io(E(t,30,31.2));
+ $('cafeShift').setAttribute('transform',`translate(${shift} 0)`);
+ const fixed=E(t,30,31.5);
+ const pinLit=fixed;
+ const flick=t<30?(.15+.12*(Math.sin(t*11)>.2?1:0)):0;
+ $('cpPin').setAttribute('fill',mix('#6b7a90','#EA5C0A',Math.max(flick,pinLit)));
+ $('cpGlow').setAttribute('opacity',(pinLit*(.75+.25*Math.sin(t*4))).toFixed(3));
+ const ringK=t>30?((t-30)%1.6)/1.6:0;$('cpRing').setAttribute('opacity',t>30.5?(1-ringK).toFixed(2):0);$('cpRing').setAttribute('r',(60+ringK*120).toFixed(1));
+ $('facadeShade').setAttribute('opacity',(lerp(.35,0,E(t,30,31.5))).toFixed(3));
+ $('winGlow').setAttribute('opacity',fixed.toFixed(3));
+ $('doorGlow').setAttribute('opacity',(E(t,35.2,35.6)*(1-E(t,36.4,36.9))*.9).toFixed(3));
+ const ch=E(t,35.4,35.6)*(1-E(t,36.6,37.2));$('chime').setAttribute('opacity',ch.toFixed(2));$('chime').setAttribute('transform',`translate(1070 585) rotate(${Math.sin(t*30)*8})`);
+ // owner
+ const mood=t>=30.8?'smile':t>=28.2?'smile':'sad';const arm=(t>=28.2&&t<30.5)?'thumb':(t>=7&&t<14)?'phone':'down';
+ const om=mood+arm;if($('owner').dataset.m!==om){$('owner').innerHTML=`<g transform="translate(690 860) scale(5.2)">${man(mood,arm)}</g>`;$('owner').dataset.m=om}
+ // walkers
+ W.forEach((w,i)=>{const k=E(t,w.t0,w.t1);const x=lerp(w.x0,w.x1,k);const bob=-Math.abs(Math.sin(t*7+i))*6;const dir=w.x1>w.x0?1:-1;
+  $('wk'+i).setAttribute('transform',`translate(${x} ${1010+bob}) scale(${w.s*dir} ${w.s})`);$('wk'+i).setAttribute('opacity',(k>0&&k<1)?1:0)});
+ // landing rocket + crew
+ let lr='';const land=io(E(t,20,21.6));const lift=io(E(t,31,33));
+ const rx=lerp(-200,1150,land),ry=lerp(-200,700,land)-lift*1100;
+ $('landRocket').setAttribute('opacity',(t>20&&t<33.5)?1:0);
+ $('landRocketIn').setAttribute('transform',`translate(${rx+(t>30?shift+260:0)} ${ry}) rotate(${lerp(0,45,land)-lift*10})`);
+ const dk=E(t,21.4,22.6);[...$('dust').children].forEach(c=>{const a=+c.dataset.a,d=+c.dataset.d*dk;c.setAttribute('cx',(1150+Math.cos(a)*d*1.6).toFixed(1));c.setAttribute('cy',(820-Math.sin(a)*d*.5).toFixed(1));c.setAttribute('opacity',((1-dk)*.6*(dk>0)).toFixed(2))});
+ const crewA=E(t,21.8,22.3)*(1-E(t,30.4,30.9));$('crew').setAttribute('opacity',crewA.toFixed(2));
+ const carm=(t>22.4&&t<23.6)?'camera':'point';if($('crew').dataset.m!==carm){$('crew').innerHTML=`<g transform="translate(1210 860) scale(-5.2 5.2)">${astro(carm)}</g>`;$('crew').dataset.m=carm}
+ $('flash').setAttribute('opacity',(t>22.9&&t<23.3?(1-Math.abs(t-23.1)/.2)*.7:0).toFixed(2));
+ // customer
+ const cA=E(t,32,32.3)*(1-E(t,35.8,36.3));$('customer').setAttribute('opacity',cA.toFixed(2));
+ const cx=t<33.6?lerp(300,870,io(E(t,32,33.6))):t<35?870:lerp(870,1070,io(E(t,35,35.9)));const cph=(t>=33.6&&t<35)?'phone':'down';
+ if($('customer').dataset.m!==cph){$('customer').innerHTML=`<g class="ci">${woman(cph)}</g>`;$('customer').dataset.m=cph}
+ $('customer').setAttribute('transform',`translate(${cx} ${868-(t<33.6||t>35?Math.abs(Math.sin(t*7))*5:0)}) scale(4.4)`);
+ // phone panel
+ const pIn=io(E(t,14,15.2))*(1-io(E(t,30,30.9)));
+ $('phone').style.transform=`translateX(${lerp(700,0,pIn)}px)`;$('phone').style.opacity=pIn>0?1:0;
+ const f1=E(t,22.8,23.2),f2=E(t,24.4,24.8),f3=E(t,26,26.4),f4=E(t,27.4,27.8);
+ const ph=[...$('photos').children];const warm=['linear-gradient(135deg,#6b4226,#c8935a)','linear-gradient(135deg,#2f2a26,#7c6a5a)','linear-gradient(135deg,#d9c3a5,#a37b54)'];
+ ph.forEach((p,i)=>{p.style.background=f1>.5?warm[i]:'#9aa5b4';p.style.filter=f1>.5?'none':'blur(3px) grayscale(1)';p.style.opacity=f1>.5?1:.7;p.innerHTML=(i===0&&f1>0)?`<span class="chk" style="left:6px;top:6px;transform:scale(${oc(f1)})">✓</span>`:''});
+ const fl=Math.sin(t*12)>0?1:.35;
+ $('hours').innerHTML=f2<.5?`<span style="opacity:${fl}">◷</span><span style="color:#4A5A72">الساعات: <span style="opacity:${fl}">«مغلق؟»</span> غير مؤكدة</span>`:`<span class="chk" style="transform:scale(${oc(f2)})">✓</span><span style="color:#EA5C0A">◷</span><span>مفتوح · يومياً ٧ص – ١٢م</span><span style="margin-inline-start:auto;font-size:19px;background:#fff3e6;color:#EA5C0A;border-radius:999px;padding:4px 12px">ساعات رمضان</span>`;
+ $('hours').style.background=f2<.5?'#eef1f5':'#f4f8ff';
+ $('reply').style.display=f3>0?'block':'none';$('reply').style.opacity=f3;$('reply').style.transform=`translateY(${(1-oc(f3))*20}px)`;
+ $('dust2').innerHTML=f3<.5?' <span style="color:#a0a8b4;font-size:16px">· بدون رد من ٣ شهور</span>':'';
+ [...$('btns').children].forEach((b,i)=>{const on=E(t,27.4+i*.25,27.7+i*.25);b.style.background=on>.5?'#EA5C0A':'#e3e7ee';b.style.color=on>.5?'#fff':'#9aa5b4';b.style.transform=`scale(${1+.15*Math.sin(on*Math.PI)})`});
+ $('mapPin').querySelector('path').setAttribute('fill',f4>.5?'#EA5C0A':'#8a97a8');
+ const st=E(t,28.3,28.6);$('stamp').style.opacity=st;$('stamp').style.transform=`rotate(-12deg) scale(${lerp(2.2,1,oc(st))})`;
+ // INSIDE
+ const nod=(t>40&&t<40.9)?Math.sin((t-40)*Math.PI*2/0.45)*8:0;
+ const aA=1-E(t,41.6,41.9);
+ $('alienG').innerHTML=`<g opacity="${aA}"><g transform="scale(4.2)">${alien(nod)}<rect x="-30" y="-24" width="13" height="17" rx="2" fill="#fff" stroke="#022754" stroke-width="1.5" transform="rotate(-10)"/><path d="M-27 -19 h7 M-27 -15 h${4+3*Math.abs(Math.sin(t*6))}" stroke="#022754" stroke-width="1"/><path d="M-17 -12 L-26 -18" stroke="#022754" stroke-width="2.2" stroke-linecap="round"/></g></g>`;
+ $('steam').setAttribute('transform',`translate(0 ${-((t*20)%14)})`);
+ const sk=E(t,41.5,42.4);$('sparkles').setAttribute('opacity',(sk>0&&sk<1?1-sk*.6:0).toFixed(2));
+ [...$('sparkles').children].forEach(s=>{const a=+s.dataset.a,d=40+sk*170;s.setAttribute('transform',`translate(${900+Math.cos(a)*d} ${600+Math.sin(a)*d}) scale(${1.4-sk})`)});
+ const mA=E(t,42.4,42.9);$('minis').setAttribute('opacity',mA.toFixed(2));
+ MI.forEach((m,i)=>{const g=$('mini'+i);const on=E(t,43.2+i*.8,43.6+i*.8);g.querySelector('.mp').setAttribute('fill',mix('#6b7a90','#EA5C0A',on));g.querySelector('.mg').setAttribute('opacity',(on*(.8+.2*Math.sin(t*4))).toFixed(2));
+  g.setAttribute('transform',`translate(${480+i*480} ${lerp(620,560,oc(E(t,42.4+i*.15,43+i*.15)))})`)});
+ // overlays
+ caps.forEach(([id,a,b])=>{const k=E(t,a,a+.5)*(1-E(t,b-.4,b));const el=$(id);el.style.opacity=k;el.style.transform=`translateY(${(1-oc(E(t,a,a+.5)))*24}px)`});
+ $('c3s').style.opacity=E(t,24,24.5);
+ $('ex').style.opacity=(E(t,7,7.5)*(1-E(t,45.4,45.8))).toFixed(2);
+ $('badge').style.opacity=1-endA;
+}
+window.render=render;render(0);
+</script>
+</body></html>
