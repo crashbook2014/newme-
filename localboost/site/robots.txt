@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /proposals/
 
 Sitemap: https://localboostsa.store/sitemap.xml
