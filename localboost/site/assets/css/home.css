@@ -364,3 +364,21 @@ footer nav a{margin-inline-start:4px}
 .more-link{text-align:center;margin:14px 0 0}
 .faq a{color:var(--orange);font-weight:700}
 footer nav{flex-wrap:wrap;gap:8px 16px}
+
+/* ===== v2026-11-28 · new package card: No Customer Lost (no price) ===== */
+.pcard.ncl{grid-column:1/-1;justify-self:center;width:calc(50% - 11px)}
+.badge.new{background:var(--yellow);color:var(--navy)}
+#packages .pcard .price.ask{font:700 22px/1.5 var(--f-display);padding:10px 20px}
+[dir=ltr] #packages .pcard .price.ask{font-family:var(--f-latin)}
+.ncl .hook{margin:12px 0 0;font:700 18px/1.5 var(--f-display);color:var(--navy)}
+[dir=ltr] .ncl .hook{font-family:var(--f-latin)}
+.ncl .loss{margin:2px 0 0;font-size:15px}
+.ncl h4{margin:14px 0 0;font:700 17px var(--f-display);color:var(--navy)}
+[dir=ltr] .ncl h4{font-family:var(--f-latin)}
+.pcard ul.checks{list-style:none;padding:0;margin:8px 0 6px}
+.checks li{position:relative;padding-inline-start:28px;margin-bottom:6px}
+.checks li::before{content:"";position:absolute;inset-inline-start:0;top:.3em;width:18px;height:18px;border-radius:50%;background:var(--orange) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.3l2.6 2.6L12 5.6' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.ncl-note{margin:0;font-size:13px}
+.ncl .result{margin:6px 0 16px;background:var(--navy);color:var(--yellow);border-radius:12px;padding:10px 14px;font-weight:700;font-size:15px}
+.ncl .en[lang=ar]{font-family:var(--f-body);align-self:flex-start}
+@media (max-width:860px){.pcard.ncl{width:auto;justify-self:stretch}}
